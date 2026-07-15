@@ -50,6 +50,7 @@ find "$ROOT/src" "$ROOT/lib/spine-csharp-src" -name '*.cs' | sort > "$RSP"
   -r:"$MANAGED/UnityEngine.dll" \
   -r:"$MANAGED/UnityEngine.AnimationModule.dll" \
   -r:"$MANAGED/UnityEngine.ImageConversionModule.dll" \
+  -r:"$MANAGED/UnityEngine.IMGUIModule.dll" \
   -r:"$MANAGED/UnityEngine.InputLegacyModule.dll" \
   -r:"$MANAGED/UnityEngine.TextRenderingModule.dll" \
   -r:"$MANAGED/UnityEngine.UI.dll" \

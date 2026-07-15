@@ -59,6 +59,39 @@ namespace ArknightsOperatorsMod {
 			return isMoving ? "Move" : oniAnimation;
 		}
 
+		public static string ResolveEffectiveAnimation(string oniAnimation,
+			OperatorActionKind? manualAction) {
+			OperatorActionKind actual = Classify(oniAnimation);
+			if (actual == OperatorActionKind.Death || actual == OperatorActionKind.Stress)
+				return oniAnimation;
+			return manualAction.HasValue ? SourceFor(manualAction.Value) : oniAnimation;
+		}
+
+		public static string PreferredModel(string effectiveAnimation, bool automaticSwitching,
+			string configuredModel) {
+			if (!automaticSwitching) return configuredModel;
+			OperatorActionKind action = Classify(effectiveAnimation);
+			if (action == OperatorActionKind.Combat || action == OperatorActionKind.Stress ||
+				action == OperatorActionKind.Death) return "正面";
+			string value = (effectiveAnimation ?? string.Empty).ToLowerInvariant();
+			if (action == OperatorActionKind.Work &&
+				ContainsAny(value, "dig", "mine", "mining", "excavat")) return "正面";
+			return "基建";
+		}
+
+		public static string SourceFor(OperatorActionKind action) {
+			switch (action) {
+				case OperatorActionKind.Move: return "move";
+				case OperatorActionKind.Work: return "dig";
+				case OperatorActionKind.Combat: return "combat";
+				case OperatorActionKind.Sleep: return "sleep";
+				case OperatorActionKind.Sit: return "sit";
+				case OperatorActionKind.Stress: return "stun";
+				case OperatorActionKind.Death: return "death";
+				default: return "idle";
+			}
+		}
+
 		public static string Pick(string oniAnimation, IList<string> availableAnimations) {
 			if (availableAnimations == null || availableAnimations.Count == 0) return null;
 			string[] preferences = PreferencesFor(Classify(oniAnimation));

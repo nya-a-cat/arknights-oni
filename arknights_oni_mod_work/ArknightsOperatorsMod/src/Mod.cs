@@ -33,8 +33,10 @@ namespace ArknightsOperatorsMod {
 	public static class GameOnPrefabInitPatch {
 		public static void Postfix(Game __instance) {
 			if (__instance == null || __instance.gameObject == null) return;
-			if (__instance.gameObject.GetComponent<AppearanceOptionsHotkey>() != null) return;
-			__instance.gameObject.AddComponent<AppearanceOptionsHotkey>();
+			if (__instance.gameObject.GetComponent<AppearanceOptionsHotkey>() == null)
+				__instance.gameObject.AddComponent<AppearanceOptionsHotkey>();
+			if (__instance.gameObject.GetComponent<OperatorActionWheelController>() == null)
+				__instance.gameObject.AddComponent<OperatorActionWheelController>();
 		}
 	}
 }

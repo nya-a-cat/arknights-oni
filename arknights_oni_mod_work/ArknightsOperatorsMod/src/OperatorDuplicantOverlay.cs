@@ -17,6 +17,7 @@ namespace ArknightsOperatorsMod {
 		private const float MinimumWorldScale = 0.0015f;
 		private const float MaximumWorldScale = 0.0080f;
 		private const float FrameZStep = -0.0001f;
+		private const float ModelSwitchDelaySeconds = 0.35f;
 		private const string PreferredFrameSkin = "播种者";
 		private const string PreferredFrameModel = "正面";
 
@@ -67,6 +68,13 @@ namespace ArknightsOperatorsMod {
 		private CancellationTokenSource loadCancellation;
 		private IDisposable resourceLease;
 		private int loadGeneration;
+		private ModConfig appearanceConfig;
+		private string activeModel;
+		private string loadingModel;
+		private string modelCandidate;
+		private string lastAttemptedModel;
+		private float modelCandidateSince;
+		private OperatorActionKind? manualAction;
 		private readonly List<KBatchedAnimController> sourceAnimations = new List<KBatchedAnimController>();
 		private readonly Dictionary<KBatchedAnimController, Color32> sourceTintBeforeSuppression =
 			new Dictionary<KBatchedAnimController, Color32>();
@@ -82,7 +90,8 @@ namespace ArknightsOperatorsMod {
 				RefreshSourceAnimations();
 				CreateVisualRoot();
 				ModConfigStore.AppearanceChanged += OnAppearanceChanged;
-				BeginAppearanceLoad(ModConfigStore.Current, true);
+				appearanceConfig = ModConfigStore.Current;
+				BeginAppearanceLoad(ConfigForEffectiveAnimation(CurrentEffectiveAnimation()), true);
 			} catch (Exception ex) {
 				Debug.LogError("[ArknightsOperatorsMod] Failed to attach overlay: " + ex);
 				enabled = false;
@@ -119,7 +128,9 @@ namespace ArknightsOperatorsMod {
 			}
 			if (skeleton == null || state == null) return;
 
-			SyncFacingAndAnimation();
+			string effectiveAnimation = CurrentEffectiveAnimation();
+			UpdatePreferredModel(effectiveAnimation);
+			SyncFacingAndAnimation(effectiveAnimation);
 			float dt = Mathf.Min(Time.deltaTime, 0.05f);
 			state.Update(dt);
 			state.Apply(skeleton);
@@ -143,7 +154,11 @@ namespace ArknightsOperatorsMod {
 		}
 
 		private void OnAppearanceChanged(ModConfig config) {
-			BeginAppearanceLoad(config, !sourceHidden);
+			appearanceConfig = ModConfigStore.Clone(config);
+			manualAction = null;
+			lastAttemptedModel = null;
+			modelCandidate = null;
+			BeginAppearanceLoad(ConfigForEffectiveAnimation(CurrentEffectiveAnimation()), !sourceHidden);
 		}
 
 		private void BeginAppearanceLoad(ModConfig config, bool allowFallback) {
@@ -153,6 +168,8 @@ namespace ArknightsOperatorsMod {
 				loadCancellation.Dispose();
 			}
 			loadCancellation = new CancellationTokenSource();
+			loadingModel = config.PreferredModel;
+			lastAttemptedModel = config.PreferredModel;
 			StartCoroutine(LoadAppearance(config, allowFallback, loadGeneration,
 				loadCancellation.Token));
 		}
@@ -190,11 +207,13 @@ namespace ArknightsOperatorsMod {
 					if (!cancellationToken.IsCancellationRequested && generation == loadGeneration) {
 						ApplySkeleton(prepared);
 						prepared = null;
+						activeModel = bundle.Model;
+						loadingModel = null;
 						IDisposable previousLease = resourceLease;
 						resourceLease = nextLease;
 						nextLease = null;
 						if (previousLease != null) previousLease.Dispose();
-						PlayBestAnimation(CurrentOniAnimation());
+						PlayBestAnimation(CurrentEffectiveAnimation());
 						HideSourceVisual();
 						remoteLoaded = true;
 						Debug.Log("[ArknightsOperatorsMod] Loaded operator " + bundle.CharacterId + " " +
@@ -213,6 +232,7 @@ namespace ArknightsOperatorsMod {
 			if (cancellationToken.IsCancellationRequested || generation != loadGeneration)
 				yield break;
 			if (!allowFallback) {
+				loadingModel = null;
 				Debug.LogWarning("[ArknightsOperatorsMod] Appearance switch failed; keeping current operator: " +
 					remoteError);
 				yield break;
@@ -223,7 +243,9 @@ namespace ArknightsOperatorsMod {
 				Debug.LogWarning("[ArknightsOperatorsMod] PRTS asset load failed; trying bundled fallback: " + remoteError);
 				try {
 					LoadSkeleton(ModAssets.AmiyaAtlasPath, ModAssets.AmiyaSkeletonPath);
-					PlayBestAnimation(CurrentOniAnimation());
+					activeModel = "基建";
+					loadingModel = null;
+					PlayBestAnimation(CurrentEffectiveAnimation());
 					loaded = true;
 				} catch (Exception spineError) {
 					Debug.LogWarning("[ArknightsOperatorsMod] Bundled skeleton failed; trying frame fallback: " + spineError);
@@ -237,9 +259,11 @@ namespace ArknightsOperatorsMod {
 			}
 
 			if (loaded) {
+				loadingModel = null;
 				HideSourceVisual();
 				Debug.Log("[ArknightsOperatorsMod] Operator overlay attached to " + gameObject.name);
 			} else {
+				loadingModel = null;
 				enabled = false;
 			}
 		}
@@ -255,6 +279,81 @@ namespace ArknightsOperatorsMod {
 				: sourceAnim.currentAnim.ToString();
 			return OperatorAnimationMapper.ResolveSourceAnimation(
 				source, IsSourceMoving());
+		}
+
+		private string CurrentEffectiveAnimation() {
+			return OperatorAnimationMapper.ResolveEffectiveAnimation(CurrentOniAnimation(), manualAction);
+		}
+
+		internal void SetManualAction(OperatorActionKind? action) {
+			manualAction = action;
+			modelCandidate = null;
+			lastAttemptedModel = activeModel;
+			string effective = CurrentEffectiveAnimation();
+			if (skeleton != null && state != null) PlayBestAnimation(effective);
+			Debug.Log("[ArknightsOperatorsMod] Manual action " +
+				(action.HasValue ? action.Value.ToString() : "Auto") + " for " + gameObject.name);
+		}
+
+		internal OperatorActionKind? ManualAction {
+			get { return manualAction; }
+		}
+
+		internal string ActiveModel {
+			get { return activeModel; }
+		}
+
+		private ModConfig ConfigForEffectiveAnimation(string effectiveAnimation) {
+			ModConfig config = ModConfigStore.Clone(appearanceConfig);
+			config.PreferredModel = OperatorAnimationMapper.PreferredModel(effectiveAnimation,
+				config.AutomaticModelSwitching, config.PreferredModel);
+			return config;
+		}
+
+		private void UpdatePreferredModel(string effectiveAnimation) {
+			if (appearanceConfig == null) return;
+			string desired = OperatorAnimationMapper.PreferredModel(effectiveAnimation,
+				appearanceConfig.AutomaticModelSwitching, appearanceConfig.PreferredModel);
+			if (ModelMatches(desired, activeModel)) {
+				if (!string.IsNullOrEmpty(loadingModel) && !ModelMatches(desired, loadingModel))
+					CancelPendingModelLoad();
+				lastAttemptedModel = activeModel;
+				modelCandidate = null;
+				return;
+			}
+			if (ModelMatches(desired, loadingModel) ||
+				string.Equals(desired, lastAttemptedModel, StringComparison.Ordinal)) {
+				modelCandidate = null;
+				return;
+			}
+			if (!string.Equals(desired, modelCandidate, StringComparison.Ordinal)) {
+				modelCandidate = desired;
+				modelCandidateSince = Time.unscaledTime;
+				return;
+			}
+			if (Time.unscaledTime - modelCandidateSince < ModelSwitchDelaySeconds) return;
+
+			ModConfig next = ModConfigStore.Clone(appearanceConfig);
+			next.PreferredModel = desired;
+			modelCandidate = null;
+			BeginAppearanceLoad(next, false);
+		}
+
+		private void CancelPendingModelLoad() {
+			loadGeneration++;
+			if (loadCancellation != null) {
+				loadCancellation.Cancel();
+				loadCancellation.Dispose();
+				loadCancellation = null;
+			}
+			loadingModel = null;
+		}
+
+		private static bool ModelMatches(string desired, string actual) {
+			if (string.IsNullOrEmpty(desired) || string.IsNullOrEmpty(actual)) return false;
+			if (string.Equals(desired, actual, StringComparison.OrdinalIgnoreCase)) return true;
+			return string.Equals(desired, "正面", StringComparison.Ordinal) &&
+				string.Equals(actual, "战斗", StringComparison.Ordinal);
 		}
 
 		private void LoadSkeleton(string atlasPath, string skeletonPath) {
@@ -443,20 +542,20 @@ namespace ArknightsOperatorsMod {
 
 		private void UpdateFrameFallback() {
 			if (frameCount <= 0 || frameFps <= 0f) return;
-			SyncFrameFallbackFacingAndAnimation();
+			SyncFrameFallbackFacingAndAnimation(CurrentEffectiveAnimation());
 			frameElapsed += Time.deltaTime;
 			int elapsedFrame = Mathf.FloorToInt(frameElapsed * frameFps);
 			int frameIndex = frameLoop ? elapsedFrame % frameCount : Mathf.Min(elapsedFrame, frameCount - 1);
 			ApplyFrameFallbackUv(frameIndex);
 		}
 
-		private void SyncFrameFallbackFacingAndAnimation() {
+		private void SyncFrameFallbackFacingAndAnimation(string effectiveAnimation) {
 			if (sourceAnim == null) return;
 			Vector3 scale = visualRoot.transform.localScale;
 			scale.x = sourceAnim.FlipX ? -1f : 1f;
 			visualRoot.transform.localScale = scale;
 
-			FrameAnimationDef next = PickFrameAnimation(CurrentOniAnimation());
+			FrameAnimationDef next = PickFrameAnimation(effectiveAnimation);
 			if (next == null || next.Animation == currentFrameAnimation) return;
 			try {
 				LoadFrameFallback(next.ManifestPath);
@@ -595,7 +694,7 @@ namespace ArknightsOperatorsMod {
 			return false;
 		}
 
-		private void SyncFacingAndAnimation() {
+		private void SyncFacingAndAnimation(string effectiveAnimation) {
 			if (sourceAnim == null) return;
 			bool flipX = sourceAnim.FlipX;
 			skeleton.ScaleX = flipX ? -1f : 1f;
@@ -604,8 +703,7 @@ namespace ArknightsOperatorsMod {
 				position.x = (flipX ? calibratedCenterX : -calibratedCenterX) * calibratedScale;
 				visualRoot.transform.localPosition = position;
 			}
-			string oniAnim = CurrentOniAnimation();
-			PlayBestAnimation(oniAnim);
+			PlayBestAnimation(effectiveAnimation);
 		}
 
 		private void PlayBestAnimation(string oniAnim) {

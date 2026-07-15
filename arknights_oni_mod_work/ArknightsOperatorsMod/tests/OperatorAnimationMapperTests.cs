@@ -37,6 +37,24 @@ internal static class OperatorAnimationMapperTests {
 		Expect("moving state works without source anim", "Move", OperatorAnimationMapper.ResolveSourceAnimation(null, true));
 		Expect("stationary state keeps source anim", "idle_loop", OperatorAnimationMapper.ResolveSourceAnimation("idle_loop", false));
 		Expect("stationary null stays null", null, OperatorAnimationMapper.ResolveSourceAnimation(null, false));
+		Expect("manual sleep overrides idle", "sleep", OperatorAnimationMapper.ResolveEffectiveAnimation(
+			"idle_loop", OperatorActionKind.Sleep));
+		Expect("real death overrides manual sleep", "death", OperatorAnimationMapper.ResolveEffectiveAnimation(
+			"death", OperatorActionKind.Sleep));
+		Expect("real stress overrides manual idle", "panic_loop", OperatorAnimationMapper.ResolveEffectiveAnimation(
+			"panic_loop", OperatorActionKind.Idle));
+		Expect("automatic sleep uses base model", "基建", OperatorAnimationMapper.PreferredModel(
+			"sleep_loop", true, "正面"));
+		Expect("automatic digging uses front model", "正面", OperatorAnimationMapper.PreferredModel(
+			"dig_loop", true, "基建"));
+		Expect("automatic combat uses front model", "正面", OperatorAnimationMapper.PreferredModel(
+			"combat", true, "基建"));
+		Expect("automatic death uses front model", "正面", OperatorAnimationMapper.PreferredModel(
+			"death", true, "基建"));
+		Expect("ordinary work stays on base model", "基建", OperatorAnimationMapper.PreferredModel(
+			"cook_loop", true, "正面"));
+		Expect("disabled switching preserves configured model", "背面", OperatorAnimationMapper.PreferredModel(
+			"death", false, "背面"));
 
 		List<string> combat = new List<string> {
 			"Attack_Begin", "Attack", "Die", "Idle", "Skill_Loop_2", "Start", "Stun"

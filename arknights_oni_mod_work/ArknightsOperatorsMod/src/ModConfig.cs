@@ -19,7 +19,7 @@ namespace ArknightsOperatorsMod {
 
 	[ConfigFile("config.json", true, true)]
 	public sealed class ModConfig : IOptions {
-		public const int CurrentSchemaVersion = 1;
+		public const int CurrentSchemaVersion = 2;
 
 		[JsonProperty]
 		public int SchemaVersion { get; set; } = CurrentSchemaVersion;
@@ -36,6 +36,9 @@ namespace ArknightsOperatorsMod {
 
 		[JsonProperty]
 		public string PreferredModel { get; set; } = "基建";
+
+		[JsonProperty]
+		public bool AutomaticModelSwitching { get; set; } = true;
 
 		internal void Normalize() {
 			SchemaVersion = CurrentSchemaVersion;
@@ -128,7 +131,8 @@ namespace ArknightsOperatorsMod {
 
 		internal static string AppearanceKey(ModConfig config) {
 			if (config == null) return "";
-			return config.DefaultCharacterId + "|" + config.PreferredSkin + "|" + config.PreferredModel;
+			return config.DefaultCharacterId + "|" + config.PreferredSkin + "|" +
+				config.PreferredModel + "|" + config.AutomaticModelSwitching;
 		}
 
 		internal static ModConfig Clone(ModConfig source) {
@@ -137,7 +141,8 @@ namespace ArknightsOperatorsMod {
 				DownloadPolicy = source.DownloadPolicy,
 				DefaultCharacterId = source.DefaultCharacterId,
 				PreferredSkin = source.PreferredSkin,
-				PreferredModel = source.PreferredModel
+				PreferredModel = source.PreferredModel,
+				AutomaticModelSwitching = source.AutomaticModelSwitching
 			};
 		}
 

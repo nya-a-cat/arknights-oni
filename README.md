@@ -36,6 +36,8 @@ The current release has been smoke-tested in a four-duplicant isolated save on O
 - Open the same selection interface from Mod Options or in a loaded save with `Ctrl+F8`, then apply the new appearance live.
 - Render Spine 3.8 Region/Mesh attachments, clipping, multiple atlas pages, and common blend modes directly in C#.
 - Map ONI movement, work, rest, sleep, stress, and death states to available operator animations.
+- Automatically use base models for daily/sleep states and front combat models for digging, combat, stun, and death.
+- Select a duplicant and press `Ctrl+F9` to open its action wheel for manual animation performances; the center button restores automatic mapping.
 - Choose between a bounded 512 MiB on-demand LRU cache and permanent retention of downloaded resources.
 - Merge concurrent requests for the same resource while allowing each duplicant to cancel its own wait independently.
 - Verify downloads with HTTPS source restrictions, temporary files, a SHA-256 index, and a 64 MiB per-file limit.
@@ -97,7 +99,7 @@ See the [GitHub Release fallback design](./docs/github_release_asset_fallback.md
 - [x] Linked operator, skin, and model selection
 - [x] Live switching from Options and `Ctrl+F8`
 - [x] Runtime animation mapping and ground alignment
-- [ ] Semantic build/battle animation profiles and a per-duplicant action wheel for manual performances
+- [x] Semantic build/battle animation profiles and a per-duplicant `Ctrl+F9` action wheel
 - [ ] Per-duplicant appearance and voice settings
 - [ ] Operator voice with language selection, preview, cooldown, and priority
 - [ ] Appearance preview, favourites, presets, and Printing Pod assignment pools

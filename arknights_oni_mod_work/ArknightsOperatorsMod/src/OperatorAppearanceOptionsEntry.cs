@@ -13,6 +13,7 @@ namespace ArknightsOperatorsMod {
 		private static string pendingCharacterId;
 		private static string pendingSkin;
 		private static string pendingModel;
+		private static bool pendingAutomaticModelSwitching;
 		private static readonly Type ComboComponentType = typeof(PComboBox<Choice>).Assembly.GetType(
 			"PeterHan.PLib.UI.PComboBoxComponent"
 		);
@@ -28,6 +29,7 @@ namespace ArknightsOperatorsMod {
 		private GameObject skinComboObject;
 		private GameObject modelComboObject;
 		private ResourcePersistencePolicy downloadPolicy;
+		private bool automaticModelSwitching;
 		private string value;
 
 		public override string Name {
@@ -58,6 +60,7 @@ namespace ArknightsOperatorsMod {
 			selection = catalog.Normalize(config.DefaultCharacterId, config.PreferredSkin,
 				config.PreferredModel);
 			downloadPolicy = config.DownloadPolicy;
+			automaticModelSwitching = config.AutomaticModelSwitching;
 			value = BuildValue(selection);
 			StagePendingSelection();
 		}
@@ -66,6 +69,7 @@ namespace ArknightsOperatorsMod {
 			if (config == null) throw new ArgumentNullException("config");
 			if (!hasPendingSelection) return false;
 			bool changed = config.DownloadPolicy != pendingDownloadPolicy ||
+				config.AutomaticModelSwitching != pendingAutomaticModelSwitching ||
 				!string.Equals(config.DefaultCharacterId, pendingCharacterId,
 					StringComparison.Ordinal) ||
 				!string.Equals(config.PreferredSkin, pendingSkin, StringComparison.Ordinal) ||
@@ -74,6 +78,7 @@ namespace ArknightsOperatorsMod {
 			config.DefaultCharacterId = pendingCharacterId;
 			config.PreferredSkin = pendingSkin;
 			config.PreferredModel = pendingModel;
+			config.AutomaticModelSwitching = pendingAutomaticModelSwitching;
 			return changed;
 		}
 
@@ -165,6 +170,23 @@ namespace ArknightsOperatorsMod {
 			});
 			AddRow(parent, row++, ModLocalization.Text("模型", "Model"), models,
 				models.ToolTip);
+
+			parent.AddRow(new GridRowSpec());
+			List<Choice> switchingChoices = BuildAutomaticModelSwitchingChoices();
+			PComboBox<Choice> switching = new PComboBox<Choice>("AutomaticModelSwitchingChoice") {
+				Content = switchingChoices,
+				InitialItem = FindChoice(switchingChoices, automaticModelSwitching.ToString()),
+				MaxRowsShown = 2,
+				TextStyle = PUITuning.Fonts.UILightStyle,
+				ToolTip = ModLocalization.Text(
+					"日常、移动、睡觉使用基建模型；挖矿、战斗、眩晕和死亡使用正面战斗模型。",
+					"Use the base model for daily, movement, and sleep states; use the front combat model for digging, combat, stun, and death."
+				),
+				OnOptionSelected = OnAutomaticModelSwitchingSelected
+			};
+			switching.SetMinWidthInCharacters(28);
+			AddRow(parent, row++, ModLocalization.Text("自动模型切换", "Automatic model switching"),
+				switching, switching.ToolTip);
 		}
 
 		public override GameObject GetUIComponent() {
@@ -177,6 +199,7 @@ namespace ArknightsOperatorsMod {
 			selection = catalog.Normalize(config.DefaultCharacterId, config.PreferredSkin,
 				config.PreferredModel);
 			downloadPolicy = config.DownloadPolicy;
+			automaticModelSwitching = config.AutomaticModelSwitching;
 			value = BuildValue(selection);
 		}
 
@@ -184,6 +207,7 @@ namespace ArknightsOperatorsMod {
 			ModConfig config = settings as ModConfig;
 			if (config == null || selection == null) return false;
 			bool changed = config.DownloadPolicy != downloadPolicy ||
+				config.AutomaticModelSwitching != automaticModelSwitching ||
 				!string.Equals(config.DefaultCharacterId, selection.Character.Id,
 				StringComparison.Ordinal) || !string.Equals(config.PreferredSkin, selection.Skin.Name,
 				StringComparison.Ordinal) || !string.Equals(config.PreferredModel, selection.Model,
@@ -192,6 +216,7 @@ namespace ArknightsOperatorsMod {
 			config.DefaultCharacterId = selection.Character.Id;
 			config.PreferredSkin = selection.Skin.Name;
 			config.PreferredModel = selection.Model;
+			config.AutomaticModelSwitching = automaticModelSwitching;
 			return changed;
 		}
 
@@ -200,6 +225,13 @@ namespace ArknightsOperatorsMod {
 			downloadPolicy = string.Equals(choice.Value, ResourcePersistencePolicy.Permanent.ToString(),
 				StringComparison.Ordinal) ? ResourcePersistencePolicy.Permanent :
 					ResourcePersistencePolicy.OnDemandCache;
+			StagePendingSelection();
+		}
+
+		private void OnAutomaticModelSwitchingSelected(GameObject source, Choice choice) {
+			if (choice == null) return;
+			bool parsed;
+			automaticModelSwitching = bool.TryParse(choice.Value, out parsed) && parsed;
 			StagePendingSelection();
 		}
 
@@ -241,6 +273,7 @@ namespace ArknightsOperatorsMod {
 			pendingCharacterId = selection.Character.Id;
 			pendingSkin = selection.Skin.Name;
 			pendingModel = selection.Model;
+			pendingAutomaticModelSwitching = automaticModelSwitching;
 			hasPendingSelection = true;
 		}
 
@@ -285,6 +318,19 @@ namespace ArknightsOperatorsMod {
 					ModLocalization.Text("永久保留已下载资源", "Keep downloaded resources"),
 					ModLocalization.Text("保留已经下载的资源，便于长期离线使用。",
 						"Keeps downloaded resources for long-term offline reuse."))
+			};
+		}
+
+		private static List<Choice> BuildAutomaticModelSwitchingChoices() {
+			return new List<Choice> {
+				new Choice(bool.TrueString,
+					ModLocalization.Text("开启", "Enabled"),
+					ModLocalization.Text("按 ONI 状态选择基建或战斗模型。",
+						"Select the base or combat model from the current ONI state.")),
+				new Choice(bool.FalseString,
+					ModLocalization.Text("关闭", "Disabled"),
+					ModLocalization.Text("始终使用手动选择的模型。",
+						"Always use the manually selected model."))
 			};
 		}
 
