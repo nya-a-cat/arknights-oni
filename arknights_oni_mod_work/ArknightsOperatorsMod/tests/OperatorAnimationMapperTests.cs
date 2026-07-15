@@ -35,6 +35,8 @@ internal static class OperatorAnimationMapperTests {
 		Expect("hex animation hash stays idle", "Idle", OperatorAnimationMapper.Classify("0xEDEAD903").ToString());
 		Expect("moving state overrides idle anim", "Move", OperatorAnimationMapper.ResolveSourceAnimation("idle_loop", true));
 		Expect("moving state works without source anim", "Move", OperatorAnimationMapper.ResolveSourceAnimation(null, true));
+		Expect("moving death keeps death priority", "death", OperatorAnimationMapper.ResolveSourceAnimation("death", true));
+		Expect("moving panic keeps stress priority", "panic_loop", OperatorAnimationMapper.ResolveSourceAnimation("panic_loop", true));
 		Expect("stationary state keeps source anim", "idle_loop", OperatorAnimationMapper.ResolveSourceAnimation("idle_loop", false));
 		Expect("stationary null stays null", null, OperatorAnimationMapper.ResolveSourceAnimation(null, false));
 		Expect("manual sleep overrides idle", "sleep", OperatorAnimationMapper.ResolveEffectiveAnimation(

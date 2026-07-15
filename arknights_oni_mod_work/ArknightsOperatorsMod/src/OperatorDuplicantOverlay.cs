@@ -256,7 +256,7 @@ namespace ArknightsOperatorsMod {
 			}
 
 			bool loaded = false;
-			if (!loaded) {
+			if (string.Equals(config.DefaultCharacterId, "char_002_amiya", StringComparison.OrdinalIgnoreCase)) {
 				Debug.LogWarning("[ArknightsOperatorsMod] PRTS asset load failed; trying bundled fallback: " + remoteError);
 				try {
 					LoadSkeleton(ModAssets.AmiyaAtlasPath, ModAssets.AmiyaSkeletonPath);
@@ -273,6 +273,9 @@ namespace ArknightsOperatorsMod {
 						Debug.LogError("[ArknightsOperatorsMod] All operator visuals failed; keeping vanilla duplicant: " + frameError);
 					}
 				}
+			} else {
+				Debug.LogWarning("[ArknightsOperatorsMod] PRTS asset load failed for " +
+					config.DefaultCharacterId + "; keeping vanilla duplicant instead of showing Amiya: " + remoteError);
 			}
 
 			if (loaded) {

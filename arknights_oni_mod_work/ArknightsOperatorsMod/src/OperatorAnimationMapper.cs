@@ -56,6 +56,9 @@ namespace ArknightsOperatorsMod {
 		}
 
 		public static string ResolveSourceAnimation(string oniAnimation, bool isMoving) {
+			OperatorActionKind actual = Classify(oniAnimation);
+			if (actual == OperatorActionKind.Death || actual == OperatorActionKind.Stress)
+				return oniAnimation;
 			return isMoving ? "Move" : oniAnimation;
 		}
 

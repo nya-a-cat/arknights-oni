@@ -9,7 +9,7 @@ This directory keeps the editable inputs, deterministic renderer, and production
 - Source captures: [`source/alpha-v0.3.2`](./source/alpha-v0.3.2)
 - Renderer: [`tools/render_alpha_promo.ps1`](../../tools/render_alpha_promo.ps1)
 
-The current image uses real Oxygen Not Included screenshots. The script applies fixed crops, scaling, borders, colour blocks, and text. GPT ImageGen was not used.
+The current image uses one post-fix Oxygen Not Included screenshot containing four different operators. The script applies four fixed crops, scaling, borders, colour blocks, and text. GPT ImageGen was not used.
 
 ## Editing workflow
 

@@ -17,17 +17,17 @@ if ([string]::IsNullOrWhiteSpace($OutputPath)) {
 	$OutputPath = Join-Path $repoRoot "docs\images\arknights-oni-alpha-v0.3.2-workshop.png"
 }
 
-$exusiaiCn = ConvertFrom-CodePoints @(0x80FD, 0x5929, 0x4F7F)
-$surtrCn = ConvertFrom-CodePoints @(0x53F2, 0x5C14, 0x7279, 0x5C14)
 $amiyaCn = ConvertFrom-CodePoints @(0x963F, 0x7C73, 0x5A05)
 $texasCn = ConvertFrom-CodePoints @(0x5FB7, 0x514B, 0x8428, 0x65AF)
+$kaltsitCn = ConvertFrom-CodePoints @(0x51EF, 0x5C14, 0x5E0C)
+$exusiaiCn = ConvertFrom-CodePoints @(0x80FD, 0x5929, 0x4F7F)
 $arknightsCn = ConvertFrom-CodePoints @(0x660E, 0x65E5, 0x65B9, 0x821F, 0x5E72, 0x5458)
 $oniCn = ConvertFrom-CodePoints @(0x7F3A, 0x6C27)
 $cards = @(
-	@{ File = "20260715125124_1.jpg"; Label = "EXUSIAI / $exusiaiCn"; Sha256 = "43E9B53AA7ED6E1DAF475D9BF8115048B5DB968066EDF069FF8F6CDACFBF5A75" },
-	@{ File = "20260715140728_1.jpg"; Label = "SURTR / $surtrCn"; Sha256 = "5352DC7177AD7BD5E38E84A77A883CBAE90BB90ED3371A37B3F9656DD16AB49E" },
-	@{ File = "20260715140920_1.jpg"; Label = "AMIYA / $amiyaCn"; Sha256 = "4A34B72AE980A0241AB5886A8F981AFC2C79B37375B5810464CDA8780EA1DAC5" },
-	@{ File = "20260715141342_1.jpg"; Label = "TEXAS / $texasCn"; Sha256 = "DBC6E76E10B8FE7F28525D6E6EEFCFCD43EAEB04A2B45BB0D5872C92CE2E3E25" }
+	@{ File = "20260716021045_1.jpg"; Label = "TEXAS / $texasCn"; Sha256 = "4F209411C98F439B6856D898259DAF5ADB3CEFC76ED04C45A8F10E78B70E97BF"; CropX = 248; CropY = 190; CropWidth = 175; CropHeight = 277 },
+	@{ File = "20260716021045_1.jpg"; Label = "AMIYA / $amiyaCn"; Sha256 = "4F209411C98F439B6856D898259DAF5ADB3CEFC76ED04C45A8F10E78B70E97BF"; CropX = 503; CropY = 190; CropWidth = 175; CropHeight = 277 },
+	@{ File = "20260716021045_1.jpg"; Label = "KAL'TSIT / $kaltsitCn"; Sha256 = "4F209411C98F439B6856D898259DAF5ADB3CEFC76ED04C45A8F10E78B70E97BF"; CropX = 720; CropY = 190; CropWidth = 175; CropHeight = 277 },
+	@{ File = "20260716021045_1.jpg"; Label = "EXUSIAI / $exusiaiCn"; Sha256 = "4F209411C98F439B6856D898259DAF5ADB3CEFC76ED04C45A8F10E78B70E97BF"; CropX = 908; CropY = 190; CropWidth = 175; CropHeight = 277 }
 )
 
 $outputDirectory = Split-Path -Parent $OutputPath
@@ -81,7 +81,7 @@ try {
 			}
 			$x = 55 + ($index * 457)
 			$destination = New-Object System.Drawing.Rectangle $x, 245, 430, 680
-			$source = New-Object System.Drawing.Rectangle 790, 640, 240, 380
+			$source = New-Object System.Drawing.Rectangle $card.CropX, $card.CropY, $card.CropWidth, $card.CropHeight
 			$graphics.DrawImage($image, $destination, $source, [System.Drawing.GraphicsUnit]::Pixel)
 			$graphics.DrawRectangle($border, $destination)
 			$graphics.DrawLine($accentPen, $x, 245, ($x + 430), 245)
