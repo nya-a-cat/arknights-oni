@@ -1,0 +1,14 @@
+Dependency: Spine C# Runtime 3.8
+Upstream: https://github.com/EsotericSoftware/spine-runtimes
+Pinned commit: 8b4844bd4b193ba9e54487ed397a777993cbad56
+Vendored scope: spine-csharp/src/**/*.cs (42 files)
+Verified source size: 496886 bytes
+License file: ../SPINE-RUNTIME-LICENSE.txt
+Upstream README snapshot: SPINE-RUNTIME-README.md
+
+Only the required C# source files, license, and README were fetched from the
+official fixed commit. No repository archive, installer, or browser binary was
+downloaded.
+
+Local compatibility patch: AnimationState.cs explicitly qualifies System.Action
+to avoid the ONI Assembly-CSharp Action type shadowing the framework delegate.

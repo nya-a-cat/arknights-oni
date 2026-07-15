@@ -1,0 +1,6 @@
+Dependency: PLib 4.25 for Oxygen Not Included U59
+Upstream release: https://github.com/peterhaneve/ONIMods/releases/tag/PLib4.25
+Binary asset: https://github.com/peterhaneve/ONIMods/releases/download/PLib4.25/PLib.dll
+Binary size: 344576 bytes
+SHA-256: 55CE409618E6D102A1BCD0298911F3DF49DDA9A94EE153D02403035A1D6101D6
+License: MIT; see PLIB-LICENSE.txt

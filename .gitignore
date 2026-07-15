@@ -1,0 +1,42 @@
+# Local research and browser state
+.cache/
+.playwright-cli/
+arknights_oni_mod_assets/
+site_probe/
+arknights_oni_mod_work/spine-runtimes-3.5/
+
+# Game art and PRTS-rendered development assets are intentionally excluded
+arknights_oni_mod_work/AmiyaDuplicantMod/assets/frames/
+arknights_oni_mod_work/AmiyaDuplicantMod/assets/spine/
+arknights_oni_mod_work/AmiyaDuplicantMod/preview/
+
+# Asset-export and local browser validation tools depend on the excluded files
+arknights_oni_mod_work/AmiyaDuplicantMod/tools/AmiyaSpinePreview.cs
+arknights_oni_mod_work/AmiyaDuplicantMod/tools/build_prts_spine_index.py
+arknights_oni_mod_work/AmiyaDuplicantMod/tools/export_all_frames_headless.py
+arknights_oni_mod_work/AmiyaDuplicantMod/tools/export_frames_headless.py
+arknights_oni_mod_work/AmiyaDuplicantMod/tools/import_exported_frames.py
+arknights_oni_mod_work/AmiyaDuplicantMod/tools/run_prts_animation_validation.ps1
+arknights_oni_mod_work/AmiyaDuplicantMod/tools/validate_prts_animations.playwright.js
+arknights_oni_mod_work/AmiyaDuplicantMod/build_preview.sh
+
+# Build outputs and generated source lists
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.rsp
+!arknights_oni_mod_work/AmiyaDuplicantMod/lib/PLib.dll
+
+# Test/cache output
+**/.test-cache/
+**/.tmp/
+**/*.part
+**/cache-index.json
+*.log
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
