@@ -6,7 +6,7 @@
 
 当前版本已经支持干员外观，后续计划加入语音、基建家具、敌人和特效。明日方舟会作为未来通用 ONI 内容框架的第一套参考实现。
 
-[English](./README.md) · [简体中文](./README.zh-CN.md) · [路线图](#当前进度与-roadmap) · [安装](#安装)
+[English](./README.md) · [简体中文](./README.zh-CN.md) · [使用说明：中文 / English / 日本語](./docs/usage_multilingual.md) · [路线图](#当前进度与-roadmap) · [安装](#安装)
 
 [![版本](https://img.shields.io/badge/version-0.3.2--alpha.1-6d5dfc)](https://github.com/nya-a-cat/arknights-oni/releases/tag/v0.3.2-alpha.1)
 ![ONI 实测](https://img.shields.io/badge/ONI_tested-740622-ea6b35)
@@ -16,6 +16,10 @@
 </div>
 
 ![Arknights Operators Alpha 实机拼图](./docs/images/arknights-oni-alpha-v0.3.2-workshop.png)
+
+![真实游戏干员选择器与动作转盘演示](./docs/images/arknights-operators-demo-v0.3.2.gif)
+
+真实 Steam 实机流程：四个复制人使用不同干员 → 单人外观选择器 → 动作转盘 → 阿米娅睡眠 → 恢复自动状态映射。
 
 > [!IMPORTANT]
 > 当前 `0.3.2-alpha.1` 实现的是 **Arknights Operators（明日方舟干员）** 模块：把可选择的干员 Spine 外观覆盖到复制人上，并将移动、工作、休息、睡眠、压力和死亡状态映射到对应动画。
