@@ -97,6 +97,7 @@ See the [GitHub Release fallback design](./docs/github_release_asset_fallback.md
 - [x] Linked operator, skin, and model selection
 - [x] Live switching from Options and `Ctrl+F8`
 - [x] Runtime animation mapping and ground alignment
+- [ ] Semantic build/battle animation profiles and a per-duplicant action wheel for manual performances
 - [ ] Per-duplicant appearance and voice settings
 - [ ] Operator voice with language selection, preview, cooldown, and priority
 - [ ] Appearance preview, favourites, presets, and Printing Pod assignment pools

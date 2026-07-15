@@ -141,7 +141,7 @@
 
 ### 5.4 2026-07-15 浏览器复验
 
-本地 `prts_animation_validator.html` 通过现有 Windows Headless Chrome 150 和 WSL `playwright-cli` CDP 路径读取当前 PRTS 资源。`prts_animation_validation_report.json` 记录 12/12 用例通过、0 失败；11 个正向用例均为 0 失败请求，另有 1 个缺失动画负例：
+本地 `prts_animation_validator.html` 通过现有 Windows Headless Chrome 150 和 WSL `playwright-cli` CDP 路径读取当前 PRTS 资源。`prts_animation_validation_report.json` 记录 17/17 用例通过、0 失败；16 个正向用例均为 0 失败请求，另有 1 个缺失动画负例：
 
 | 用例 | 实测结果 |
 | --- | --- |
@@ -155,11 +155,12 @@
 | Lancet-2“海岸救援改装”/正面 `Idle` | 58 bones、47 slots、1 page、1 path attachment、1 path constraint，帧前进 |
 | `char_1052_kalts2` 默认/正面 | 315 bones、202 slots、2 pages、4 clipping、2 path、6013 双色帧、1007 非黑双色帧，帧前进 |
 | `char_1052_kalts2` 默认/正面 `Attack_Loop`、`Stun` | 同一模型，攻击循环与眩晕姿态均可载入 |
+| 阿米娅、德克萨斯、凯尔希 默认/基建与正面 | 基建包含 `Interact / Move / Relax / Sit / Sleep`；正面包含 `Attack / Skill / Die / Stun` 的不同子集；三组稳定交集只有 `Default` |
 | 阿米娅缺失动画负例 | `status=failed`、`error.code=missing_animation`，测试按预期失败语义通过 |
 
 报告还验证了 Die 非循环/停末帧合同、Begin/Main/End 相位合同和 `Skill_Loop_2 -> Skill_2` 相位根归一。运行态实测 `Skill_2_Begin -> Skill_2_Idle(loop)`、退出 `Skill_2_End -> Idle`；Die 播放 1 秒后为 `running=false`、`held_last_frame=true`、`track_time=0.9833`。
 
-第一轮联网验证遇到的原始错误为 `net::ERR_CONNECTION_CLOSED`。网页客户端增加 3 次有界重试后，最终 11 个正向用例的 `failed_requests` 均为 0。以上结果证明网页侧 PRTS WebGL 资源与诊断逻辑；ONI C# mesh 的视觉等价性仍需游戏内验证。
+第一轮联网验证遇到的原始错误为 `net::ERR_CONNECTION_CLOSED`。网页客户端增加 3 次有界重试后，最终 16 个正向用例的 `failed_requests` 均为 0。以上结果证明网页侧 PRTS WebGL 资源与诊断逻辑；ONI C# mesh 的视觉等价性仍需游戏内验证。
 
 ## 6. 本地代码与 ONI 环境
 
@@ -274,7 +275,7 @@
 | 阿米娅 metadata 层级 | 已验证 | `site_probe/char_002_amiya_meta.json` |
 | 阿米娅 4 皮肤、每皮肤实际模型与远端路径 | 已验证 | `assets/spine/amiya/prts_spine_index.json` |
 | PRTS Viewer 页面结构和导出能力 | 已验证 | `site_probe/amiya.html`、`site_probe/SpineViewer.Di5NOLW8.js`、`preview/prts_frame_exporter.html` |
-| 4 个角色、11 个实时动画/特征用例和 1 个缺失动画负例 | 已验证 | `preview/prts_animation_validation_report.json`，Playwright 12/12 通过 |
+| 7 个模型样本、16 个实时动画/特征用例和 1 个缺失动画负例 | 已验证 | `preview/prts_animation_validation_report.json`，Playwright 17/17 通过 |
 | 干员多语言名称、重定向别名与 `char_id` 回填 | 已验证 | 449 条 PRTS 轻量目录；`Surtr`、`阿米娅`、`テキサス` 由游戏内设置与单元测试共同验证 |
 | 130 个阿米娅动画 sheet、8 fps、1000×1000 帧 | 已验证的旧原型 | `assets/frames/amiya/library/index.json`；该方案不继续扩展 |
 | 当前 overlay 的 Region/Mesh、单材质实现 | 已验证的旧源码基线 | `src/OperatorDuplicantOverlay.cs` |
