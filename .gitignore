@@ -1,6 +1,7 @@
 # Local research and browser state
 .cache/
 .playwright-cli/
+/PROGRESS.md
 arknights_oni_mod_assets/
 site_probe/
 arknights_oni_mod_work/spine-runtimes-3.5/

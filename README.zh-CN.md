@@ -154,7 +154,6 @@ python3 ./tests/test_fallback_release_builder.py
 - `arknights_oni_mod_work/ArknightsOperatorsMod/tests`：逻辑测试和真实小资源集成测试。
 - `arknights_oni_mod_work/ArknightsOperatorsMod/lib`：PLib、固定版本 Spine C# runtime 源码及来源说明。
 - `docs`：PRTS 资产研究、架构验收记录和详细路线图。
-- `PROGRESS.md`：只追加的实现与验证日志。
 
 ## 项目边界与第三方组件
 

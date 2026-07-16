@@ -154,7 +154,6 @@ The final integration test downloads a real, small PRTS fixture. The fallback te
 - `arknights_oni_mod_work/ArknightsOperatorsMod/tests`: Logic tests and the real small-resource integration test.
 - `arknights_oni_mod_work/ArknightsOperatorsMod/lib`: PLib plus the pinned Spine C# runtime sources and provenance notes.
 - `docs`: PRTS asset research, architecture and acceptance notes, and the detailed roadmap.
-- `PROGRESS.md`: Append-only implementation and verification log.
 
 ## Project boundaries & third-party components
 
