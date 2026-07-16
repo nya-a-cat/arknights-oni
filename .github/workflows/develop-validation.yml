@@ -80,6 +80,7 @@ jobs:
             libmono-system-io-compression4.0-cil \
             libmono-system-net-http4.0-cil \
             libmono-system-runtime-serialization4.0-cil \
+            libmono-system-xml-linq4.0-cil \
             mono-mcs \
             mono-runtime
 
