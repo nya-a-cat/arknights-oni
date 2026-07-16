@@ -2,6 +2,33 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$ROOT/../.." && pwd)"
+SOURCE_PREFIX="arknights_oni_mod_work/ArknightsOperatorsMod"
+CHANNEL_INPUT="${1:-Stable}"
+if [[ $# -gt 1 ]]; then
+  echo "Usage: bash build.sh [Stable|Dev|RC]" >&2
+  exit 2
+fi
+
+case "${CHANNEL_INPUT,,}" in
+  stable)
+    CHANNEL="Stable"
+    OUTPUT_NAME="ArknightsOperatorsMod.dll"
+    ;;
+  dev)
+    CHANNEL="Dev"
+    OUTPUT_NAME="ArknightsOperatorsTesting.dll"
+    ;;
+  rc)
+    CHANNEL="RC"
+    OUTPUT_NAME="ArknightsOperatorsTesting.dll"
+    ;;
+  *)
+    echo "Unknown build channel '$CHANNEL_INPUT'; expected Stable, Dev, or RC." >&2
+    exit 2
+    ;;
+esac
+
 if [[ -n "${ONI_GAME_ROOT:-}" ]]; then
   GAME_ROOT="$ONI_GAME_ROOT"
 elif [[ -f "/mnt/c/Program Files (x86)/Steam/steamapps/common/OxygenNotIncluded/OxygenNotIncluded_Data/Managed/Assembly-CSharp.dll" ]]; then
@@ -10,7 +37,7 @@ else
   GAME_ROOT="/mnt/c/Program Files (x86)/Steam/steamapps/downloading/457140"
 fi
 MANAGED="$GAME_ROOT/OxygenNotIncluded_Data/Managed"
-OUT="$ROOT/ArknightsOperatorsMod.dll"
+OUT="$ROOT/$OUTPUT_NAME"
 RSP="$ROOT/build.sources.rsp"
 MCS_BIN="${MCS_BIN:-$(command -v mcs || true)}"
 if [[ -z "$MCS_BIN" && -x "/home/linuxbrew/.linuxbrew/bin/mcs" ]]; then
@@ -32,7 +59,18 @@ if [[ -z "$MCS_BIN" ]]; then
   exit 1
 fi
 
-find "$ROOT/src" "$ROOT/lib/spine-csharp-src" -name '*.cs' | sort > "$RSP"
+: > "$RSP"
+while IFS= read -r -d '' source_path; do
+  printf '"%s/%s"\n' "$REPO_ROOT" "$source_path" >> "$RSP"
+done < <(
+  git -C "$REPO_ROOT" ls-files -z -- \
+    ":(glob)$SOURCE_PREFIX/src/**/*.cs" \
+    ":(glob)$SOURCE_PREFIX/lib/spine-csharp-src/**/*.cs" | sort -z
+)
+if [[ ! -s "$RSP" ]]; then
+  echo "No tracked C# sources were found for the Mod build." >&2
+  exit 1
+fi
 
 "$MCS_BIN" \
   -target:library \
@@ -58,4 +96,4 @@ find "$ROOT/src" "$ROOT/lib/spine-csharp-src" -name '*.cs' | sort > "$RSP"
   -r:"$ROOT/lib/PLib.dll" \
   @"$RSP"
 
-echo "Built $OUT"
+echo "Built $CHANNEL assembly: $OUT"
