@@ -133,6 +133,8 @@ internal static class ModConfigTests {
 			"new config cache capacity is not 512 MiB");
 		Require(defaults.VisualScalePercent == ModConfig.DefaultVisualScalePercent,
 			"new config visual scale is not 125 percent");
+		Require(defaults.VisualScaleOverrides != null && defaults.VisualScaleOverrides.Count == 0,
+			"new config contains unexpected appearance scale overrides");
 
 		List<PeterHan.PLib.Options.IOptionsEntry> options =
 			new List<PeterHan.PLib.Options.IOptionsEntry>(defaults.CreateOptions());
@@ -151,6 +153,8 @@ internal static class ModConfigTests {
 			"legacy config schema version was not upgraded");
 		Require(legacy.VisualScalePercent == ModConfig.DefaultVisualScalePercent,
 			"legacy config without VisualScalePercent did not migrate to 125 percent");
+		Require(legacy.VisualScaleOverrides != null && legacy.VisualScaleOverrides.Count == 0,
+			"legacy config did not migrate an empty appearance scale override map");
 
 		UnityEngine.Debug.ResetWarnings();
 		Require(Normalize(127).CacheCapacityMiB == ModConfig.DefaultCacheCapacityMiB,
@@ -184,6 +188,21 @@ internal static class ModConfigTests {
 			!ModConfig.IsValidVisualScalePercent(74) &&
 			!ModConfig.IsValidVisualScalePercent(201),
 			"visual scale boundary validation is incorrect");
+		string baseScaleKey = ModConfig.AppearanceScaleKey("CHAR_002_AMIYA", "默认", "基建");
+		string combatScaleKey = ModConfig.AppearanceScaleKey("char_002_amiya", "默认", "战斗");
+		Require(baseScaleKey == ModConfig.AppearanceScaleKey("char_002_amiya", "默认", "基建"),
+			"appearance scale key did not normalize character ID casing");
+		Require(baseScaleKey != combatScaleKey,
+			"base and combat models share one appearance scale key");
+		ModConfig perAppearance = new ModConfig { VisualScalePercent = 125 };
+		perAppearance.VisualScaleOverrides[baseScaleKey] = 140;
+		perAppearance.VisualScaleOverrides[combatScaleKey] = 165;
+		Require(perAppearance.ResolveVisualScalePercent("char_002_amiya", "默认", "基建") == 140,
+			"base appearance scale override was not resolved");
+		Require(perAppearance.ResolveVisualScalePercent("char_002_amiya", "默认", "战斗") == 165,
+			"combat appearance scale override was not resolved separately");
+		Require(perAppearance.ResolveVisualScalePercent("char_103_angel", "默认", "基建") == 125,
+			"unconfigured appearance did not inherit the global default scale");
 		Require(ModConfig.IsValidCacheCapacityMiB(128) &&
 			ModConfig.IsValidCacheCapacityMiB(2000) &&
 			!ModConfig.IsValidCacheCapacityMiB(127) &&
@@ -214,6 +233,11 @@ internal static class ModConfigTests {
 		});
 		Require(clone.CacheCapacityMiB == 731, "config clone lost cache capacity");
 		Require(clone.VisualScalePercent == 150, "config clone lost visual scale");
+		clone.VisualScaleOverrides[baseScaleKey] = 140;
+		ModConfig deepClone = ModConfigStore.Clone(clone);
+		clone.VisualScaleOverrides[baseScaleKey] = 180;
+		Require(deepClone.VisualScaleOverrides[baseScaleKey] == 140,
+			"config clone shares the appearance scale override dictionary");
 
 		PrtsResourceService service = new PrtsResourceService();
 		PrtsResourceService.Instance = service;
@@ -241,6 +265,24 @@ internal static class ModConfigTests {
 		Require(service.MaintenanceRuns == 1,
 			"changing visual scale ran cache maintenance");
 
+		ModConfigStore.SetAppearanceVisualScale("char_002_amiya", "默认", "基建", 140);
+		Require(visualScaleChanges == 2,
+			"adding an appearance scale override did not raise one visual-scale event");
+		Require(ModConfigStore.Current.ResolveVisualScalePercent(
+			"char_002_amiya", "默认", "基建") == 140,
+			"appearance scale override was not persisted in the config store");
+		ModConfigStore.SetAppearanceVisualScale("char_002_amiya", "默认", "基建", 140);
+		Require(visualScaleChanges == 2,
+			"saving an unchanged appearance scale raised a redundant event");
+		ModConfigStore.ResetAppearanceVisualScale("char_002_amiya", "默认", "基建");
+		Require(visualScaleChanges == 3,
+			"resetting an appearance scale override did not raise one visual-scale event");
+		Require(ModConfigStore.Current.ResolveVisualScalePercent(
+			"char_002_amiya", "默认", "基建") == 150,
+			"reset appearance scale did not restore the global default");
+		Require(service.MaintenanceRuns == 1,
+			"appearance scale changes ran cache maintenance");
+
 		ModConfigStore.SaveAndApply(ModConfigStore.Current);
 		Require(service.MaintenanceRuns == 1,
 			"unchanged cache settings ran redundant maintenance");
@@ -258,6 +300,18 @@ internal static class ModConfigTests {
 			"persisted config does not contain cache capacity");
 		Require(persisted.Contains("\"VisualScalePercent\": 150"),
 			"persisted config does not contain visual scale");
+		Require(persisted.Contains("\"VisualScaleOverrides\""),
+			"persisted config does not contain the appearance scale override map");
+
+		ModConfig invalidOverrideConfig = ModConfigStore.Current;
+		invalidOverrideConfig.VisualScaleOverrides["broken-key"] = 140;
+		invalidOverrideConfig.VisualScaleOverrides[baseScaleKey] = 201;
+		UnityEngine.Debug.ResetWarnings();
+		invalidOverrideConfig.Normalize();
+		Require(invalidOverrideConfig.VisualScaleOverrides.Count == 0,
+			"invalid appearance scale overrides were not discarded");
+		Require(UnityEngine.Debug.WarningCount == 2,
+			"invalid appearance scale overrides did not log two warnings");
 
 		ModConfig invalidDiskConfig = new ModConfig {
 			DownloadPolicy = ResourcePersistencePolicy.OnDemandCache,

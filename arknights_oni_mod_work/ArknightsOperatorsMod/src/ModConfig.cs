@@ -19,7 +19,7 @@ namespace ArknightsOperatorsMod {
 
 	[ConfigFile("config.json", true, true)]
 	public sealed class ModConfig : IOptions {
-		public const int CurrentSchemaVersion = 4;
+		public const int CurrentSchemaVersion = 5;
 		public const int MinimumCacheCapacityMiB = 128;
 		public const int DefaultCacheCapacityMiB = 512;
 		public const int MaximumCacheCapacityMiB = 2000;
@@ -52,6 +52,10 @@ namespace ArknightsOperatorsMod {
 		[JsonProperty]
 		public int VisualScalePercent { get; set; } = DefaultVisualScalePercent;
 
+		[JsonProperty]
+		public Dictionary<string, int> VisualScaleOverrides { get; set; } =
+			new Dictionary<string, int>(StringComparer.Ordinal);
+
 		internal bool Normalize() {
 			bool changed = false;
 			if (SchemaVersion != CurrentSchemaVersion) {
@@ -73,6 +77,25 @@ namespace ArknightsOperatorsMod {
 					" is outside 75-200; restored to 125 percent");
 				VisualScalePercent = DefaultVisualScalePercent;
 				changed = true;
+			}
+			if (VisualScaleOverrides == null) {
+				VisualScaleOverrides = new Dictionary<string, int>(StringComparer.Ordinal);
+				changed = true;
+			} else {
+				Dictionary<string, int> validOverrides =
+					new Dictionary<string, int>(StringComparer.Ordinal);
+				foreach (KeyValuePair<string, int> entry in VisualScaleOverrides) {
+					if (!IsValidAppearanceScaleKey(entry.Key) ||
+						!IsValidVisualScalePercent(entry.Value)) {
+						Debug.LogWarning("[ArknightsOperatorsMod] Ignored invalid visual scale override: " +
+							(entry.Key ?? "<null>") + "=" + entry.Value);
+						changed = true;
+						continue;
+					}
+					validOverrides[entry.Key] = entry.Value;
+				}
+				if (validOverrides.Count != VisualScaleOverrides.Count)
+					VisualScaleOverrides = validOverrides;
 			}
 			if (string.IsNullOrWhiteSpace(DefaultCharacterId)) {
 				DefaultCharacterId = "char_002_amiya";
@@ -97,6 +120,32 @@ namespace ArknightsOperatorsMod {
 		internal static bool IsValidVisualScalePercent(int scalePercent) {
 			return scalePercent >= MinimumVisualScalePercent &&
 				scalePercent <= MaximumVisualScalePercent;
+		}
+
+		internal static string AppearanceScaleKey(string characterId, string skin, string model) {
+			if (string.IsNullOrWhiteSpace(characterId))
+				throw new ArgumentException("Character ID is required", "characterId");
+			if (string.IsNullOrWhiteSpace(skin))
+				throw new ArgumentException("Skin is required", "skin");
+			if (string.IsNullOrWhiteSpace(model))
+				throw new ArgumentException("Model is required", "model");
+			return characterId.Trim().ToLowerInvariant() + "\u001f" + skin.Trim() + "\u001f" +
+				model.Trim();
+		}
+
+		internal int ResolveVisualScalePercent(string characterId, string skin, string model) {
+			int scalePercent;
+			string key = AppearanceScaleKey(characterId, skin, model);
+			return VisualScaleOverrides != null &&
+				VisualScaleOverrides.TryGetValue(key, out scalePercent) ?
+				scalePercent : VisualScalePercent;
+		}
+
+		private static bool IsValidAppearanceScaleKey(string key) {
+			if (string.IsNullOrWhiteSpace(key)) return false;
+			string[] parts = key.Split(new[] { '\u001f' }, StringSplitOptions.None);
+			return parts.Length == 3 && !string.IsNullOrWhiteSpace(parts[0]) &&
+				!string.IsNullOrWhiteSpace(parts[1]) && !string.IsNullOrWhiteSpace(parts[2]);
 		}
 
 		internal static long CacheCapacityBytes(int capacityMiB) {
@@ -235,7 +284,7 @@ namespace ArknightsOperatorsMod {
 				string previousAppearance = AppearanceKey(current);
 				ResourcePersistencePolicy previousPolicy = current.DownloadPolicy;
 				int previousCapacityMiB = current.CacheCapacityMiB;
-				int previousScalePercent = current.VisualScalePercent;
+				ModConfig previousScaleConfig = Clone(current);
 				current = Clone(saved);
 				current.Normalize();
 				cacheSettingsChanged = previousPolicy != current.DownloadPolicy ||
@@ -248,7 +297,7 @@ namespace ArknightsOperatorsMod {
 					changed = AppearanceChanged;
 					snapshot = Clone(current);
 				}
-				if (previousScalePercent != current.VisualScalePercent) {
+				if (!VisualScaleSettingsEqual(previousScaleConfig, current)) {
 					scaleChanged = VisualScaleChanged;
 					scaleSnapshot = Clone(current);
 				}
@@ -280,8 +329,39 @@ namespace ArknightsOperatorsMod {
 				PreferredSkin = source.PreferredSkin,
 				PreferredModel = source.PreferredModel,
 				AutomaticModelSwitching = source.AutomaticModelSwitching,
-				VisualScalePercent = source.VisualScalePercent
+				VisualScalePercent = source.VisualScalePercent,
+				VisualScaleOverrides = source.VisualScaleOverrides == null ?
+					new Dictionary<string, int>(StringComparer.Ordinal) :
+					new Dictionary<string, int>(source.VisualScaleOverrides, StringComparer.Ordinal)
 			};
+		}
+
+		internal static void SetAppearanceVisualScale(string characterId, string skin, string model,
+			int scalePercent) {
+			if (!ModConfig.IsValidVisualScalePercent(scalePercent))
+				throw new ArgumentOutOfRangeException("scalePercent");
+			ModConfig next = Current;
+			next.VisualScaleOverrides[ModConfig.AppearanceScaleKey(characterId, skin, model)] =
+				scalePercent;
+			SaveAndApply(next);
+		}
+
+		internal static void ResetAppearanceVisualScale(string characterId, string skin, string model) {
+			ModConfig next = Current;
+			if (!next.VisualScaleOverrides.Remove(
+				ModConfig.AppearanceScaleKey(characterId, skin, model))) return;
+			SaveAndApply(next);
+		}
+
+		private static bool VisualScaleSettingsEqual(ModConfig left, ModConfig right) {
+			if (left.VisualScalePercent != right.VisualScalePercent ||
+				left.VisualScaleOverrides.Count != right.VisualScaleOverrides.Count) return false;
+			foreach (KeyValuePair<string, int> entry in left.VisualScaleOverrides) {
+				int rightValue;
+				if (!right.VisualScaleOverrides.TryGetValue(entry.Key, out rightValue) ||
+					rightValue != entry.Value) return false;
+			}
+			return true;
 		}
 
 		private static void EnsureInitialized() {

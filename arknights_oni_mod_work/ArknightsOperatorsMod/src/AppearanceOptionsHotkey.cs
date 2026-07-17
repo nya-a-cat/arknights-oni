@@ -17,6 +17,9 @@ namespace ArknightsOperatorsMod {
 		private Vector2 operatorScroll;
 		private string statusText;
 		private float statusUntil;
+		private string scaleAppearanceKey;
+		private string scaleText = string.Empty;
+		private string scaleError;
 
 		private void Update() {
 			if (dialogOpen) return;
@@ -57,6 +60,7 @@ namespace ArknightsOperatorsMod {
 				searchText = string.Empty;
 				operatorScroll = Vector2.zero;
 				pickerOpen = true;
+				RefreshScaleEditor();
 			} catch (Exception error) {
 				ShowStatus(ModLocalization.Text("无法打开单个复制人外观：", "Could not open duplicant appearance: ") +
 					error.Message);
@@ -156,9 +160,10 @@ namespace ArknightsOperatorsMod {
 			GUI.Box(new Rect(rightX + 50f, panel.y + 356f, 195f, 38f), DisplayValue(selection.Model));
 			if (GUI.Button(new Rect(rightX + 253f, panel.y + 356f, 42f, 38f), "›")) CycleModel(1);
 
-			GUI.Box(new Rect(rightX, panel.y + 420f, 295f, 142f), ModLocalization.Text(
-				"应用后只更改当前复制人。\n动作转盘：Ctrl+F9\n全局默认设置：Ctrl+Shift+F8\n自动基建/战斗切换沿用全局设置。",
-				"Apply changes only to this duplicant.\nAction wheel: Ctrl+F9\nGlobal defaults: Ctrl+Shift+F8\nAutomatic base/combat switching follows the global setting."
+			DrawScaleEditor(rightX, panel.y + 414f);
+			GUI.Box(new Rect(rightX, panel.y + 506f, 295f, 56f), ModLocalization.Text(
+				"比例按当前实际模型保存，并由使用同一外观的复制人共享。",
+				"The size is saved for the loaded model and shared by duplicants using that appearance."
 			));
 
 			if (GUI.Button(new Rect(panel.x + 20f, panel.y + 584f, 250f, 46f),
@@ -199,6 +204,57 @@ namespace ArknightsOperatorsMod {
 			pickerOpen = false;
 			target = null;
 			selection = null;
+			scaleAppearanceKey = null;
+			scaleText = string.Empty;
+			scaleError = null;
+		}
+
+		private void DrawScaleEditor(float x, float y) {
+			RefreshScaleEditorWhenModelChanges();
+			bool canEdit = target != null && !string.IsNullOrEmpty(scaleAppearanceKey);
+			string model = canEdit ? DisplayValue(target.ActiveModel) :
+				ModLocalization.Text("正在加载", "Loading");
+			GUI.Label(new Rect(x, y, 295f, 24f),
+				ModLocalization.Text("当前模型比例：", "Loaded model size: ") + model);
+
+			bool previousEnabled = GUI.enabled;
+			GUI.enabled = canEdit;
+			string nextText = GUI.TextField(new Rect(x, y + 28f, 78f, 32f),
+				scaleText ?? string.Empty, 3);
+			GUI.Label(new Rect(x + 84f, y + 32f, 24f, 24f), "%");
+			if (!string.Equals(nextText, scaleText, StringComparison.Ordinal)) {
+				scaleText = nextText;
+				int scalePercent;
+				if (int.TryParse(scaleText, out scalePercent) &&
+					ModConfig.IsValidVisualScalePercent(scalePercent) &&
+					target.SetActiveVisualScalePercent(scalePercent)) {
+					scaleError = null;
+				} else {
+					scaleError = ModLocalization.Text("请输入 75–200 的整数", "Enter an integer from 75 to 200");
+				}
+			}
+			if (GUI.Button(new Rect(x + 116f, y + 28f, 179f, 32f),
+				ModLocalization.Text("恢复默认比例", "Restore default size")) &&
+				target.ResetActiveVisualScalePercent()) {
+				scaleText = target.ActiveVisualScalePercent.ToString();
+				scaleError = null;
+			}
+			GUI.enabled = previousEnabled;
+			if (!string.IsNullOrEmpty(scaleError))
+				GUI.Label(new Rect(x, y + 63f, 295f, 24f), scaleError);
+		}
+
+		private void RefreshScaleEditorWhenModelChanges() {
+			string currentKey = target == null ? null : target.ActiveAppearanceScaleKey;
+			if (string.Equals(currentKey, scaleAppearanceKey, StringComparison.Ordinal)) return;
+			RefreshScaleEditor();
+		}
+
+		private void RefreshScaleEditor() {
+			scaleAppearanceKey = target == null ? null : target.ActiveAppearanceScaleKey;
+			scaleText = string.IsNullOrEmpty(scaleAppearanceKey) ? string.Empty :
+				target.ActiveVisualScalePercent.ToString();
+			scaleError = null;
 		}
 
 		private void ShowStatus(string text) {

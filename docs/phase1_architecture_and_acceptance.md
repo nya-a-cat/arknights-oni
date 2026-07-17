@@ -148,13 +148,17 @@ Documents/Klei/OxygenNotIncluded/mods/config/ArknightsOperatorsMod/
 
 ```json
 {
-  "SchemaVersion": 3,
+  "SchemaVersion": 5,
   "DownloadPolicy": "按需缓存（512 MiB）",
   "CacheCapacityMiB": 512,
   "DefaultCharacterId": "char_002_amiya",
   "PreferredSkin": "默认",
   "PreferredModel": "基建",
-  "AutomaticModelSwitching": true
+  "AutomaticModelSwitching": true,
+  "VisualScalePercent": 125,
+  "VisualScaleOverrides": {
+    "char_002_amiya\u001f默认\u001f基建": 140
+  }
 }
 ```
 
@@ -162,9 +166,12 @@ Documents/Klei/OxygenNotIncluded/mods/config/ArknightsOperatorsMod/
 - 未找到配置、JSON 损坏或枚举值未知时使用 `OnDemandCache`。默认角色、皮肤和模型分别使用 `char_002_amiya`、“默认”和“基建”。
 - 旧配置缺少 `CacheCapacityMiB` 时迁移为 `512`。磁盘配置中的容量小于 `128`、大于 `2000` 或无法解析时恢复为 `512` 并记录警告。
 - `AutomaticModelSwitching=true` 时，日常、移动、睡觉和坐下使用基建模型；挖矿、战斗、眩晕和死亡使用正面模型。关闭后固定使用 `PreferredModel`。
+- `VisualScalePercent` 是 `75–200%` 的全局默认值，缺省为 `125%`；`100%` 保留旧版视觉大小。`VisualScaleOverrides` 按实际 `char_id + 皮肤 + 模型` 保存共享微调，自动切换得到的基建与战斗模型拥有独立键。
+- `Ctrl+F8` 的当前模型比例在有效整数输入后立即写入配置并重新计算视觉缩放、脚底基线、水平中心和翻转；该路径不发起资源解析或下载。“恢复默认比例”删除该外观键并重新继承 `VisualScalePercent`。
+- 外观比例仅作用于 overlay 变换，ONI 原版复制人的导航、占格和碰撞体保持不变。
 - `CacheCapacityMiB` 仅改变 LRU 目标；`PrtsAssetClient` 的 `64 MiB` 单个 Spine 源文件限制与备用 ZIP 的 `512 MiB` 异常响应/压缩炸弹安全上限保持固定。
 - 写配置采用临时文件加同目录原子替换。
-- 未知字段读取时忽略以保持向前兼容；写回时保存 schema 3 已定义字段。
+- 未知字段读取时忽略以保持向前兼容；写回时保存 schema 5 已定义字段。
 
 ### 4.2 缓存索引合同
 

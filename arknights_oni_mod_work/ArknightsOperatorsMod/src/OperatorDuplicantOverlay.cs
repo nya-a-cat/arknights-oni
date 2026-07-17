@@ -73,6 +73,8 @@ namespace ArknightsOperatorsMod {
 		private int loadGeneration;
 		private OperatorAppearanceOverride appearanceOverride;
 		private ModConfig appearanceConfig;
+		private string activeCharacterId;
+		private string activeSkin;
 		private string activeModel;
 		private string loadingModel;
 		private string modelCandidate;
@@ -176,7 +178,7 @@ namespace ArknightsOperatorsMod {
 
 		private void OnVisualScaleChanged(ModConfig config) {
 			if (config == null || appearanceConfig == null) return;
-			appearanceConfig.VisualScalePercent = config.VisualScalePercent;
+			appearanceConfig = ResolveAppearanceConfig(config);
 			if (frameFallbackMode)
 				ApplyFrameFallbackTransform();
 			else
@@ -253,7 +255,8 @@ namespace ArknightsOperatorsMod {
 					if (nextLease == null) nextLease = service.Acquire(bundle.ResourceKeys);
 					prepared = PrepareSkeleton(bundle.AtlasPath, bundle.SkeletonPath);
 					if (!cancellationToken.IsCancellationRequested && generation == loadGeneration) {
-						ApplyPreparedAppearanceTransactional(prepared, bundle.Model);
+						ApplyPreparedAppearanceTransactional(prepared, bundle.CharacterId,
+							bundle.Skin, bundle.Model);
 						prepared = null;
 						IDisposable previousLease = resourceLease;
 						resourceLease = nextLease;
@@ -297,7 +300,8 @@ namespace ArknightsOperatorsMod {
 				LoadedSpineVisual fallbackPrepared = null;
 				try {
 					fallbackPrepared = PrepareSkeleton(ModAssets.AmiyaAtlasPath, ModAssets.AmiyaSkeletonPath);
-					ApplyPreparedAppearanceTransactional(fallbackPrepared, "基建");
+					ApplyPreparedAppearanceTransactional(fallbackPrepared, "char_002_amiya",
+						"默认", "基建");
 					fallbackPrepared = null;
 					loaded = true;
 					sourceAlreadyHidden = true;
@@ -377,6 +381,36 @@ namespace ArknightsOperatorsMod {
 
 		internal string ActiveModel {
 			get { return activeModel; }
+		}
+
+		internal string ActiveAppearanceScaleKey {
+			get {
+				return string.IsNullOrWhiteSpace(activeCharacterId) ||
+					string.IsNullOrWhiteSpace(activeSkin) || string.IsNullOrWhiteSpace(activeModel) ?
+					null : ModConfig.AppearanceScaleKey(activeCharacterId, activeSkin, activeModel);
+			}
+		}
+
+		internal int ActiveVisualScalePercent {
+			get {
+				return appearanceConfig == null || string.IsNullOrEmpty(ActiveAppearanceScaleKey) ?
+					ModConfig.DefaultVisualScalePercent : appearanceConfig.ResolveVisualScalePercent(
+						activeCharacterId, activeSkin, activeModel);
+			}
+		}
+
+		internal bool SetActiveVisualScalePercent(int scalePercent) {
+			if (string.IsNullOrEmpty(ActiveAppearanceScaleKey) ||
+				!ModConfig.IsValidVisualScalePercent(scalePercent)) return false;
+			ModConfigStore.SetAppearanceVisualScale(activeCharacterId, activeSkin, activeModel,
+				scalePercent);
+			return true;
+		}
+
+		internal bool ResetActiveVisualScalePercent() {
+			if (string.IsNullOrEmpty(ActiveAppearanceScaleKey)) return false;
+			ModConfigStore.ResetAppearanceVisualScale(activeCharacterId, activeSkin, activeModel);
+			return true;
 		}
 
 		internal string DuplicantName {
@@ -495,7 +529,8 @@ namespace ArknightsOperatorsMod {
 			}
 		}
 
-		private void ApplyPreparedAppearanceTransactional(LoadedSpineVisual loaded, string model) {
+		private void ApplyPreparedAppearanceTransactional(LoadedSpineVisual loaded, string characterId,
+			string skin, string model) {
 			if (loaded == null) throw new ArgumentNullException("loaded");
 			Mesh previousMesh = mesh;
 			Mesh nextMesh = new Mesh { name = "ArknightsSpineOverlayMesh" };
@@ -521,14 +556,18 @@ namespace ArknightsOperatorsMod {
 			float previousRawMaxY = rawMaxY;
 			Vector3 previousVisualPosition = visualRoot.transform.localPosition;
 			Vector3 previousVisualScale = visualRoot.transform.localScale;
+			string previousActiveCharacterId = activeCharacterId;
+			string previousActiveSkin = activeSkin;
 			string previousActiveModel = activeModel;
 			string previousLoadingModel = loadingModel;
 			bool previousSourceHidden = sourceHidden;
 			try {
 				mesh = nextMesh;
 				meshFilter.sharedMesh = nextMesh;
-				ApplySkeleton(loaded);
+				activeCharacterId = characterId;
+				activeSkin = skin;
 				activeModel = model;
+				ApplySkeleton(loaded);
 				loadingModel = null;
 				PlayBestAnimation(CurrentEffectiveAnimation());
 				HideSourceVisual();
@@ -550,6 +589,8 @@ namespace ArknightsOperatorsMod {
 				rawMinY = previousRawMinY;
 				rawMaxX = previousRawMaxX;
 				rawMaxY = previousRawMaxY;
+				activeCharacterId = previousActiveCharacterId;
+				activeSkin = previousActiveSkin;
 				activeModel = previousActiveModel;
 				loadingModel = previousLoadingModel;
 				assignedMaterials = previousAssignedMaterials;
@@ -604,6 +645,9 @@ namespace ArknightsOperatorsMod {
 		}
 
 		private void LoadFrameFallback() {
+			activeCharacterId = "char_002_amiya";
+			activeSkin = "默认";
+			activeModel = PreferredFrameModel;
 			LoadFrameLibrary();
 			FrameAnimationDef initial = PickFrameAnimation(null);
 			LoadFrameFallback(initial != null ? initial.ManifestPath : ModAssets.AmiyaFrameManifestPath);
@@ -1086,7 +1130,8 @@ namespace ArknightsOperatorsMod {
 
 		private float VisualScaleMultiplier() {
 			int percent = appearanceConfig == null ? ModConfig.DefaultVisualScalePercent :
-				appearanceConfig.VisualScalePercent;
+				string.IsNullOrEmpty(ActiveAppearanceScaleKey) ? appearanceConfig.VisualScalePercent :
+				appearanceConfig.ResolveVisualScalePercent(activeCharacterId, activeSkin, activeModel);
 			if (!ModConfig.IsValidVisualScalePercent(percent))
 				percent = ModConfig.DefaultVisualScalePercent;
 			return percent / 100f;
