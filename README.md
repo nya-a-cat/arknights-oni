@@ -33,12 +33,13 @@ The recorded four-duplicant game-test baseline used the `0.3.2-alpha.1` candidat
 - Search a catalog of 449 operators by Chinese, English, or Japanese name, PRTS redirect alias, or `char_id` inside the game.
 - Use automatically selected Chinese or English option labels; operator display names prefer Chinese, Japanese, or English according to the current game language and available PRTS metadata.
 - Select an operator, skin, and model through linked controls.
-- Select a duplicant and press `Ctrl+F8` to assign its operator, skin, and model live; use `Ctrl+Shift+F8` for global defaults.
+- Select a duplicant and press `Ctrl+F8` to assign its operator, skin, and model live; use `Ctrl+Shift+F8` for lightweight global resource, model-switching, and size settings.
 - Render Spine 3.8 Region/Mesh attachments, clipping, multiple atlas pages, and common blend modes directly in C#.
 - Map ONI movement, work, rest, sleep, stress, and death states to available operator animations.
 - Automatically use base models for daily/sleep states and front combat models for digging, combat, stun, and death.
 - Select a duplicant and press `Ctrl+F9` to open its action wheel for manual animation performances; the center button restores automatic mapping.
 - On the `0.3.3` development line, choose a configurable `128–2000 MiB` on-demand LRU cache (default `512 MiB`) or permanent retention of downloaded resources.
+- On the `0.3.3` development line, use a default visual size of `125%`, configurable from `75%` to `200%`; changing it updates loaded overlays without another asset download.
 - Merge concurrent requests for the same resource while allowing each duplicant to cancel its own wait independently.
 - Verify downloads with HTTPS source restrictions, temporary files, a SHA-256 index, and a 64 MiB per-file limit.
 - Prepare a verified loader and cloud builder for a versioned 449-operator GitHub Release fallback snapshot. The initial `assets-v1.0.0` snapshot is still unpublished.
@@ -101,7 +102,7 @@ See the [GitHub Release fallback design](./docs/github_release_asset_fallback.md
 
 - [x] Searchable 449-operator catalog with Chinese, English, Japanese, redirect-alias, and `char_id` lookup
 - [x] Linked operator, skin, and model selection
-- [x] Live switching from Options and `Ctrl+F8`
+- [x] Live per-duplicant switching from `Ctrl+F8`, with lightweight global runtime and resource settings in Mod Options
 - [x] Runtime animation mapping and ground alignment
 - [x] Semantic build/battle animation profiles and a per-duplicant `Ctrl+F9` action wheel
 - [x] Per-duplicant operator, skin, and model settings with save persistence

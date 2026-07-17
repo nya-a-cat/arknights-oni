@@ -17,16 +17,16 @@ Version scope / 版本范围 / バージョン範囲：the published `0.3.2-alph
 ### 游戏内操作
 
 - 选中一个复制人，按 `Ctrl+F8`：为该复制人单独选择干员、皮肤和模型。
-- 按 `Ctrl+Shift+F8`：打开全局默认和资源缓存设置。
+- 按 `Ctrl+Shift+F8`：打开资源策略、缓存容量、自动模型切换和默认外观大小设置。
 - 选中一个复制人，按 `Ctrl+F9`：打开动作转盘；中心按钮恢复 ONI 自动状态映射。
 - 搜索支持中文名、英文名、日文名、PRTS 重定向别名和 `char_id`。
 - “恢复全局默认”会清除当前复制人的单独外观覆盖。
 
 ### 资源策略
 
-- `按需缓存`：仅获取使用到的外观。`0.3.3` 中可填写 `128–2000 MiB` 的整数容量，默认 `512 MiB`；界面显示“当前占用 / 目标容量”。
-- 空值、文本或越界值会阻止保存并显示 `128–2000 MiB` 范围提示。保存更小容量后立即执行 LRU 清理；当前使用、正在下载和持有租约的资源受到保护。受保护资源导致占用暂时超过目标时，界面会提示，并在资源释放后再次维护。
-- `永久保留已下载资源`：仅获取使用到的外观，并长期保留成功缓存的文件。此模式禁用容量输入框并保留已经填写的数值。
+- `按需缓存`：仅获取使用到的外观。`0.3.3` 中可填写 `128–2000 MiB` 的整数容量，默认 `512 MiB`。保存更小容量后立即执行 LRU 清理；当前使用、正在下载和持有租约的资源受到保护。
+- `永久保留已下载资源`：仅获取使用到的外观，并长期保留成功缓存的文件。容量输入值会保留，切回按需缓存时继续使用。
+- `默认外观大小`：`100%` 对应旧版大小，`0.3.3` 默认 `125%`，可填写 `75–200%`。修改只更新视觉渲染，不改变 ONI 碰撞体，也不会重新下载资源。
 - 两种模式都不会预下载完整的 449 干员资源库。
 - 用户容量不会放宽 `64 MiB` 单个 Spine 源文件限制或 `512 MiB` 备用包安全上限。
 
@@ -41,16 +41,16 @@ Version scope / 版本范围 / バージョン範囲：the published `0.3.2-alph
 ### In-game controls
 
 - Select a duplicant and press `Ctrl+F8`: choose an individual operator, skin, and model.
-- Press `Ctrl+Shift+F8`: open global defaults and resource-cache settings.
+- Press `Ctrl+Shift+F8`: open resource policy, cache capacity, automatic model switching, and default appearance size settings.
 - Select a duplicant and press `Ctrl+F9`: open the action wheel; use the centre button to restore automatic ONI state mapping.
 - Search accepts Chinese, English, or Japanese names, PRTS redirect aliases, and `char_id`.
 - `Use global default` removes the selected duplicant's individual appearance override.
 
 ### Resource strategies
 
-- `On-demand cache`: fetch only used appearances. In `0.3.3`, enter an integer capacity from `128` to `2000 MiB`; the default is `512 MiB`. The interface shows current usage and the target capacity.
-- Empty, non-integer, or out-of-range values block saving and show the accepted range. Saving a smaller capacity runs LRU maintenance immediately. Active, downloading, and leased resources stay protected. The interface reports a temporary over-target state and maintenance runs again after those resources are released.
-- `Keep downloaded resources`: fetch used appearances and retain successfully cached files. This mode disables the capacity field and preserves its saved value.
+- `On-demand cache`: fetch only used appearances. In `0.3.3`, enter an integer capacity from `128` to `2000 MiB`; the default is `512 MiB`. Saving a smaller capacity runs LRU maintenance immediately. Active, downloading, and leased resources stay protected.
+- `Keep downloaded resources`: fetch used appearances and retain successfully cached files. The capacity value stays saved and is reused after switching back to on-demand caching.
+- `Default appearance size`: `100%` is the previous size. `0.3.3` defaults to `125%` and accepts `75–200%`. Changes affect visual rendering only, keep ONI collision unchanged, and do not download assets again.
 - Neither strategy pre-downloads the complete 449-operator resource library.
 - The user capacity does not relax the `64 MiB` per-Spine-source-file limit or the `512 MiB` fallback-package safety ceiling.
 
@@ -65,16 +65,16 @@ Version scope / 版本范围 / バージョン範囲：the published `0.3.2-alph
 ### ゲーム内操作
 
 - 複製人間を選択して `Ctrl+F8`：その複製人間専用のオペレーター、コーデ、モデルを選択します。
-- `Ctrl+Shift+F8`：グローバル既定値とリソースキャッシュ設定を開きます。
+- `Ctrl+Shift+F8`：リソース方式、キャッシュ容量、自動モデル切替、既定の外観サイズを開きます。
 - 複製人間を選択して `Ctrl+F9`：アクションホイールを開きます。中央ボタンで ONI の自動状態マッピングに戻ります。
 - 中国語名、英語名、日本語名、PRTS リダイレクト別名、`char_id` で検索できます。
 - `グローバル既定値を使用` は、その複製人間の個別外観設定を解除します。
 
 ### リソース保存方式
 
-- `オンデマンドキャッシュ`：使用した外観だけを取得します。`0.3.3` では `128–2000 MiB` の整数を設定でき、既定値は `512 MiB` です。画面には現在の使用量と目標容量が表示されます。
-- 空欄、整数以外、範囲外の値では保存できず、有効範囲が表示されます。小さい容量を保存すると LRU 整理が直ちに実行されます。使用中、ダウンロード中、リース中のリソースは保護され、保護分で一時的に目標を超える場合は警告し、解放後に再整理します。
-- `ダウンロード済みリソースを保持`：使用した外観だけを取得し、正常にキャッシュしたファイルを保持します。この方式では容量入力が無効になり、入力済みの値は保持されます。
+- `オンデマンドキャッシュ`：使用した外観だけを取得します。`0.3.3` では `128–2000 MiB` の整数を設定でき、既定値は `512 MiB` です。小さい容量を保存すると LRU 整理が直ちに実行され、使用中、ダウンロード中、リース中のリソースは保護されます。
+- `ダウンロード済みリソースを保持`：使用した外観だけを取得し、正常にキャッシュしたファイルを保持します。容量値は保存され、オンデマンド方式へ戻したときに再利用されます。
+- `既定の外観サイズ`：`100%` は従来のサイズです。`0.3.3` の既定値は `125%` で、`75–200%` を設定できます。表示のみを変更し、ONI の当たり判定とダウンロード済みリソースは変更しません。
 - どちらの方式も 449 オペレーターの全リソースを事前ダウンロードしません。
 - ユーザー設定容量は、Spine ソース 1 ファイルあたり `64 MiB` の制限とフォールバックパッケージの `512 MiB` 安全上限を変更しません。
 

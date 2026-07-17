@@ -20,6 +20,7 @@ namespace ArknightsOperatorsMod {
 		private const float ModelSwitchDelaySeconds = 0.35f;
 		private const string PreferredFrameSkin = "播种者";
 		private const string PreferredFrameModel = "正面";
+		private static bool applicationQuitting;
 
 		private KBatchedAnimController sourceAnim;
 		private Navigator navigator;
@@ -65,6 +66,7 @@ namespace ArknightsOperatorsMod {
 		private bool scaleInitialized;
 		private float calibratedScale = 1f;
 		private float calibratedCenterX;
+		private float calibratedMinY;
 		private CancellationTokenSource loadCancellation;
 		private Task<OperatorAssetBundle> pendingBundleTask;
 		private IDisposable resourceLease;
@@ -95,6 +97,7 @@ namespace ArknightsOperatorsMod {
 				RefreshSourceAnimations();
 				CreateVisualRoot();
 				ModConfigStore.AppearanceChanged += OnAppearanceChanged;
+				ModConfigStore.VisualScaleChanged += OnVisualScaleChanged;
 				appearanceConfig = ResolveAppearanceConfig(ModConfigStore.Current);
 				BeginAppearanceLoad(ConfigForEffectiveAnimation(CurrentEffectiveAnimation()), true);
 			} catch (Exception ex) {
@@ -108,15 +111,23 @@ namespace ArknightsOperatorsMod {
 			CancelPendingAppearanceLoad();
 		}
 
+		private void OnApplicationQuit() {
+			applicationQuitting = true;
+		}
+
 		private void OnDestroy() {
 			ModConfigStore.AppearanceChanged -= OnAppearanceChanged;
+			ModConfigStore.VisualScaleChanged -= OnVisualScaleChanged;
 			loadGeneration++;
 			CancelPendingAppearanceLoad();
 			if (resourceLease != null) {
 				resourceLease.Dispose();
 				resourceLease = null;
 			}
-			RestoreSourceVisuals();
+			if (applicationQuitting)
+				ClearSourceVisualState();
+			else
+				RestoreSourceVisuals();
 			if (visualRoot != null) Destroy(visualRoot);
 			if (textureLoader != null) textureLoader.Dispose();
 			foreach (FrameSheetCache cached in frameSheetCache.Values) {
@@ -161,6 +172,15 @@ namespace ArknightsOperatorsMod {
 
 		private void OnAppearanceChanged(ModConfig config) {
 			ApplyAppearanceConfig(ResolveAppearanceConfig(config));
+		}
+
+		private void OnVisualScaleChanged(ModConfig config) {
+			if (config == null || appearanceConfig == null) return;
+			appearanceConfig.VisualScalePercent = config.VisualScalePercent;
+			if (frameFallbackMode)
+				ApplyFrameFallbackTransform();
+			else
+				ApplyCalibratedScale();
 		}
 
 		private void ApplyAppearanceConfig(ModConfig config) {
@@ -494,6 +514,7 @@ namespace ArknightsOperatorsMod {
 			bool previousScaleInitialized = scaleInitialized;
 			float previousCalibratedScale = calibratedScale;
 			float previousCalibratedCenterX = calibratedCenterX;
+			float previousCalibratedMinY = calibratedMinY;
 			float previousRawMinX = rawMinX;
 			float previousRawMinY = rawMinY;
 			float previousRawMaxX = rawMaxX;
@@ -524,6 +545,7 @@ namespace ArknightsOperatorsMod {
 				scaleInitialized = previousScaleInitialized;
 				calibratedScale = previousCalibratedScale;
 				calibratedCenterX = previousCalibratedCenterX;
+				calibratedMinY = previousCalibratedMinY;
 				rawMinX = previousRawMinX;
 				rawMinY = previousRawMinY;
 				rawMaxX = previousRawMaxX;
@@ -607,7 +629,7 @@ namespace ArknightsOperatorsMod {
 
 			FrameSheetCache sheet = GetFrameSheet(sheetPath);
 			visualRoot.transform.localPosition = new Vector3(0f, GroundOffsetY, -0.35f);
-			visualRoot.transform.localScale = Vector3.one;
+			ApplyFrameFallbackTransform();
 			meshRenderer.sharedMaterial = sheet.Material;
 			meshRenderer.sortingOrder = 100;
 
@@ -715,9 +737,7 @@ namespace ArknightsOperatorsMod {
 
 		private void SyncFrameFallbackFacingAndAnimation(string effectiveAnimation) {
 			if (sourceAnim == null) return;
-			Vector3 scale = visualRoot.transform.localScale;
-			scale.x = sourceAnim.FlipX ? -1f : 1f;
-			visualRoot.transform.localScale = scale;
+			ApplyFrameFallbackTransform();
 
 			FrameAnimationDef next = PickFrameAnimation(effectiveAnimation);
 			if (next == null || next.Animation == currentFrameAnimation) return;
@@ -840,13 +860,32 @@ namespace ArknightsOperatorsMod {
 		}
 
 		private void RestoreSourceVisuals() {
+			try {
+				foreach (KeyValuePair<KBatchedAnimController, Color32> entry in sourceTintBeforeSuppression) {
+					if (entry.Key == null) continue;
+					try {
+						entry.Key.TintColour = entry.Value;
+					} catch (Exception error) {
+						Debug.LogWarning("[ArknightsOperatorsMod] Skipped source tint restore: " +
+							error.Message);
+					}
+				}
+				foreach (KeyValuePair<KBatchedAnimController, bool> entry in sourceVisibilityBeforeSuppression) {
+					if (entry.Key == null) continue;
+					try {
+						entry.Key.SetVisiblity(entry.Value);
+					} catch (Exception error) {
+						Debug.LogWarning("[ArknightsOperatorsMod] Skipped source visibility restore: " +
+							error.Message);
+					}
+				}
+			} finally {
+				ClearSourceVisualState();
+			}
+		}
+
+		private void ClearSourceVisualState() {
 			sourceHidden = false;
-			foreach (KeyValuePair<KBatchedAnimController, Color32> entry in sourceTintBeforeSuppression) {
-				if (entry.Key != null) entry.Key.TintColour = entry.Value;
-			}
-			foreach (KeyValuePair<KBatchedAnimController, bool> entry in sourceVisibilityBeforeSuppression) {
-				if (entry.Key != null) entry.Key.SetVisiblity(entry.Value);
-			}
 			sourceTintBeforeSuppression.Clear();
 			sourceVisibilityBeforeSuppression.Clear();
 			sourceAnimations.Clear();
@@ -867,7 +906,8 @@ namespace ArknightsOperatorsMod {
 			skeleton.ScaleX = flipX ? -1f : 1f;
 			if (scaleInitialized) {
 				Vector3 position = visualRoot.transform.localPosition;
-				position.x = (flipX ? calibratedCenterX : -calibratedCenterX) * calibratedScale;
+				position.x = (flipX ? calibratedCenterX : -calibratedCenterX) *
+					CurrentWorldScale();
 				visualRoot.transform.localPosition = position;
 			}
 			PlayBestAnimation(effectiveAnimation);
@@ -1033,16 +1073,47 @@ namespace ArknightsOperatorsMod {
 
 		private void ConfigureScaleFromBounds() {
 			if (scaleInitialized || float.IsInfinity(rawMinY) || rawMaxY <= rawMinY) return;
-			float scale = Mathf.Clamp(TargetVisualHeight / (rawMaxY - rawMinY), MinimumWorldScale, MaximumWorldScale);
 			float centerX = (rawMinX + rawMaxX) * 0.5f;
-			calibratedScale = scale;
+			calibratedScale = Mathf.Clamp(TargetVisualHeight / (rawMaxY - rawMinY),
+				MinimumWorldScale, MaximumWorldScale);
 			calibratedCenterX = centerX;
-			visualRoot.transform.localScale = new Vector3(scale, scale, scale);
-			visualRoot.transform.localPosition = new Vector3(-centerX * scale,
-				GroundOffsetY - rawMinY * scale, -0.35f);
+			calibratedMinY = rawMinY;
 			scaleInitialized = true;
-			Debug.Log("[ArknightsOperatorsMod] Auto scale=" + scale + " rawBounds=" +
+			ApplyCalibratedScale();
+			Debug.Log("[ArknightsOperatorsMod] Auto scale=" + CurrentWorldScale() + " rawBounds=" +
 				(rawMaxX - rawMinX) + "x" + (rawMaxY - rawMinY));
+		}
+
+		private float VisualScaleMultiplier() {
+			int percent = appearanceConfig == null ? ModConfig.DefaultVisualScalePercent :
+				appearanceConfig.VisualScalePercent;
+			if (!ModConfig.IsValidVisualScalePercent(percent))
+				percent = ModConfig.DefaultVisualScalePercent;
+			return percent / 100f;
+		}
+
+		private float CurrentWorldScale() {
+			return calibratedScale * VisualScaleMultiplier();
+		}
+
+		private void ApplyCalibratedScale() {
+			if (!scaleInitialized || visualRoot == null) return;
+			float scale = CurrentWorldScale();
+			bool flipX = sourceAnim != null && sourceAnim.FlipX;
+			visualRoot.transform.localScale = new Vector3(scale, scale, scale);
+			visualRoot.transform.localPosition = new Vector3(
+				(flipX ? calibratedCenterX : -calibratedCenterX) * scale,
+				GroundOffsetY - calibratedMinY * scale,
+				-0.35f
+			);
+		}
+
+		private void ApplyFrameFallbackTransform() {
+			if (visualRoot == null) return;
+			float scale = VisualScaleMultiplier();
+			bool flipX = sourceAnim != null && sourceAnim.FlipX;
+			visualRoot.transform.localScale = new Vector3(flipX ? -scale : scale, scale, scale);
+			visualRoot.transform.localPosition = new Vector3(0f, GroundOffsetY, -0.35f);
 		}
 
 		private void InitializeScaleFromReferenceAnimation() {

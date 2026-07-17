@@ -19,10 +19,13 @@ namespace ArknightsOperatorsMod {
 
 	[ConfigFile("config.json", true, true)]
 	public sealed class ModConfig : IOptions {
-		public const int CurrentSchemaVersion = 3;
+		public const int CurrentSchemaVersion = 4;
 		public const int MinimumCacheCapacityMiB = 128;
 		public const int DefaultCacheCapacityMiB = 512;
 		public const int MaximumCacheCapacityMiB = 2000;
+		public const int MinimumVisualScalePercent = 75;
+		public const int DefaultVisualScalePercent = 125;
+		public const int MaximumVisualScalePercent = 200;
 
 		[JsonProperty]
 		public int SchemaVersion { get; set; } = CurrentSchemaVersion;
@@ -46,6 +49,9 @@ namespace ArknightsOperatorsMod {
 		[JsonProperty]
 		public bool AutomaticModelSwitching { get; set; } = true;
 
+		[JsonProperty]
+		public int VisualScalePercent { get; set; } = DefaultVisualScalePercent;
+
 		internal bool Normalize() {
 			bool changed = false;
 			if (SchemaVersion != CurrentSchemaVersion) {
@@ -60,6 +66,12 @@ namespace ArknightsOperatorsMod {
 				Debug.LogWarning("[ArknightsOperatorsMod] CacheCapacityMiB=" + CacheCapacityMiB +
 					" is outside 128-2000; restored to 512 MiB");
 				CacheCapacityMiB = DefaultCacheCapacityMiB;
+				changed = true;
+			}
+			if (!IsValidVisualScalePercent(VisualScalePercent)) {
+				Debug.LogWarning("[ArknightsOperatorsMod] VisualScalePercent=" + VisualScalePercent +
+					" is outside 75-200; restored to 125 percent");
+				VisualScalePercent = DefaultVisualScalePercent;
 				changed = true;
 			}
 			if (string.IsNullOrWhiteSpace(DefaultCharacterId)) {
@@ -82,6 +94,11 @@ namespace ArknightsOperatorsMod {
 				capacityMiB <= MaximumCacheCapacityMiB;
 		}
 
+		internal static bool IsValidVisualScalePercent(int scalePercent) {
+			return scalePercent >= MinimumVisualScalePercent &&
+				scalePercent <= MaximumVisualScalePercent;
+		}
+
 		internal static long CacheCapacityBytes(int capacityMiB) {
 			if (!IsValidCacheCapacityMiB(capacityMiB))
 				capacityMiB = DefaultCacheCapacityMiB;
@@ -100,15 +117,61 @@ namespace ArknightsOperatorsMod {
 		}
 
 		public IEnumerable<IOptionsEntry> CreateOptions() {
-			yield return new OperatorAppearanceOptionsEntry(this);
+			string category = ModLocalization.Text("全局设置", "Global settings");
+			yield return new SelectOneOptionsEntry(
+				nameof(DownloadPolicy),
+				new OptionAttribute(
+					ModLocalization.Text("资源保存策略", "Resource retention"),
+					ModLocalization.Text(
+						"按需缓存会在容量范围内清理旧资源；永久保留会保存已下载资源。",
+						"On-demand caching removes old resources within the capacity target; permanent retention keeps downloaded resources."
+					),
+					category
+				),
+				typeof(ResourcePersistencePolicy)
+			);
+			yield return new IntOptionsEntry(
+				nameof(CacheCapacityMiB),
+				new OptionAttribute(
+					ModLocalization.Text("按需缓存容量（MiB）", "On-demand cache capacity (MiB)"),
+					ModLocalization.Text(
+						"请输入 128 到 2000 之间的整数；永久保留模式会保存此值供以后使用。",
+						"Enter an integer from 128 to 2000. Permanent retention preserves the value for later use."
+					),
+					category
+				),
+				new LimitAttribute(MinimumCacheCapacityMiB, MaximumCacheCapacityMiB, 1)
+			);
+			yield return new CheckboxOptionsEntry(
+				nameof(AutomaticModelSwitching),
+				new OptionAttribute(
+					ModLocalization.Text("自动模型切换", "Automatic model switching"),
+					ModLocalization.Text(
+						"日常状态使用基建模型，挖矿、战斗、眩晕和死亡使用战斗模型。",
+						"Use the base model for daily states and the combat model for digging, combat, stun, and death."
+					),
+					category
+				)
+			);
+			yield return new IntOptionsEntry(
+				nameof(VisualScalePercent),
+				new OptionAttribute(
+					ModLocalization.Text("默认外观大小（%）", "Default appearance size (%)"),
+					ModLocalization.Text(
+						"100% 是旧版大小，默认 125%，可设置为 75% 到 200%。",
+						"100% is the previous size. The default is 125%, configurable from 75% to 200%."
+					),
+					category
+				),
+				new LimitAttribute(MinimumVisualScalePercent, MaximumVisualScalePercent, 1)
+			);
 		}
 
 		public void OnOptionsChanged() {
-			OperatorAppearanceOptionsEntry.ApplyPendingSelection(this);
 			Normalize();
 			ModConfigStore.SaveAndApply(this);
-			Debug.Log("[ArknightsOperatorsMod] Saved appearance " + DefaultCharacterId + " " +
-				PreferredSkin + "/" + PreferredModel + "; cache=" + CacheCapacityMiB + " MiB");
+			Debug.Log("[ArknightsOperatorsMod] Saved global settings; cache=" +
+				CacheCapacityMiB + " MiB; scale=" + VisualScalePercent + "%");
 		}
 	}
 
@@ -119,6 +182,7 @@ namespace ArknightsOperatorsMod {
 		private static ModConfig current;
 
 		public static event Action<ModConfig> AppearanceChanged;
+		public static event Action<ModConfig> VisualScaleChanged;
 
 		public static string ConfigPath {
 			get {
@@ -163,12 +227,15 @@ namespace ArknightsOperatorsMod {
 			if (saved == null) throw new ArgumentNullException("saved");
 			Action<ModConfig> changed = null;
 			ModConfig snapshot = null;
+			Action<ModConfig> scaleChanged = null;
+			ModConfig scaleSnapshot = null;
 			bool cacheSettingsChanged = false;
 			lock (Gate) {
 				EnsureInitializedNoLock();
 				string previousAppearance = AppearanceKey(current);
 				ResourcePersistencePolicy previousPolicy = current.DownloadPolicy;
 				int previousCapacityMiB = current.CacheCapacityMiB;
+				int previousScalePercent = current.VisualScalePercent;
 				current = Clone(saved);
 				current.Normalize();
 				cacheSettingsChanged = previousPolicy != current.DownloadPolicy ||
@@ -181,8 +248,13 @@ namespace ArknightsOperatorsMod {
 					changed = AppearanceChanged;
 					snapshot = Clone(current);
 				}
+				if (previousScalePercent != current.VisualScalePercent) {
+					scaleChanged = VisualScaleChanged;
+					scaleSnapshot = Clone(current);
+				}
 			}
 			if (changed != null) changed(snapshot);
+			if (scaleChanged != null) scaleChanged(scaleSnapshot);
 			if (cacheSettingsChanged && PrtsResourceService.Instance != null) {
 				try {
 					PrtsResourceService.Instance.RunCacheMaintenance();
@@ -207,7 +279,8 @@ namespace ArknightsOperatorsMod {
 				DefaultCharacterId = source.DefaultCharacterId,
 				PreferredSkin = source.PreferredSkin,
 				PreferredModel = source.PreferredModel,
-				AutomaticModelSwitching = source.AutomaticModelSwitching
+				AutomaticModelSwitching = source.AutomaticModelSwitching,
+				VisualScalePercent = source.VisualScalePercent
 			};
 		}
 

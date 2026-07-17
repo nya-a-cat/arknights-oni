@@ -33,6 +33,46 @@ namespace PeterHan.PLib.Options {
 
 	public interface IOptionsEntry { }
 
+	public sealed class OptionAttribute : Attribute {
+		public OptionAttribute(string title, string tooltip = null, string category = null) { }
+	}
+
+	public sealed class LimitAttribute : Attribute {
+		public double Minimum { get; private set; }
+		public double Maximum { get; private set; }
+
+		public LimitAttribute(double minimum, double maximum, double step = 1.0) {
+			Minimum = minimum;
+			Maximum = maximum;
+		}
+	}
+
+	public sealed class SelectOneOptionsEntry : IOptionsEntry {
+		public string Field { get; private set; }
+
+		public SelectOneOptionsEntry(string field, OptionAttribute spec, Type fieldType) {
+			Field = field;
+		}
+	}
+
+	public sealed class IntOptionsEntry : IOptionsEntry {
+		public string Field { get; private set; }
+		public LimitAttribute Limit { get; private set; }
+
+		public IntOptionsEntry(string field, OptionAttribute spec, LimitAttribute limit = null) {
+			Field = field;
+			Limit = limit;
+		}
+	}
+
+	public sealed class CheckboxOptionsEntry : IOptionsEntry {
+		public string Field { get; private set; }
+
+		public CheckboxOptionsEntry(string field, OptionAttribute spec) {
+			Field = field;
+		}
+	}
+
 	public static class POptions {
 		public static string ConfigFilePath;
 
@@ -43,11 +83,9 @@ namespace PeterHan.PLib.Options {
 }
 
 namespace ArknightsOperatorsMod {
-	public sealed class OperatorAppearanceOptionsEntry : PeterHan.PLib.Options.IOptionsEntry {
-		public OperatorAppearanceOptionsEntry(ModConfig config) { }
-
-		public static bool ApplyPendingSelection(ModConfig config) {
-			return false;
+	public static class ModLocalization {
+		public static string Text(string chinese, string english) {
+			return english;
 		}
 	}
 
@@ -76,6 +114,12 @@ internal static class ModConfigTests {
 		return config;
 	}
 
+	private static ModConfig NormalizeScale(int scalePercent) {
+		ModConfig config = new ModConfig { VisualScalePercent = scalePercent };
+		config.Normalize();
+		return config;
+	}
+
 	public static int Main(string[] args) {
 		if (args.Length != 1) throw new ArgumentException("Expected an isolated config directory");
 		string root = Path.GetFullPath(args[0]);
@@ -87,6 +131,17 @@ internal static class ModConfigTests {
 			"new config schema version is incorrect");
 		Require(defaults.CacheCapacityMiB == ModConfig.DefaultCacheCapacityMiB,
 			"new config cache capacity is not 512 MiB");
+		Require(defaults.VisualScalePercent == ModConfig.DefaultVisualScalePercent,
+			"new config visual scale is not 125 percent");
+
+		List<PeterHan.PLib.Options.IOptionsEntry> options =
+			new List<PeterHan.PLib.Options.IOptionsEntry>(defaults.CreateOptions());
+		Require(options.Count == 4, "options page does not contain exactly four global settings");
+		Require(options[0] is PeterHan.PLib.Options.SelectOneOptionsEntry &&
+			options[1] is PeterHan.PLib.Options.IntOptionsEntry &&
+			options[2] is PeterHan.PLib.Options.CheckboxOptionsEntry &&
+			options[3] is PeterHan.PLib.Options.IntOptionsEntry,
+			"options page does not use the expected public PLib entries");
 
 		ModConfig legacy = JsonConvert.DeserializeObject<ModConfig>("{\"SchemaVersion\":2}");
 		legacy.Normalize();
@@ -94,6 +149,8 @@ internal static class ModConfigTests {
 			"legacy config without CacheCapacityMiB did not migrate to 512 MiB");
 		Require(legacy.SchemaVersion == ModConfig.CurrentSchemaVersion,
 			"legacy config schema version was not upgraded");
+		Require(legacy.VisualScalePercent == ModConfig.DefaultVisualScalePercent,
+			"legacy config without VisualScalePercent did not migrate to 125 percent");
 
 		UnityEngine.Debug.ResetWarnings();
 		Require(Normalize(127).CacheCapacityMiB == ModConfig.DefaultCacheCapacityMiB,
@@ -108,6 +165,25 @@ internal static class ModConfigTests {
 			"capacity above 2000 MiB did not fall back to 512 MiB");
 		Require(UnityEngine.Debug.WarningCount == 2,
 			"out-of-range cache values did not log warnings");
+
+		UnityEngine.Debug.ResetWarnings();
+		Require(NormalizeScale(74).VisualScalePercent == ModConfig.DefaultVisualScalePercent,
+			"visual scale below 75 percent did not fall back to 125 percent");
+		Require(NormalizeScale(75).VisualScalePercent == 75,
+			"minimum visual scale was rejected");
+		Require(NormalizeScale(125).VisualScalePercent == 125,
+			"default visual scale was changed");
+		Require(NormalizeScale(200).VisualScalePercent == 200,
+			"maximum visual scale was rejected");
+		Require(NormalizeScale(201).VisualScalePercent == ModConfig.DefaultVisualScalePercent,
+			"visual scale above 200 percent did not fall back to 125 percent");
+		Require(UnityEngine.Debug.WarningCount == 2,
+			"out-of-range visual scale values did not log warnings");
+		Require(ModConfig.IsValidVisualScalePercent(75) &&
+			ModConfig.IsValidVisualScalePercent(200) &&
+			!ModConfig.IsValidVisualScalePercent(74) &&
+			!ModConfig.IsValidVisualScalePercent(201),
+			"visual scale boundary validation is incorrect");
 		Require(ModConfig.IsValidCacheCapacityMiB(128) &&
 			ModConfig.IsValidCacheCapacityMiB(2000) &&
 			!ModConfig.IsValidCacheCapacityMiB(127) &&
@@ -132,8 +208,12 @@ internal static class ModConfigTests {
 		Require(ModConfig.CanApplyCacheCapacityInput(ResourcePersistencePolicy.Permanent, false),
 			"permanent mode did not preserve the previous valid capacity");
 
-		ModConfig clone = ModConfigStore.Clone(new ModConfig { CacheCapacityMiB = 731 });
+		ModConfig clone = ModConfigStore.Clone(new ModConfig {
+			CacheCapacityMiB = 731,
+			VisualScalePercent = 150
+		});
 		Require(clone.CacheCapacityMiB == 731, "config clone lost cache capacity");
+		Require(clone.VisualScalePercent == 150, "config clone lost visual scale");
 
 		PrtsResourceService service = new PrtsResourceService();
 		PrtsResourceService.Instance = service;
@@ -151,7 +231,17 @@ internal static class ModConfigTests {
 		Require(service.MaintenanceRuns == 1,
 			"changing cache capacity did not run maintenance");
 
-		ModConfigStore.SaveAndApply(new ModConfig { CacheCapacityMiB = 128 });
+		int visualScaleChanges = 0;
+		ModConfigStore.VisualScaleChanged += delegate { visualScaleChanges++; };
+		ModConfig scaled = ModConfigStore.Current;
+		scaled.VisualScalePercent = 150;
+		ModConfigStore.SaveAndApply(scaled);
+		Require(visualScaleChanges == 1,
+			"changing visual scale did not raise one visual-scale event");
+		Require(service.MaintenanceRuns == 1,
+			"changing visual scale ran cache maintenance");
+
+		ModConfigStore.SaveAndApply(ModConfigStore.Current);
 		Require(service.MaintenanceRuns == 1,
 			"unchanged cache settings ran redundant maintenance");
 
@@ -166,6 +256,8 @@ internal static class ModConfigTests {
 		string persisted = File.ReadAllText(PeterHan.PLib.Options.POptions.ConfigFilePath);
 		Require(persisted.Contains("\"CacheCapacityMiB\": 128"),
 			"persisted config does not contain cache capacity");
+		Require(persisted.Contains("\"VisualScalePercent\": 150"),
+			"persisted config does not contain visual scale");
 
 		ModConfig invalidDiskConfig = new ModConfig {
 			DownloadPolicy = ResourcePersistencePolicy.OnDemandCache,
