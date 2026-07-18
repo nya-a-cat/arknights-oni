@@ -17,7 +17,10 @@ internal static class OperatorAppearanceCatalogTests {
 		for (int i = 0; i < catalog.Operators.Count; i++) {
 			if (!string.IsNullOrWhiteSpace(catalog.Operators[i].ThumbnailUrl)) thumbnailCount++;
 		}
-		Require(thumbnailCount == 441, "thumbnail URL snapshot mismatch");
+		Require(thumbnailCount == 449, "thumbnail URL snapshot mismatch");
+		OperatorAppearanceDefinition raidian = catalog.FindExact("char_614_acsupo");
+		Require(raidian != null && raidian.ThumbnailUrl.Contains("Raidian"),
+			"protocol-suffix thumbnail lookup failed");
 
 		OperatorAppearanceDefinition amiya = catalog.FindExact("阿米娅");
 		Require(amiya != null && amiya.Id == "char_002_amiya", "Chinese name lookup failed");

@@ -8,6 +8,7 @@ import concurrent.futures
 import json
 import pathlib
 import re
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -149,15 +150,51 @@ def fetch_thumbnail_urls(
     ]
     thumbnails: dict[str, str] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-        for batch_result in executor.map(
-            lambda batch: fetch_thumbnail_batch(batch, retries), batches
-        ):
-            thumbnails.update(batch_result)
+        futures = {
+            executor.submit(fetch_thumbnail_batch, batch, retries): batch
+            for batch in batches
+        }
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                thumbnails.update(future.result())
+            except Exception as error:
+                print(
+                    "Warning: PRTS thumbnail batch failed for "
+                    + ", ".join(futures[future])
+                    + f": {error}",
+                    file=sys.stderr,
+                )
+    missing_names = [name for name in names if name not in thumbnails]
+    fallback_batches = [
+        missing_names[start : start + THUMBNAIL_BATCH_SIZE]
+        for start in range(0, len(missing_names), THUMBNAIL_BATCH_SIZE)
+    ]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+        futures = {
+            executor.submit(
+                fetch_thumbnail_batch, batch, retries, "(卫戍协议)"
+            ): batch
+            for batch in fallback_batches
+        }
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                thumbnails.update(future.result())
+            except Exception as error:
+                print(
+                    "Warning: PRTS fallback thumbnail batch failed for "
+                    + ", ".join(futures[future])
+                    + f": {error}",
+                    file=sys.stderr,
+                )
     return thumbnails
 
 
-def fetch_thumbnail_batch(batch: list[str], retries: int) -> dict[str, str]:
-    title_to_name = {f"文件:头像 {name}.png": name for name in batch}
+def fetch_thumbnail_batch(
+    batch: list[str], retries: int, filename_suffix: str = ""
+) -> dict[str, str]:
+    title_to_name = {
+        f"文件:头像 {name}{filename_suffix}.png": name for name in batch
+    }
     params = {
         "action": "query",
         "format": "json",

@@ -107,6 +107,71 @@ class ThumbnailCatalogTests(unittest.TestCase):
         self.assertEqual(fetched_bytes, 0)
         self.assertEqual(record["thumbnail_url"], thumbnail_url)
 
+    def test_missing_standard_portrait_uses_protocol_suffix(self) -> None:
+        requested_titles: list[str] = []
+
+        def urlopen(request: object, timeout: int) -> FakeResponse:
+            del timeout
+            parsed = urllib.parse.urlparse(request.full_url)  # type: ignore[attr-defined]
+            title = urllib.parse.parse_qs(parsed.query)["titles"][0]
+            requested_titles.append(title)
+            page: dict[str, object] = {"title": title}
+            if title == "文件:头像 Mechanist(卫戍协议).png":
+                page["imageinfo"] = [
+                    {
+                        "thumburl": (
+                            "https://media.prts.wiki/thumb/c/ca/"
+                            "portrait.png/96px-portrait.png"
+                        ),
+                        "mime": "image/png",
+                    }
+                ]
+            return FakeResponse({"query": {"pages": [page]}})
+
+        with mock.patch.object(catalog_builder.urllib.request, "urlopen", urlopen):
+            thumbnails = catalog_builder.fetch_thumbnail_urls(
+                [{"id": "char_610_acfend", "name": "Mechanist"}], retries=0
+            )
+
+        self.assertEqual(
+            requested_titles,
+            ["文件:头像 Mechanist.png", "文件:头像 Mechanist(卫戍协议).png"],
+        )
+        self.assertIn("Mechanist", thumbnails)
+
+    def test_one_failed_batch_does_not_discard_other_results(self) -> None:
+        def urlopen(request: object, timeout: int) -> FakeResponse:
+            del timeout
+            parsed = urllib.parse.urlparse(request.full_url)  # type: ignore[attr-defined]
+            titles = urllib.parse.parse_qs(parsed.query)["titles"][0].split("|")
+            if any("测试0" in title for title in titles):
+                raise TimeoutError("simulated PRTS timeout")
+            pages = [
+                {
+                    "title": title,
+                    "imageinfo": [
+                        {
+                            "thumburl": (
+                                "https://media.prts.wiki/thumb/test.png/"
+                                "96px-test.png"
+                            )
+                        }
+                    ],
+                }
+                for title in titles
+            ]
+            return FakeResponse({"query": {"pages": pages}})
+
+        operators = [
+            {"id": f"char_{index}", "name": f"测试{index}"}
+            for index in range(31)
+        ]
+        with mock.patch.object(catalog_builder.urllib.request, "urlopen", urlopen):
+            thumbnails = catalog_builder.fetch_thumbnail_urls(operators, retries=0)
+
+        self.assertGreaterEqual(len(thumbnails), 1)
+        self.assertLess(len(thumbnails), len(operators))
+
 
 if __name__ == "__main__":
     unittest.main()
