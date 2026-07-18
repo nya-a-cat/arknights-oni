@@ -629,7 +629,29 @@ namespace ArknightsOperatorsMod {
 
 		private void ApplySelection() {
 			if (target == null || selection == null) return;
+			string characterId = selection.Character.Id;
+			string skin = selection.Skin.Name;
+			string model = selection.Model;
+			bool active = target.IsAppearanceActive(characterId, skin, model);
+			Debug.Log("[ArknightsOperatorsMod] Apply clicked " + characterId + " " +
+				skin + "/" + model + " active=" + active + " for " + target.DuplicantName);
+			if (active) {
+				CommitSelection();
+				return;
+			}
 			BeginAppearanceOperation(true);
+		}
+
+		private bool CommitSelection() {
+			if (target == null || selection == null) return false;
+			string targetName = target.DuplicantName;
+			string displayName = DisplayName(selection.Character);
+			target.SetIndividualAppearance(selection.Character.Id, selection.Skin.Name, selection.Model);
+			applyWhenAppearanceReady = false;
+			ShowStatus(ModLocalization.Text("已设置 ", "Assigned ") +
+				displayName + " → " + targetName);
+			ClosePicker();
+			return true;
 		}
 
 		private void BeginAppearanceOperation(bool applyWhenReady) {
@@ -657,16 +679,7 @@ namespace ArknightsOperatorsMod {
 			string model = selection.Model;
 			if (target.IsAppearanceActive(characterId, skin, model)) {
 				appearanceOperationPending = false;
-				if (applyWhenAppearanceReady) {
-					string targetName = target.DuplicantName;
-					string displayName = DisplayName(selection.Character);
-					target.SetIndividualAppearance(characterId, skin, model);
-					applyWhenAppearanceReady = false;
-					ShowStatus(ModLocalization.Text("已设置 ", "Assigned ") +
-						displayName + " → " + targetName);
-					ClosePicker();
-					return true;
-				}
+				if (applyWhenAppearanceReady) return CommitSelection();
 				applyWhenAppearanceReady = false;
 				operationStatus = ModLocalization.Text("预览已加载。", "Preview ready.");
 				return false;
