@@ -42,7 +42,8 @@
         }
       ],
       "english_name": "Amiya",
-      "japanese_name": "アーミヤ"
+      "japanese_name": "アーミヤ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/36/%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%B1%B3%E5%A8%85.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%B1%B3%E5%A8%85.png"
     },
     {
       "id": "char_003_kalts",
@@ -81,7 +82,8 @@
         "凯爹",
         "Kaltist",
         "老女人"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c5/%E5%A4%B4%E5%83%8F_%E5%87%AF%E5%B0%94%E5%B8%8C.png/96px-%E5%A4%B4%E5%83%8F_%E5%87%AF%E5%B0%94%E5%B8%8C.png"
     },
     {
       "id": "char_009_12fce",
@@ -98,7 +100,8 @@
       ],
       "aliases": [
         "太子"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b7/%E5%A4%B4%E5%83%8F_12F.png/96px-%E5%A4%B4%E5%83%8F_12F.png"
     },
     {
       "id": "char_010_chen",
@@ -135,7 +138,8 @@
         "陈晖洁",
         "陈sir",
         "女游客C"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cf/%E5%A4%B4%E5%83%8F_%E9%99%88.png/96px-%E5%A4%B4%E5%83%8F_%E9%99%88.png"
     },
     {
       "id": "char_017_huang",
@@ -167,7 +171,8 @@
         }
       ],
       "english_name": "Blaze",
-      "japanese_name": "ブレイズ"
+      "japanese_name": "ブレイズ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/30/%E5%A4%B4%E5%83%8F_%E7%85%8C.png/96px-%E5%A4%B4%E5%83%8F_%E7%85%8C.png"
     },
     {
       "id": "char_1001_amiya2",
@@ -203,7 +208,8 @@
         "剑兔",
         "近卫阿米娅",
         "阿米娅（近卫升变状态）"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/5b/%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%B1%B3%E5%A8%85%28%E8%BF%91%E5%8D%AB%29.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%B1%B3%E5%A8%85%28%E8%BF%91%E5%8D%AB%29.png"
     },
     {
       "id": "char_1011_lava2",
@@ -241,7 +247,8 @@
         "SP炎熔",
         "炎熔SP",
         "炎狱"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/20/%E5%A4%B4%E5%83%8F_%E7%82%8E%E7%8B%B1%E7%82%8E%E7%86%94.png/96px-%E5%A4%B4%E5%83%8F_%E7%82%8E%E7%8B%B1%E7%82%8E%E7%86%94.png"
     },
     {
       "id": "char_1012_skadi2",
@@ -275,7 +282,8 @@
         "浊心",
         "浊蒂",
         "红蒂"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/80/%E5%A4%B4%E5%83%8F_%E6%B5%8A%E5%BF%83%E6%96%AF%E5%8D%A1%E8%92%82.png/96px-%E5%A4%B4%E5%83%8F_%E6%B5%8A%E5%BF%83%E6%96%AF%E5%8D%A1%E8%92%82.png"
     },
     {
       "id": "char_1013_chen2",
@@ -311,7 +319,8 @@
       "aliases": [
         "水陈",
         "假日威龙"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/df/%E5%A4%B4%E5%83%8F_%E5%81%87%E6%97%A5%E5%A8%81%E9%BE%99%E9%99%88.png/96px-%E5%A4%B4%E5%83%8F_%E5%81%87%E6%97%A5%E5%A8%81%E9%BE%99%E9%99%88.png"
     },
     {
       "id": "char_1014_nearl2",
@@ -340,7 +349,8 @@
         "耀骑士",
         "耀光",
         "174"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/03/%E5%A4%B4%E5%83%8F_%E8%80%80%E9%AA%91%E5%A3%AB%E4%B8%B4%E5%85%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%80%80%E9%AA%91%E5%A3%AB%E4%B8%B4%E5%85%89.png"
     },
     {
       "id": "char_1016_agoat2",
@@ -368,7 +378,8 @@
       "aliases": [
         "奶羊",
         "纯艾"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f0/%E5%A4%B4%E5%83%8F_%E7%BA%AF%E7%83%AC%E8%89%BE%E9%9B%85%E6%B3%95%E6%8B%89.png/96px-%E5%A4%B4%E5%83%8F_%E7%BA%AF%E7%83%AC%E8%89%BE%E9%9B%85%E6%B3%95%E6%8B%89.png"
     },
     {
       "id": "char_1019_siege2",
@@ -395,7 +406,8 @@
       "japanese_name": "ヴィーナ・ヴィクトリア",
       "aliases": [
         "维娜"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/68/%E5%A4%B4%E5%83%8F_%E7%BB%B4%E5%A8%9C%C2%B7%E7%BB%B4%E5%A4%9A%E5%88%A9%E4%BA%9A.png/96px-%E5%A4%B4%E5%83%8F_%E7%BB%B4%E5%A8%9C%C2%B7%E7%BB%B4%E5%A4%9A%E5%88%A9%E4%BA%9A.png"
     },
     {
       "id": "char_101_sora",
@@ -424,7 +436,8 @@
         }
       ],
       "english_name": "Sora",
-      "japanese_name": "ソラ"
+      "japanese_name": "ソラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/58/%E5%A4%B4%E5%83%8F_%E7%A9%BA.png/96px-%E5%A4%B4%E5%83%8F_%E7%A9%BA.png"
     },
     {
       "id": "char_1020_reed2",
@@ -468,7 +481,8 @@
       "aliases": [
         "Reed The Flame Shadow",
         "焰苇"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/94/%E5%A4%B4%E5%83%8F_%E7%84%B0%E5%BD%B1%E8%8B%87%E8%8D%89.png/96px-%E5%A4%B4%E5%83%8F_%E7%84%B0%E5%BD%B1%E8%8B%87%E8%8D%89.png"
     },
     {
       "id": "char_1021_kroos2",
@@ -504,7 +518,8 @@
       "aliases": [
         "寒芒",
         "寒克"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/39/%E5%A4%B4%E5%83%8F_%E5%AF%92%E8%8A%92%E5%85%8B%E6%B4%9B%E4%B8%9D.png/96px-%E5%A4%B4%E5%83%8F_%E5%AF%92%E8%8A%92%E5%85%8B%E6%B4%9B%E4%B8%9D.png"
     },
     {
       "id": "char_1022_flwr2",
@@ -521,7 +536,8 @@
       ],
       "aliases": [
         "Perfumer the Distilled"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8f/%E5%A4%B4%E5%83%8F_%E6%92%B7%E8%8B%B1%E8%B0%83%E9%A6%99%E5%B8%88.png/96px-%E5%A4%B4%E5%83%8F_%E6%92%B7%E8%8B%B1%E8%B0%83%E9%A6%99%E5%B8%88.png"
     },
     {
       "id": "char_1023_ghost2",
@@ -551,7 +567,8 @@
         "溟鲨",
         "归溟鲨",
         "归鲨"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/be/%E5%A4%B4%E5%83%8F_%E5%BD%92%E6%BA%9F%E5%B9%BD%E7%81%B5%E9%B2%A8.png/96px-%E5%A4%B4%E5%83%8F_%E5%BD%92%E6%BA%9F%E5%B9%BD%E7%81%B5%E9%B2%A8.png"
     },
     {
       "id": "char_1024_hbisc2",
@@ -578,7 +595,8 @@
       "japanese_name": "濯塵ハイビスカス",
       "aliases": [
         "濯尘"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8d/%E5%A4%B4%E5%83%8F_%E6%BF%AF%E5%B0%98%E8%8A%99%E8%93%89.png/96px-%E5%A4%B4%E5%83%8F_%E6%BF%AF%E5%B0%98%E8%8A%99%E8%93%89.png"
     },
     {
       "id": "char_1026_gvial2",
@@ -606,7 +624,8 @@
       "aliases": [
         "百嘉",
         "异嘉"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1b/%E5%A4%B4%E5%83%8F_%E7%99%BE%E7%82%BC%E5%98%89%E7%BB%B4%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E7%99%BE%E7%82%BC%E5%98%89%E7%BB%B4%E5%B0%94.png"
     },
     {
       "id": "char_1027_greyy2",
@@ -641,7 +660,8 @@
       "japanese_name": "承曦グレイ",
       "aliases": [
         "电狗"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e2/%E5%A4%B4%E5%83%8F_%E6%89%BF%E6%9B%A6%E6%A0%BC%E9%9B%B7%E4%BC%8A.png/96px-%E5%A4%B4%E5%83%8F_%E6%89%BF%E6%9B%A6%E6%A0%BC%E9%9B%B7%E4%BC%8A.png"
     },
     {
       "id": "char_1028_texas2",
@@ -676,7 +696,8 @@
       "japanese_name": "血掟テキサス",
       "aliases": [
         "异德"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b8/%E5%A4%B4%E5%83%8F_%E7%BC%84%E9%BB%98%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E7%BC%84%E9%BB%98%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF.png"
     },
     {
       "id": "char_1029_yato2",
@@ -696,7 +717,8 @@
       "aliases": [
         "Kirin X Yato",
         "麒麟X夜刀"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e5/%E5%A4%B4%E5%83%8F_%E9%BA%92%E9%BA%9FR%E5%A4%9C%E5%88%80.png/96px-%E5%A4%B4%E5%83%8F_%E9%BA%92%E9%BA%9FR%E5%A4%9C%E5%88%80.png"
     },
     {
       "id": "char_102_texas",
@@ -732,7 +754,8 @@
       "aliases": [
         "德狗",
         "得克萨斯"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/57/%E5%A4%B4%E5%83%8F_%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF.png"
     },
     {
       "id": "char_1030_noirc2",
@@ -748,7 +771,8 @@
         }
       ],
       "english_name": "Rathalos S Noir Corne",
-      "japanese_name": "レウスSノイルホーン"
+      "japanese_name": "レウスSノイルホーン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/81/%E5%A4%B4%E5%83%8F_%E7%81%AB%E9%BE%99S%E9%BB%91%E8%A7%92.png/96px-%E5%A4%B4%E5%83%8F_%E7%81%AB%E9%BE%99S%E9%BB%91%E8%A7%92.png"
     },
     {
       "id": "char_1031_slent2",
@@ -772,7 +796,8 @@
         }
       ],
       "english_name": "Silence the Paradigmatic",
-      "japanese_name": "淬羽サイレンス"
+      "japanese_name": "淬羽サイレンス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/0d/%E5%A4%B4%E5%83%8F_%E6%B7%AC%E7%BE%BD%E8%B5%AB%E9%BB%98.png/96px-%E5%A4%B4%E5%83%8F_%E6%B7%AC%E7%BE%BD%E8%B5%AB%E9%BB%98.png"
     },
     {
       "id": "char_1032_excu2",
@@ -807,7 +832,8 @@
       "japanese_name": "聖約イグゼキュター",
       "aliases": [
         "圣葬"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/7e/%E5%A4%B4%E5%83%8F_%E5%9C%A3%E7%BA%A6%E9%80%81%E8%91%AC%E4%BA%BA.png/96px-%E5%A4%B4%E5%83%8F_%E5%9C%A3%E7%BA%A6%E9%80%81%E8%91%AC%E4%BA%BA.png"
     },
     {
       "id": "char_1033_swire2",
@@ -831,7 +857,8 @@
         }
       ],
       "english_name": "Swire the Elegant Wit",
-      "japanese_name": "琳琅スワイヤー"
+      "japanese_name": "琳琅スワイヤー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/74/%E5%A4%B4%E5%83%8F_%E7%90%B3%E7%90%85%E8%AF%97%E6%80%80%E9%9B%85.png/96px-%E5%A4%B4%E5%83%8F_%E7%90%B3%E7%90%85%E8%AF%97%E6%80%80%E9%9B%85.png"
     },
     {
       "id": "char_1034_jesca2",
@@ -858,7 +885,8 @@
       "japanese_name": "滌火ジェシカ",
       "aliases": [
         "DJ"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/14/%E5%A4%B4%E5%83%8F_%E6%B6%A4%E7%81%AB%E6%9D%B0%E8%A5%BF%E5%8D%A1.png/96px-%E5%A4%B4%E5%83%8F_%E6%B6%A4%E7%81%AB%E6%9D%B0%E8%A5%BF%E5%8D%A1.png"
     },
     {
       "id": "char_1035_wisdel",
@@ -897,7 +925,8 @@
         "Ew",
         "异W",
         "EW"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/66/%E5%A4%B4%E5%83%8F_%E7%BB%B4%E4%BB%80%E6%88%B4%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E7%BB%B4%E4%BB%80%E6%88%B4%E5%B0%94.png"
     },
     {
       "id": "char_1036_fang2",
@@ -924,7 +953,8 @@
       "japanese_name": "歴陣鋭槍フェン",
       "aliases": [
         "Fang the Fire-sharpened"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/5a/%E5%A4%B4%E5%83%8F_%E5%8E%86%E9%98%B5%E9%94%90%E6%9E%AA%E8%8A%AC.png/96px-%E5%A4%B4%E5%83%8F_%E5%8E%86%E9%98%B5%E9%94%90%E6%9E%AA%E8%8A%AC.png"
     },
     {
       "id": "char_1037_amiya3",
@@ -950,7 +980,8 @@
       "aliases": [
         "奶兔",
         "阿米娅（医疗）"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ac/%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%B1%B3%E5%A8%85%28%E5%8C%BB%E7%96%97%29.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%B1%B3%E5%A8%85%28%E5%8C%BB%E7%96%97%29.png"
     },
     {
       "id": "char_1038_whitw2",
@@ -977,7 +1008,8 @@
       "japanese_name": "荒蕪ラップランド",
       "aliases": [
         "异拉"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/04/%E5%A4%B4%E5%83%8F_%E8%8D%92%E8%8A%9C%E6%8B%89%E6%99%AE%E5%85%B0%E5%BE%B7.png/96px-%E5%A4%B4%E5%83%8F_%E8%8D%92%E8%8A%9C%E6%8B%89%E6%99%AE%E5%85%B0%E5%BE%B7.png"
     },
     {
       "id": "char_1039_thorn2",
@@ -1005,7 +1037,8 @@
       "aliases": [
         "伊西多",
         "星棘"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3b/%E5%A4%B4%E5%83%8F_%E5%BC%95%E6%98%9F%E6%A3%98%E5%88%BA.png/96px-%E5%A4%B4%E5%83%8F_%E5%BC%95%E6%98%9F%E6%A3%98%E5%88%BA.png"
     },
     {
       "id": "char_103_angel",
@@ -1050,7 +1083,8 @@
         "阿能",
         "熊天使",
         "蕾缪乐"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ad/%E5%A4%B4%E5%83%8F_%E8%83%BD%E5%A4%A9%E4%BD%BF.png/96px-%E5%A4%B4%E5%83%8F_%E8%83%BD%E5%A4%A9%E4%BD%BF.png"
     },
     {
       "id": "char_1040_blaze2",
@@ -1074,7 +1108,8 @@
         }
       ],
       "english_name": "Blaze the Igniting Spark",
-      "japanese_name": "熾炎ブレイズ"
+      "japanese_name": "熾炎ブレイズ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c4/%E5%A4%B4%E5%83%8F_%E7%83%9B%E7%85%8C.png/96px-%E5%A4%B4%E5%83%8F_%E7%83%9B%E7%85%8C.png"
     },
     {
       "id": "char_1041_angel2",
@@ -1101,7 +1136,8 @@
       "japanese_name": "新約エクシア",
       "aliases": [
         "新能"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3a/%E5%A4%B4%E5%83%8F_%E6%96%B0%E7%BA%A6%E8%83%BD%E5%A4%A9%E4%BD%BF.png/96px-%E5%A4%B4%E5%83%8F_%E6%96%B0%E7%BA%A6%E8%83%BD%E5%A4%A9%E4%BD%BF.png"
     },
     {
       "id": "char_1042_phatm2",
@@ -1117,7 +1153,8 @@
         }
       ],
       "english_name": "Tragodia",
-      "japanese_name": "トラゴーディア"
+      "japanese_name": "トラゴーディア",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/0d/%E5%A4%B4%E5%83%8F_%E9%85%92%E7%A5%9E.png/96px-%E5%A4%B4%E5%83%8F_%E9%85%92%E7%A5%9E.png"
     },
     {
       "id": "char_1043_leizi2",
@@ -1144,7 +1181,8 @@
       "japanese_name": "司霆レイズ",
       "aliases": [
         "小姨"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/5c/%E5%A4%B4%E5%83%8F_%E5%8F%B8%E9%9C%86%E6%83%8A%E8%9B%B0.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%B8%E9%9C%86%E6%83%8A%E8%9B%B0.png"
     },
     {
       "id": "char_1044_hsgma2",
@@ -1163,7 +1201,8 @@
       "japanese_name": "斬業ホシグマ",
       "aliases": [
         "新熊"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e5/%E5%A4%B4%E5%83%8F_%E6%96%A9%E4%B8%9A%E6%98%9F%E7%86%8A.png/96px-%E5%A4%B4%E5%83%8F_%E6%96%A9%E4%B8%9A%E6%98%9F%E7%86%8A.png"
     },
     {
       "id": "char_1045_svash2",
@@ -1179,7 +1218,8 @@
         }
       ],
       "english_name": "SilverAsh the Reignfrost",
-      "japanese_name": "凛御シルバーアッシュ"
+      "japanese_name": "凛御シルバーアッシュ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3d/%E5%A4%B4%E5%83%8F_%E5%87%9B%E5%BE%A1%E9%93%B6%E7%81%B0.png/96px-%E5%A4%B4%E5%83%8F_%E5%87%9B%E5%BE%A1%E9%93%B6%E7%81%B0.png"
     },
     {
       "id": "char_1046_sbell2",
@@ -1203,7 +1243,8 @@
         }
       ],
       "english_name": "Pramanix the Prerita",
-      "japanese_name": "聖聆プラマニクス"
+      "japanese_name": "聖聆プラマニクス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ab/%E5%A4%B4%E5%83%8F_%E5%9C%A3%E8%81%86%E5%88%9D%E9%9B%AA.png/96px-%E5%A4%B4%E5%83%8F_%E5%9C%A3%E8%81%86%E5%88%9D%E9%9B%AA.png"
     },
     {
       "id": "char_1047_halo2",
@@ -1219,7 +1260,8 @@
         }
       ],
       "english_name": "Astgenne the Lightchaser",
-      "japanese_name": "溯光アステジーニ"
+      "japanese_name": "溯光アステジーニ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d0/%E5%A4%B4%E5%83%8F_%E6%BA%AF%E5%85%89%E6%98%9F%E6%BA%90.png/96px-%E5%A4%B4%E5%83%8F_%E6%BA%AF%E5%85%89%E6%98%9F%E6%BA%90.png"
     },
     {
       "id": "char_1048_orchd2",
@@ -1236,7 +1278,8 @@
       ],
       "aliases": [
         "Violet Mizutsune Orchid"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/20/%E5%A4%B4%E5%83%8F_%E7%84%B0%E7%8B%90%E9%BE%99%E6%A2%93%E5%85%B0.png/96px-%E5%A4%B4%E5%83%8F_%E7%84%B0%E7%8B%90%E9%BE%99%E6%A2%93%E5%85%B0.png"
     },
     {
       "id": "char_1049_catap2",
@@ -1253,7 +1296,8 @@
       ],
       "aliases": [
         "Zinogre S Catapult"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fd/%E5%A4%B4%E5%83%8F_%E9%9B%B7%E7%8B%BC%E9%BE%99S%E7%A9%BA%E7%88%86.png/96px-%E5%A4%B4%E5%83%8F_%E9%9B%B7%E7%8B%BC%E9%BE%99S%E7%A9%BA%E7%88%86.png"
     },
     {
       "id": "char_1050_chen3",
@@ -1271,7 +1315,8 @@
       "aliases": [
         "Ch'en the Dawnstreak",
         "火陈"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d0/%E5%A4%B4%E5%83%8F_%E8%B5%A4%E5%88%83%E6%98%8E%E9%9C%84%E9%99%88.png/96px-%E5%A4%B4%E5%83%8F_%E8%B5%A4%E5%88%83%E6%98%8E%E9%9C%84%E9%99%88.png"
     },
     {
       "id": "char_1051_headb2",
@@ -1288,7 +1333,8 @@
       ],
       "aliases": [
         "Zima the Raging Tide"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/81/%E5%A4%B4%E5%83%8F_%E6%80%92%E6%BD%AE%E5%87%9B%E5%86%AC.png/96px-%E5%A4%B4%E5%83%8F_%E6%80%92%E6%BD%AE%E5%87%9B%E5%86%AC.png"
     },
     {
       "id": "char_1052_kalts2",
@@ -1306,7 +1352,8 @@
       "aliases": [
         "Kal'tsit·Esperanta",
         "思衡托"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/57/%E5%A4%B4%E5%83%8F_%E5%87%AF%E5%B0%94%E5%B8%8C%C2%B7%E6%80%9D%E8%A1%A1%E6%89%98.png/96px-%E5%A4%B4%E5%83%8F_%E5%87%AF%E5%B0%94%E5%B8%8C%C2%B7%E6%80%9D%E8%A1%A1%E6%89%98.png"
     },
     {
       "id": "char_106_franka",
@@ -1333,7 +1380,8 @@
       "japanese_name": "フランカ",
       "aliases": [
         "胖狐狸"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2b/%E5%A4%B4%E5%83%8F_%E8%8A%99%E5%85%B0%E5%8D%A1.png/96px-%E5%A4%B4%E5%83%8F_%E8%8A%99%E5%85%B0%E5%8D%A1.png"
     },
     {
       "id": "char_107_liskam",
@@ -1365,7 +1413,8 @@
         }
       ],
       "english_name": "Liskarm",
-      "japanese_name": "リスカム"
+      "japanese_name": "リスカム",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f5/%E5%A4%B4%E5%83%8F_%E9%9B%B7%E8%9B%87.png/96px-%E5%A4%B4%E5%83%8F_%E9%9B%B7%E8%9B%87.png"
     },
     {
       "id": "char_108_silent",
@@ -1400,7 +1449,8 @@
       "japanese_name": "サイレンス",
       "aliases": [
         "奥利维亚・赫默"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/39/%E5%A4%B4%E5%83%8F_%E8%B5%AB%E9%BB%98.png/96px-%E5%A4%B4%E5%83%8F_%E8%B5%AB%E9%BB%98.png"
     },
     {
       "id": "char_109_fmout",
@@ -1424,7 +1474,8 @@
         }
       ],
       "english_name": "Gitano",
-      "japanese_name": "ギターノ"
+      "japanese_name": "ギターノ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/63/%E5%A4%B4%E5%83%8F_%E8%BF%9C%E5%B1%B1.png/96px-%E5%A4%B4%E5%83%8F_%E8%BF%9C%E5%B1%B1.png"
     },
     {
       "id": "char_110_deepcl",
@@ -1448,7 +1499,8 @@
         }
       ],
       "english_name": "Deepcolor",
-      "japanese_name": "ディピカ"
+      "japanese_name": "ディピカ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d1/%E5%A4%B4%E5%83%8F_%E6%B7%B1%E6%B5%B7%E8%89%B2.png/96px-%E5%A4%B4%E5%83%8F_%E6%B7%B1%E6%B5%B7%E8%89%B2.png"
     },
     {
       "id": "char_112_siege",
@@ -1485,7 +1537,8 @@
         "推王",
         "王维娜",
         "王小姐"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/ba/%E5%A4%B4%E5%83%8F_%E6%8E%A8%E8%BF%9B%E4%B9%8B%E7%8E%8B.png/96px-%E5%A4%B4%E5%83%8F_%E6%8E%A8%E8%BF%9B%E4%B9%8B%E7%8E%8B.png"
     },
     {
       "id": "char_113_cqbw",
@@ -1510,7 +1563,8 @@
       ],
       "aliases": [
         "达不溜"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d6/%E5%A4%B4%E5%83%8F_W.png/96px-%E5%A4%B4%E5%83%8F_W.png"
     },
     {
       "id": "char_115_headbr",
@@ -1545,7 +1599,8 @@
       "japanese_name": "ズィマー",
       "aliases": [
         "Зима"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cd/%E5%A4%B4%E5%83%8F_%E5%87%9B%E5%86%AC.png/96px-%E5%A4%B4%E5%83%8F_%E5%87%9B%E5%86%AC.png"
     },
     {
       "id": "char_117_myrrh",
@@ -1569,7 +1624,8 @@
         }
       ],
       "english_name": "Myrrh",
-      "japanese_name": "ミルラ"
+      "japanese_name": "ミルラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d9/%E5%A4%B4%E5%83%8F_%E6%9C%AB%E8%8D%AF.png/96px-%E5%A4%B4%E5%83%8F_%E6%9C%AB%E8%8D%AF.png"
     },
     {
       "id": "char_118_yuki",
@@ -1596,7 +1652,8 @@
       "japanese_name": "シラユキ",
       "aliases": [
         "ShiraYuki"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b4/%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%9B%AA.png/96px-%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%9B%AA.png"
     },
     {
       "id": "char_120_hibisc",
@@ -1620,7 +1677,8 @@
         }
       ],
       "english_name": "Hibiscus",
-      "japanese_name": "ハイビスカス"
+      "japanese_name": "ハイビスカス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d3/%E5%A4%B4%E5%83%8F_%E8%8A%99%E8%93%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%8A%99%E8%93%89.png"
     },
     {
       "id": "char_121_lava",
@@ -1644,7 +1702,8 @@
         }
       ],
       "english_name": "Lava",
-      "japanese_name": "ラヴァ"
+      "japanese_name": "ラヴァ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fb/%E5%A4%B4%E5%83%8F_%E7%82%8E%E7%86%94.png/96px-%E5%A4%B4%E5%83%8F_%E7%82%8E%E7%86%94.png"
     },
     {
       "id": "char_122_beagle",
@@ -1668,7 +1727,8 @@
         }
       ],
       "english_name": "Beagle",
-      "japanese_name": "ビーグル"
+      "japanese_name": "ビーグル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/32/%E5%A4%B4%E5%83%8F_%E7%B1%B3%E6%A0%BC%E9%B2%81.png/96px-%E5%A4%B4%E5%83%8F_%E7%B1%B3%E6%A0%BC%E9%B2%81.png"
     },
     {
       "id": "char_123_fang",
@@ -1692,7 +1752,8 @@
         }
       ],
       "english_name": "Fang",
-      "japanese_name": "フェン"
+      "japanese_name": "フェン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/41/%E5%A4%B4%E5%83%8F_%E8%8A%AC.png/96px-%E5%A4%B4%E5%83%8F_%E8%8A%AC.png"
     },
     {
       "id": "char_124_kroos",
@@ -1727,7 +1788,8 @@
       "japanese_name": "クルース",
       "aliases": [
         "克洛斯"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b9/%E5%A4%B4%E5%83%8F_%E5%85%8B%E6%B4%9B%E4%B8%9D.png/96px-%E5%A4%B4%E5%83%8F_%E5%85%8B%E6%B4%9B%E4%B8%9D.png"
     },
     {
       "id": "char_126_shotst",
@@ -1759,7 +1821,8 @@
         }
       ],
       "english_name": "Meteor",
-      "japanese_name": "メテオ"
+      "japanese_name": "メテオ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/14/%E5%A4%B4%E5%83%8F_%E6%B5%81%E6%98%9F.png/96px-%E5%A4%B4%E5%83%8F_%E6%B5%81%E6%98%9F.png"
     },
     {
       "id": "char_127_estell",
@@ -1788,7 +1851,8 @@
         "艾斯黛尔",
         "艾斯戴尔",
         "艾丝戴尔"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/57/%E5%A4%B4%E5%83%8F_%E8%89%BE%E4%B8%9D%E9%BB%9B%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E8%89%BE%E4%B8%9D%E9%BB%9B%E5%B0%94.png"
     },
     {
       "id": "char_128_plosis",
@@ -1824,7 +1888,8 @@
       "aliases": [
         "白面",
         "白咕咕"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/83/%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%9D%A2%E9%B8%AE.png/96px-%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%9D%A2%E9%B8%AE.png"
     },
     {
       "id": "char_129_bluep",
@@ -1859,7 +1924,8 @@
       "japanese_name": "アズリウス",
       "aliases": [
         "蓝莓"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/63/%E5%A4%B4%E5%83%8F_%E8%93%9D%E6%AF%92.png/96px-%E5%A4%B4%E5%83%8F_%E8%93%9D%E6%AF%92.png"
     },
     {
       "id": "char_130_doberm",
@@ -1883,7 +1949,8 @@
         }
       ],
       "english_name": "Dobermann",
-      "japanese_name": "ドーベルマン"
+      "japanese_name": "ドーベルマン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a1/%E5%A4%B4%E5%83%8F_%E6%9D%9C%E5%AE%BE.png/96px-%E5%A4%B4%E5%83%8F_%E6%9D%9C%E5%AE%BE.png"
     },
     {
       "id": "char_131_flameb",
@@ -1915,7 +1982,8 @@
         }
       ],
       "english_name": "Flamebringer",
-      "japanese_name": "エンカク"
+      "japanese_name": "エンカク",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d6/%E5%A4%B4%E5%83%8F_%E7%82%8E%E5%AE%A2.png/96px-%E5%A4%B4%E5%83%8F_%E7%82%8E%E5%AE%A2.png"
     },
     {
       "id": "char_133_mm",
@@ -1939,7 +2007,8 @@
         }
       ],
       "english_name": "May",
-      "japanese_name": "メイ"
+      "japanese_name": "メイ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ac/%E5%A4%B4%E5%83%8F_%E6%A2%85.png/96px-%E5%A4%B4%E5%83%8F_%E6%A2%85.png"
     },
     {
       "id": "char_134_ifrit",
@@ -1983,7 +2052,8 @@
       "aliases": [
         "小火龙",
         "伊芙芙"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ed/%E5%A4%B4%E5%83%8F_%E4%BC%8A%E8%8A%99%E5%88%A9%E7%89%B9.png/96px-%E5%A4%B4%E5%83%8F_%E4%BC%8A%E8%8A%99%E5%88%A9%E7%89%B9.png"
     },
     {
       "id": "char_135_halo",
@@ -2007,7 +2077,8 @@
         }
       ],
       "english_name": "Astgenne",
-      "japanese_name": "アステジーニ"
+      "japanese_name": "アステジーニ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/48/%E5%A4%B4%E5%83%8F_%E6%98%9F%E6%BA%90.png/96px-%E5%A4%B4%E5%83%8F_%E6%98%9F%E6%BA%90.png"
     },
     {
       "id": "char_136_hsguma",
@@ -2043,7 +2114,8 @@
       "aliases": [
         "星能",
         "鬼姐"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/07/%E5%A4%B4%E5%83%8F_%E6%98%9F%E7%86%8A.png/96px-%E5%A4%B4%E5%83%8F_%E6%98%9F%E7%86%8A.png"
     },
     {
       "id": "char_137_brownb",
@@ -2067,7 +2139,8 @@
         }
       ],
       "english_name": "Beehunter",
-      "japanese_name": "ビーハンター"
+      "japanese_name": "ビーハンター",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c2/%E5%A4%B4%E5%83%8F_%E7%8C%8E%E8%9C%82.png/96px-%E5%A4%B4%E5%83%8F_%E7%8C%8E%E8%9C%82.png"
     },
     {
       "id": "char_140_whitew",
@@ -2094,7 +2167,8 @@
       "japanese_name": "ラップランド",
       "aliases": [
         "拉狗"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/bf/%E5%A4%B4%E5%83%8F_%E6%8B%89%E6%99%AE%E5%85%B0%E5%BE%B7.png/96px-%E5%A4%B4%E5%83%8F_%E6%8B%89%E6%99%AE%E5%85%B0%E5%BE%B7.png"
     },
     {
       "id": "char_141_nights",
@@ -2118,7 +2192,8 @@
         }
       ],
       "english_name": "Haze",
-      "japanese_name": "ヘイズ"
+      "japanese_name": "ヘイズ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/55/%E5%A4%B4%E5%83%8F_%E5%A4%9C%E7%83%9F.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%9C%E7%83%9F.png"
     },
     {
       "id": "char_143_ghost",
@@ -2145,7 +2220,8 @@
       "japanese_name": "スペクター",
       "aliases": [
         "Yls"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/28/%E5%A4%B4%E5%83%8F_%E5%B9%BD%E7%81%B5%E9%B2%A8.png/96px-%E5%A4%B4%E5%83%8F_%E5%B9%BD%E7%81%B5%E9%B2%A8.png"
     },
     {
       "id": "char_144_red",
@@ -2169,7 +2245,8 @@
         }
       ],
       "english_name": "Projekt Red",
-      "japanese_name": "レッド"
+      "japanese_name": "レッド",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ac/%E5%A4%B4%E5%83%8F_%E7%BA%A2.png/96px-%E5%A4%B4%E5%83%8F_%E7%BA%A2.png"
     },
     {
       "id": "char_145_prove",
@@ -2205,7 +2282,8 @@
       "aliases": [
         "大尾巴狼",
         "普狗"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/72/%E5%A4%B4%E5%83%8F_%E6%99%AE%E7%BD%97%E6%97%BA%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E6%99%AE%E7%BD%97%E6%97%BA%E6%96%AF.png"
     },
     {
       "id": "char_147_shining",
@@ -2229,7 +2307,8 @@
         }
       ],
       "english_name": "Shining",
-      "japanese_name": "シャイニング"
+      "japanese_name": "シャイニング",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/54/%E5%A4%B4%E5%83%8F_%E9%97%AA%E7%81%B5.png/96px-%E5%A4%B4%E5%83%8F_%E9%97%AA%E7%81%B5.png"
     },
     {
       "id": "char_148_nearl",
@@ -2256,7 +2335,8 @@
       "japanese_name": "ニアール",
       "aliases": [
         "玛嘉烈・临光"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1a/%E5%A4%B4%E5%83%8F_%E4%B8%B4%E5%85%89.png/96px-%E5%A4%B4%E5%83%8F_%E4%B8%B4%E5%85%89.png"
     },
     {
       "id": "char_149_scave",
@@ -2280,7 +2360,8 @@
         }
       ],
       "english_name": "Scavenger",
-      "japanese_name": "スカベンジャー"
+      "japanese_name": "スカベンジャー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/63/%E5%A4%B4%E5%83%8F_%E6%B8%85%E9%81%93%E5%A4%AB.png/96px-%E5%A4%B4%E5%83%8F_%E6%B8%85%E9%81%93%E5%A4%AB.png"
     },
     {
       "id": "char_1502_crosly",
@@ -2307,7 +2388,8 @@
       "japanese_name": "クラウンスレイヤー",
       "aliases": [
         "柳德米拉"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/12/%E5%A4%B4%E5%83%8F_%E5%BC%91%E5%90%9B%E8%80%85.png/96px-%E5%A4%B4%E5%83%8F_%E5%BC%91%E5%90%9B%E8%80%85.png"
     },
     {
       "id": "char_150_snakek",
@@ -2342,7 +2424,8 @@
       "japanese_name": "クオーラ",
       "aliases": [
         "龟龟"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/02/%E5%A4%B4%E5%83%8F_%E8%9B%87%E5%B1%A0%E7%AE%B1.png/96px-%E5%A4%B4%E5%83%8F_%E8%9B%87%E5%B1%A0%E7%AE%B1.png"
     },
     {
       "id": "char_151_myrtle",
@@ -2385,7 +2468,8 @@
       "japanese_name": "テンニンカ",
       "aliases": [
         "桃子"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/9d/%E5%A4%B4%E5%83%8F_%E6%A1%83%E9%87%91%E5%A8%98.png/96px-%E5%A4%B4%E5%83%8F_%E6%A1%83%E9%87%91%E5%A8%98.png"
     },
     {
       "id": "char_154_morgan",
@@ -2409,7 +2493,8 @@
         }
       ],
       "english_name": "Morgan",
-      "japanese_name": "モーガン"
+      "japanese_name": "モーガン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fe/%E5%A4%B4%E5%83%8F_%E6%91%A9%E6%A0%B9.png/96px-%E5%A4%B4%E5%83%8F_%E6%91%A9%E6%A0%B9.png"
     },
     {
       "id": "char_155_tiger",
@@ -2433,7 +2518,8 @@
         }
       ],
       "english_name": "Indra",
-      "japanese_name": "インドラ"
+      "japanese_name": "インドラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fe/%E5%A4%B4%E5%83%8F_%E5%9B%A0%E9%99%80%E7%BD%97.png/96px-%E5%A4%B4%E5%83%8F_%E5%9B%A0%E9%99%80%E7%BD%97.png"
     },
     {
       "id": "char_157_dagda",
@@ -2449,7 +2535,8 @@
         }
       ],
       "english_name": "Dagda",
-      "japanese_name": "ダグザ"
+      "japanese_name": "ダグザ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/dd/%E5%A4%B4%E5%83%8F_%E8%BE%BE%E6%A0%BC%E8%BE%BE.png/96px-%E5%A4%B4%E5%83%8F_%E8%BE%BE%E6%A0%BC%E8%BE%BE.png"
     },
     {
       "id": "char_158_milu",
@@ -2481,7 +2568,8 @@
         }
       ],
       "english_name": "Firewatch",
-      "japanese_name": "ファイヤーウォッチ"
+      "japanese_name": "ファイヤーウォッチ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/27/%E5%A4%B4%E5%83%8F_%E5%AE%88%E6%9E%97%E4%BA%BA.png/96px-%E5%A4%B4%E5%83%8F_%E5%AE%88%E6%9E%97%E4%BA%BA.png"
     },
     {
       "id": "char_159_peacok",
@@ -2505,7 +2593,8 @@
         }
       ],
       "english_name": "Conviction",
-      "japanese_name": "コンビクション"
+      "japanese_name": "コンビクション",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f2/%E5%A4%B4%E5%83%8F_%E6%96%AD%E7%BD%AA%E8%80%85.png/96px-%E5%A4%B4%E5%83%8F_%E6%96%AD%E7%BD%AA%E8%80%85.png"
     },
     {
       "id": "char_163_hpsts",
@@ -2529,7 +2618,8 @@
         }
       ],
       "english_name": "Vulcan",
-      "japanese_name": "ヴァルカン"
+      "japanese_name": "ヴァルカン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f1/%E5%A4%B4%E5%83%8F_%E7%81%AB%E7%A5%9E.png/96px-%E5%A4%B4%E5%83%8F_%E7%81%AB%E7%A5%9E.png"
     },
     {
       "id": "char_164_nightm",
@@ -2566,7 +2656,8 @@
         "葛罗莉亚",
         "瑞贝尔・帕斯贝莱蒂・葛罗莉亚",
         "Gloria"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a7/%E5%A4%B4%E5%83%8F_%E5%A4%9C%E9%AD%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%9C%E9%AD%94.png"
     },
     {
       "id": "char_166_skfire",
@@ -2593,7 +2684,8 @@
       "japanese_name": "スカイフレア",
       "aliases": [
         "火子姐"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fa/%E5%A4%B4%E5%83%8F_%E5%A4%A9%E7%81%AB.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%A9%E7%81%AB.png"
     },
     {
       "id": "char_171_bldsk",
@@ -2631,7 +2723,8 @@
         "Fafa0",
         "华法林",
         "FF0"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/30/%E5%A4%B4%E5%83%8F_%E5%8D%8E%E6%B3%95%E7%90%B3.png/96px-%E5%A4%B4%E5%83%8F_%E5%8D%8E%E6%B3%95%E7%90%B3.png"
     },
     {
       "id": "char_172_svrash",
@@ -2675,7 +2768,8 @@
       "aliases": [
         "银老板",
         "恩希欧迪斯・希瓦艾什"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/27/%E5%A4%B4%E5%83%8F_%E9%93%B6%E7%81%B0.png/96px-%E5%A4%B4%E5%83%8F_%E9%93%B6%E7%81%B0.png"
     },
     {
       "id": "char_173_slchan",
@@ -2710,7 +2804,8 @@
       "japanese_name": "クリフハート",
       "aliases": [
         "恩希亚"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/7d/%E5%A4%B4%E5%83%8F_%E5%B4%96%E5%BF%83.png/96px-%E5%A4%B4%E5%83%8F_%E5%B4%96%E5%BF%83.png"
     },
     {
       "id": "char_174_slbell",
@@ -2737,7 +2832,8 @@
       "japanese_name": "プラマニクス",
       "aliases": [
         "恩雅"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d7/%E5%A4%B4%E5%83%8F_%E5%88%9D%E9%9B%AA.png/96px-%E5%A4%B4%E5%83%8F_%E5%88%9D%E9%9B%AA.png"
     },
     {
       "id": "char_179_cgbird",
@@ -2772,7 +2868,8 @@
       "japanese_name": "ナイチンゲール",
       "aliases": [
         "丽兹"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/64/%E5%A4%B4%E5%83%8F_%E5%A4%9C%E8%8E%BA.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%9C%E8%8E%BA.png"
     },
     {
       "id": "char_180_amgoat",
@@ -2809,7 +2906,8 @@
         "小羊",
         "小绵羊",
         "Eyja"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cc/%E5%A4%B4%E5%83%8F_%E8%89%BE%E9%9B%85%E6%B3%95%E6%8B%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%89%BE%E9%9B%85%E6%B3%95%E6%8B%89.png"
     },
     {
       "id": "char_181_flower",
@@ -2844,7 +2942,8 @@
       "japanese_name": "パフューマー",
       "aliases": [
         "莱娜"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/6a/%E5%A4%B4%E5%83%8F_%E8%B0%83%E9%A6%99%E5%B8%88.png/96px-%E5%A4%B4%E5%83%8F_%E8%B0%83%E9%A6%99%E5%B8%88.png"
     },
     {
       "id": "char_183_skgoat",
@@ -2868,7 +2967,8 @@
         }
       ],
       "english_name": "Earthspirit",
-      "japanese_name": "アーススピリット"
+      "japanese_name": "アーススピリット",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/57/%E5%A4%B4%E5%83%8F_%E5%9C%B0%E7%81%B5.png/96px-%E5%A4%B4%E5%83%8F_%E5%9C%B0%E7%81%B5.png"
     },
     {
       "id": "char_185_frncat",
@@ -2900,7 +3000,8 @@
         }
       ],
       "english_name": "Mousse",
-      "japanese_name": "ムース"
+      "japanese_name": "ムース",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fc/%E5%A4%B4%E5%83%8F_%E6%85%95%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E6%85%95%E6%96%AF.png"
     },
     {
       "id": "char_187_ccheal",
@@ -2924,7 +3025,8 @@
         }
       ],
       "english_name": "Gavial",
-      "japanese_name": "ガヴィル"
+      "japanese_name": "ガヴィル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cc/%E5%A4%B4%E5%83%8F_%E5%98%89%E7%BB%B4%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%98%89%E7%BB%B4%E5%B0%94.png"
     },
     {
       "id": "char_188_helage",
@@ -2952,7 +3054,8 @@
       "aliases": [
         "老爷子",
         "大公"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cd/%E5%A4%B4%E5%83%8F_%E8%B5%AB%E6%8B%89%E6%A0%BC.png/96px-%E5%A4%B4%E5%83%8F_%E8%B5%AB%E6%8B%89%E6%A0%BC.png"
     },
     {
       "id": "char_190_clour",
@@ -2976,7 +3079,8 @@
         }
       ],
       "english_name": "Vermeil",
-      "japanese_name": "ヴァーミル"
+      "japanese_name": "ヴァーミル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/af/%E5%A4%B4%E5%83%8F_%E7%BA%A2%E4%BA%91.png/96px-%E5%A4%B4%E5%83%8F_%E7%BA%A2%E4%BA%91.png"
     },
     {
       "id": "char_192_falco",
@@ -3000,7 +3104,8 @@
         }
       ],
       "english_name": "Plume",
-      "japanese_name": "プリュム"
+      "japanese_name": "プリュム",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1f/%E5%A4%B4%E5%83%8F_%E7%BF%8E%E7%BE%BD.png/96px-%E5%A4%B4%E5%83%8F_%E7%BF%8E%E7%BE%BD.png"
     },
     {
       "id": "char_193_frostl",
@@ -3024,7 +3129,8 @@
         }
       ],
       "english_name": "Frostleaf",
-      "japanese_name": "フロストリーフ"
+      "japanese_name": "フロストリーフ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/29/%E5%A4%B4%E5%83%8F_%E9%9C%9C%E5%8F%B6.png/96px-%E5%A4%B4%E5%83%8F_%E9%9C%9C%E5%8F%B6.png"
     },
     {
       "id": "char_194_leto",
@@ -3043,7 +3149,8 @@
       "japanese_name": "リェータ",
       "aliases": [
         "Лето"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/65/%E5%A4%B4%E5%83%8F_%E7%83%88%E5%A4%8F.png/96px-%E5%A4%B4%E5%83%8F_%E7%83%88%E5%A4%8F.png"
     },
     {
       "id": "char_195_glassb",
@@ -3070,7 +3177,8 @@
       "japanese_name": "イースチナ",
       "aliases": [
         "Истина"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e6/%E5%A4%B4%E5%83%8F_%E7%9C%9F%E7%90%86.png/96px-%E5%A4%B4%E5%83%8F_%E7%9C%9F%E7%90%86.png"
     },
     {
       "id": "char_196_sunbr",
@@ -3099,7 +3207,8 @@
         "ГУМ",
         "Гум",
         "谷米"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/07/%E5%A4%B4%E5%83%8F_%E5%8F%A4%E7%B1%B3.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%A4%E7%B1%B3.png"
     },
     {
       "id": "char_197_poca",
@@ -3135,7 +3244,8 @@
       "aliases": [
         "Роса",
         "Poca"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/63/%E5%A4%B4%E5%83%8F_%E6%97%A9%E9%9C%B2.png/96px-%E5%A4%B4%E5%83%8F_%E6%97%A9%E9%9C%B2.png"
     },
     {
       "id": "char_198_blackd",
@@ -3170,7 +3280,8 @@
       "japanese_name": "クーリエ",
       "aliases": [
         "魏斯"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/27/%E5%A4%B4%E5%83%8F_%E8%AE%AF%E4%BD%BF.png/96px-%E5%A4%B4%E5%83%8F_%E8%AE%AF%E4%BD%BF.png"
     },
     {
       "id": "char_199_yak",
@@ -3197,7 +3308,8 @@
       "japanese_name": "マッターホルン",
       "aliases": [
         "马特洪"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e4/%E5%A4%B4%E5%83%8F_%E8%A7%92%E5%B3%B0.png/96px-%E5%A4%B4%E5%83%8F_%E8%A7%92%E5%B3%B0.png"
     },
     {
       "id": "char_2012_typhon",
@@ -3229,7 +3341,8 @@
         }
       ],
       "english_name": "Typhon",
-      "japanese_name": "ティフォン"
+      "japanese_name": "ティフォン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/70/%E5%A4%B4%E5%83%8F_%E6%8F%90%E4%B8%B0.png/96px-%E5%A4%B4%E5%83%8F_%E6%8F%90%E4%B8%B0.png"
     },
     {
       "id": "char_2013_cerber",
@@ -3268,7 +3381,8 @@
         "氪二百",
         "刻俄伯",
         "刻狗"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4a/%E5%A4%B4%E5%83%8F_%E5%88%BB%E4%BF%84%E6%9F%8F.png/96px-%E5%A4%B4%E5%83%8F_%E5%88%BB%E4%BF%84%E6%9F%8F.png"
     },
     {
       "id": "char_2014_nian",
@@ -3300,7 +3414,8 @@
         }
       ],
       "english_name": "Nian",
-      "japanese_name": "ニェン"
+      "japanese_name": "ニェン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/9c/%E5%A4%B4%E5%83%8F_%E5%B9%B4.png/96px-%E5%A4%B4%E5%83%8F_%E5%B9%B4.png"
     },
     {
       "id": "char_2015_dusk",
@@ -3332,7 +3447,8 @@
         }
       ],
       "english_name": "Dusk",
-      "japanese_name": "シー"
+      "japanese_name": "シー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/6b/%E5%A4%B4%E5%83%8F_%E5%A4%95.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%95.png"
     },
     {
       "id": "char_201_moeshd",
@@ -3367,7 +3483,8 @@
       "japanese_name": "クロワッサン",
       "aliases": [
         "面包人"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ab/%E5%A4%B4%E5%83%8F_%E5%8F%AF%E9%A2%82.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%AF%E9%A2%82.png"
     },
     {
       "id": "char_2023_ling",
@@ -3407,7 +3524,8 @@
         }
       ],
       "english_name": "Ling",
-      "japanese_name": "リィン"
+      "japanese_name": "リィン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2c/%E5%A4%B4%E5%83%8F_%E4%BB%A4.png/96px-%E5%A4%B4%E5%83%8F_%E4%BB%A4.png"
     },
     {
       "id": "char_2024_chyue",
@@ -3443,7 +3561,8 @@
       "aliases": [
         "朔",
         "大哥"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/09/%E5%A4%B4%E5%83%8F_%E9%87%8D%E5%B2%B3.png/96px-%E5%A4%B4%E5%83%8F_%E9%87%8D%E5%B2%B3.png"
     },
     {
       "id": "char_2025_shu",
@@ -3467,7 +3586,8 @@
         }
       ],
       "english_name": "Shu",
-      "japanese_name": "シュウ"
+      "japanese_name": "シュウ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f2/%E5%A4%B4%E5%83%8F_%E9%BB%8D.png/96px-%E5%A4%B4%E5%83%8F_%E9%BB%8D.png"
     },
     {
       "id": "char_2026_yu",
@@ -3491,7 +3611,8 @@
         }
       ],
       "english_name": "Yu",
-      "japanese_name": "ユー"
+      "japanese_name": "ユー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/66/%E5%A4%B4%E5%83%8F_%E4%BD%99.png/96px-%E5%A4%B4%E5%83%8F_%E4%BD%99.png"
     },
     {
       "id": "char_2027_wang",
@@ -3508,7 +3629,8 @@
       ],
       "aliases": [
         "Wang"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/38/%E5%A4%B4%E5%83%8F_%E6%9C%9B.png/96px-%E5%A4%B4%E5%83%8F_%E6%9C%9B.png"
     },
     {
       "id": "char_202_demkni",
@@ -3555,7 +3677,8 @@
         "赛雷娅",
         "塞爹",
         "塞蕾娅"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ee/%E5%A4%B4%E5%83%8F_%E5%A1%9E%E9%9B%B7%E5%A8%85.png/96px-%E5%A4%B4%E5%83%8F_%E5%A1%9E%E9%9B%B7%E5%A8%85.png"
     },
     {
       "id": "char_204_platnm",
@@ -3582,7 +3705,8 @@
       "japanese_name": "プラチナ",
       "aliases": [
         "欣特莱雅"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3b/%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%87%91.png/96px-%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%87%91.png"
     },
     {
       "id": "char_206_gnosis",
@@ -3606,7 +3730,8 @@
         }
       ],
       "english_name": "Gnosis",
-      "japanese_name": "ノーシス"
+      "japanese_name": "ノーシス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/9f/%E5%A4%B4%E5%83%8F_%E7%81%B5%E7%9F%A5.png/96px-%E5%A4%B4%E5%83%8F_%E7%81%B5%E7%9F%A5.png"
     },
     {
       "id": "char_208_melan",
@@ -3630,7 +3755,8 @@
         }
       ],
       "english_name": "Melantha",
-      "japanese_name": "メランサ"
+      "japanese_name": "メランサ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4b/%E5%A4%B4%E5%83%8F_%E7%8E%AB%E5%85%B0%E8%8E%8E.png/96px-%E5%A4%B4%E5%83%8F_%E7%8E%AB%E5%85%B0%E8%8E%8E.png"
     },
     {
       "id": "char_209_ardign",
@@ -3665,7 +3791,8 @@
       "japanese_name": "カーディ",
       "aliases": [
         "梅莉"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/87/%E5%A4%B4%E5%83%8F_%E5%8D%A1%E7%BC%87.png/96px-%E5%A4%B4%E5%83%8F_%E5%8D%A1%E7%BC%87.png"
     },
     {
       "id": "char_210_stward",
@@ -3689,7 +3816,8 @@
         }
       ],
       "english_name": "Steward",
-      "japanese_name": "スチュワード"
+      "japanese_name": "スチュワード",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b3/%E5%A4%B4%E5%83%8F_%E5%8F%B2%E9%83%BD%E5%8D%8E%E5%BE%B7.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%B2%E9%83%BD%E5%8D%8E%E5%BE%B7.png"
     },
     {
       "id": "char_211_adnach",
@@ -3713,7 +3841,8 @@
         }
       ],
       "english_name": "Adnachiel",
-      "japanese_name": "アドナキエル"
+      "japanese_name": "アドナキエル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f6/%E5%A4%B4%E5%83%8F_%E5%AE%89%E5%BE%B7%E5%88%87%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%AE%89%E5%BE%B7%E5%88%87%E5%B0%94.png"
     },
     {
       "id": "char_212_ansel",
@@ -3748,7 +3877,8 @@
       "japanese_name": "アンセル",
       "aliases": [
         "安塞尔"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/94/%E5%A4%B4%E5%83%8F_%E5%AE%89%E8%B5%9B%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%AE%89%E8%B5%9B%E5%B0%94.png"
     },
     {
       "id": "char_213_mostma",
@@ -3786,7 +3916,8 @@
         "蓝天使",
         "小莫",
         "莫斯提玛"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/0b/%E5%A4%B4%E5%83%8F_%E8%8E%AB%E6%96%AF%E6%8F%90%E9%A9%AC.png/96px-%E5%A4%B4%E5%83%8F_%E8%8E%AB%E6%96%AF%E6%8F%90%E9%A9%AC.png"
     },
     {
       "id": "char_214_kafka",
@@ -3810,7 +3941,8 @@
         }
       ],
       "english_name": "Kafka",
-      "japanese_name": "カフカ"
+      "japanese_name": "カフカ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8d/%E5%A4%B4%E5%83%8F_%E5%8D%A1%E5%A4%AB%E5%8D%A1.png/96px-%E5%A4%B4%E5%83%8F_%E5%8D%A1%E5%A4%AB%E5%8D%A1.png"
     },
     {
       "id": "char_215_mantic",
@@ -3842,7 +3974,8 @@
         }
       ],
       "english_name": "Manticore",
-      "japanese_name": "マンティコア"
+      "japanese_name": "マンティコア",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c5/%E5%A4%B4%E5%83%8F_%E7%8B%AE%E8%9D%8E.png/96px-%E5%A4%B4%E5%83%8F_%E7%8B%AE%E8%9D%8E.png"
     },
     {
       "id": "char_218_cuttle",
@@ -3866,7 +3999,8 @@
         }
       ],
       "english_name": "Andreana",
-      "japanese_name": "アンドレアナ"
+      "japanese_name": "アンドレアナ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/36/%E5%A4%B4%E5%83%8F_%E5%AE%89%E5%93%B2%E6%8B%89.png/96px-%E5%A4%B4%E5%83%8F_%E5%AE%89%E5%93%B2%E6%8B%89.png"
     },
     {
       "id": "char_219_meteo",
@@ -3898,7 +4032,8 @@
         }
       ],
       "english_name": "Meteorite",
-      "japanese_name": "メテオリーテ"
+      "japanese_name": "メテオリーテ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ea/%E5%A4%B4%E5%83%8F_%E9%99%A8%E6%98%9F.png/96px-%E5%A4%B4%E5%83%8F_%E9%99%A8%E6%98%9F.png"
     },
     {
       "id": "char_220_grani",
@@ -3925,7 +4060,8 @@
       "japanese_name": "グラニ",
       "aliases": [
         "小马哥"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/29/%E5%A4%B4%E5%83%8F_%E6%A0%BC%E6%8B%89%E5%B0%BC.png/96px-%E5%A4%B4%E5%83%8F_%E6%A0%BC%E6%8B%89%E5%B0%BC.png"
     },
     {
       "id": "char_222_bpipe",
@@ -3965,7 +4101,8 @@
         }
       ],
       "english_name": "Bagpipe",
-      "japanese_name": "バグパイプ"
+      "japanese_name": "バグパイプ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/de/%E5%A4%B4%E5%83%8F_%E9%A3%8E%E7%AC%9B.png/96px-%E5%A4%B4%E5%83%8F_%E9%A3%8E%E7%AC%9B.png"
     },
     {
       "id": "char_225_haak",
@@ -4000,7 +4137,8 @@
       "japanese_name": "ア",
       "aliases": [
         "啊"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/31/%E5%A4%B4%E5%83%8F_%E9%98%BF.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF.png"
     },
     {
       "id": "char_226_hmau",
@@ -4028,7 +4166,8 @@
       "aliases": [
         "口牛",
         "哞"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/41/%E5%A4%B4%E5%83%8F_%E5%90%BD.png/96px-%E5%A4%B4%E5%83%8F_%E5%90%BD.png"
     },
     {
       "id": "char_230_savage",
@@ -4068,7 +4207,8 @@
         }
       ],
       "english_name": "Savage",
-      "japanese_name": "サベージ"
+      "japanese_name": "サベージ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/36/%E5%A4%B4%E5%83%8F_%E6%9A%B4%E8%A1%8C.png/96px-%E5%A4%B4%E5%83%8F_%E6%9A%B4%E8%A1%8C.png"
     },
     {
       "id": "char_235_jesica",
@@ -4108,7 +4248,8 @@
         }
       ],
       "english_name": "Jessica",
-      "japanese_name": "ジェシカ"
+      "japanese_name": "ジェシカ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/63/%E5%A4%B4%E5%83%8F_%E6%9D%B0%E8%A5%BF%E5%8D%A1.png/96px-%E5%A4%B4%E5%83%8F_%E6%9D%B0%E8%A5%BF%E5%8D%A1.png"
     },
     {
       "id": "char_236_rope",
@@ -4143,7 +4284,8 @@
       "japanese_name": "ロープ",
       "aliases": [
         "暗锁"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/dd/%E5%A4%B4%E5%83%8F_%E6%9A%97%E7%B4%A2.png/96px-%E5%A4%B4%E5%83%8F_%E6%9A%97%E7%B4%A2.png"
     },
     {
       "id": "char_237_gravel",
@@ -4170,7 +4312,8 @@
       "japanese_name": "グラベル",
       "aliases": [
         "塞诺蜜"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/ce/%E5%A4%B4%E5%83%8F_%E7%A0%BE.png/96px-%E5%A4%B4%E5%83%8F_%E7%A0%BE.png"
     },
     {
       "id": "char_240_wyvern",
@@ -4194,7 +4337,8 @@
         }
       ],
       "english_name": "Vanilla",
-      "japanese_name": "バニラ"
+      "japanese_name": "バニラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c8/%E5%A4%B4%E5%83%8F_%E9%A6%99%E8%8D%89.png/96px-%E5%A4%B4%E5%83%8F_%E9%A6%99%E8%8D%89.png"
     },
     {
       "id": "char_241_panda",
@@ -4229,7 +4373,8 @@
       "japanese_name": "エフイーター",
       "aliases": [
         "熊猫"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/dd/%E5%A4%B4%E5%83%8F_%E9%A3%9F%E9%93%81%E5%85%BD.png/96px-%E5%A4%B4%E5%83%8F_%E9%A3%9F%E9%93%81%E5%85%BD.png"
     },
     {
       "id": "char_242_otter",
@@ -4253,7 +4398,8 @@
         }
       ],
       "english_name": "Mayer",
-      "japanese_name": "メイヤー"
+      "japanese_name": "メイヤー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/07/%E5%A4%B4%E5%83%8F_%E6%A2%85%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E6%A2%85%E5%B0%94.png"
     },
     {
       "id": "char_243_waaifu",
@@ -4280,7 +4426,8 @@
       "japanese_name": "ワイフー",
       "aliases": [
         "Waifu"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ed/%E5%A4%B4%E5%83%8F_%E6%A7%90%E7%90%A5.png/96px-%E5%A4%B4%E5%83%8F_%E6%A7%90%E7%90%A5.png"
     },
     {
       "id": "char_245_cello",
@@ -4309,7 +4456,8 @@
         "阿尔图罗",
         "2226",
         "图图"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/05/%E5%A4%B4%E5%83%8F_%E5%A1%91%E5%BF%83.png/96px-%E5%A4%B4%E5%83%8F_%E5%A1%91%E5%BF%83.png"
     },
     {
       "id": "char_248_mgllan",
@@ -4337,7 +4485,8 @@
       "aliases": [
         "小企鹅",
         "麦麦"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4d/%E5%A4%B4%E5%83%8F_%E9%BA%A6%E5%93%B2%E4%BC%A6.png/96px-%E5%A4%B4%E5%83%8F_%E9%BA%A6%E5%93%B2%E4%BC%A6.png"
     },
     {
       "id": "char_249_mlyss",
@@ -4373,7 +4522,8 @@
       "aliases": [
         "缪缪",
         "缪尔赛斯"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3a/%E5%A4%B4%E5%83%8F_%E7%BC%AA%E5%B0%94%E8%B5%9B%E6%80%9D.png/96px-%E5%A4%B4%E5%83%8F_%E7%BC%AA%E5%B0%94%E8%B5%9B%E6%80%9D.png"
     },
     {
       "id": "char_250_phatom",
@@ -4408,7 +4558,8 @@
       "japanese_name": "ファントム",
       "aliases": [
         "奎因"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/83/%E5%A4%B4%E5%83%8F_%E5%82%80%E5%BD%B1.png/96px-%E5%A4%B4%E5%83%8F_%E5%82%80%E5%BD%B1.png"
     },
     {
       "id": "char_252_bibeak",
@@ -4432,7 +4583,8 @@
         }
       ],
       "english_name": "Bibeak",
-      "japanese_name": "バイビーク"
+      "japanese_name": "バイビーク",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2f/%E5%A4%B4%E5%83%8F_%E6%9F%8F%E5%96%99.png/96px-%E5%A4%B4%E5%83%8F_%E6%9F%8F%E5%96%99.png"
     },
     {
       "id": "char_253_greyy",
@@ -4464,7 +4616,8 @@
         }
       ],
       "english_name": "Greyy",
-      "japanese_name": "グレイ"
+      "japanese_name": "グレイ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fe/%E5%A4%B4%E5%83%8F_%E6%A0%BC%E9%9B%B7%E4%BC%8A.png/96px-%E5%A4%B4%E5%83%8F_%E6%A0%BC%E9%9B%B7%E4%BC%8A.png"
     },
     {
       "id": "char_254_vodfox",
@@ -4496,7 +4649,8 @@
         }
       ],
       "english_name": "Shamare",
-      "japanese_name": "シャマレ"
+      "japanese_name": "シャマレ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/36/%E5%A4%B4%E5%83%8F_%E5%B7%AB%E6%81%8B.png/96px-%E5%A4%B4%E5%83%8F_%E5%B7%AB%E6%81%8B.png"
     },
     {
       "id": "char_258_podego",
@@ -4524,7 +4678,8 @@
       "aliases": [
         "波司登",
         "波可登"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/43/%E5%A4%B4%E5%83%8F_%E6%B3%A2%E7%99%BB%E5%8F%AF.png/96px-%E5%A4%B4%E5%83%8F_%E6%B3%A2%E7%99%BB%E5%8F%AF.png"
     },
     {
       "id": "char_260_durnar",
@@ -4548,7 +4703,8 @@
         }
       ],
       "english_name": "Dur-nar",
-      "japanese_name": "ジュナー"
+      "japanese_name": "ジュナー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ab/%E5%A4%B4%E5%83%8F_%E5%9D%9A%E9%9B%B7.png/96px-%E5%A4%B4%E5%83%8F_%E5%9D%9A%E9%9B%B7.png"
     },
     {
       "id": "char_261_sddrag",
@@ -4572,7 +4728,8 @@
         }
       ],
       "english_name": "Reed",
-      "japanese_name": "リード"
+      "japanese_name": "リード",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/7a/%E5%A4%B4%E5%83%8F_%E8%8B%87%E8%8D%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%8B%87%E8%8D%89.png"
     },
     {
       "id": "char_263_skadi",
@@ -4604,7 +4761,8 @@
         }
       ],
       "english_name": "Skadi",
-      "japanese_name": "スカジ"
+      "japanese_name": "スカジ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/53/%E5%A4%B4%E5%83%8F_%E6%96%AF%E5%8D%A1%E8%92%82.png/96px-%E5%A4%B4%E5%83%8F_%E6%96%AF%E5%8D%A1%E8%92%82.png"
     },
     {
       "id": "char_264_f12yin",
@@ -4644,7 +4802,8 @@
         }
       ],
       "english_name": "Mountain",
-      "japanese_name": "マウンテン"
+      "japanese_name": "マウンテン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ec/%E5%A4%B4%E5%83%8F_%E5%B1%B1.png/96px-%E5%A4%B4%E5%83%8F_%E5%B1%B1.png"
     },
     {
       "id": "char_265_sophia",
@@ -4671,7 +4830,8 @@
       "japanese_name": "ウィスラッシュ",
       "aliases": [
         "佐菲娅"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f8/%E5%A4%B4%E5%83%8F_%E9%9E%AD%E5%88%83.png/96px-%E5%A4%B4%E5%83%8F_%E9%9E%AD%E5%88%83.png"
     },
     {
       "id": "char_271_spikes",
@@ -4706,7 +4866,8 @@
       "japanese_name": "アレーン",
       "aliases": [
         "芳烃"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/6a/%E5%A4%B4%E5%83%8F_%E8%8A%B3%E6%B1%80.png/96px-%E5%A4%B4%E5%83%8F_%E8%8A%B3%E6%B1%80.png"
     },
     {
       "id": "char_272_strong",
@@ -4730,7 +4891,8 @@
         }
       ],
       "english_name": "Jaye",
-      "japanese_name": "ジェイ"
+      "japanese_name": "ジェイ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/54/%E5%A4%B4%E5%83%8F_%E5%AD%91.png/96px-%E5%A4%B4%E5%83%8F_%E5%AD%91.png"
     },
     {
       "id": "char_274_astesi",
@@ -4773,7 +4935,8 @@
       "japanese_name": "アステシア",
       "aliases": [
         "小闹钟"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ee/%E5%A4%B4%E5%83%8F_%E6%98%9F%E6%9E%81.png/96px-%E5%A4%B4%E5%83%8F_%E6%98%9F%E6%9E%81.png"
     },
     {
       "id": "char_275_breeze",
@@ -4800,7 +4963,8 @@
       "japanese_name": "ブリーズ",
       "aliases": [
         "格蕾丝・亚利桑那"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ad/%E5%A4%B4%E5%83%8F_%E5%BE%AE%E9%A3%8E.png/96px-%E5%A4%B4%E5%83%8F_%E5%BE%AE%E9%A3%8E.png"
     },
     {
       "id": "char_277_sqrrel",
@@ -4824,7 +4988,8 @@
         }
       ],
       "english_name": "Shaw",
-      "japanese_name": "ショウ"
+      "japanese_name": "ショウ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2f/%E5%A4%B4%E5%83%8F_%E9%98%BF%E6%B6%88.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF%E6%B6%88.png"
     },
     {
       "id": "char_278_orchid",
@@ -4848,7 +5013,8 @@
         }
       ],
       "english_name": "Orchid",
-      "japanese_name": "オーキッド"
+      "japanese_name": "オーキッド",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/83/%E5%A4%B4%E5%83%8F_%E6%A2%93%E5%85%B0.png/96px-%E5%A4%B4%E5%83%8F_%E6%A2%93%E5%85%B0.png"
     },
     {
       "id": "char_279_excu",
@@ -4876,7 +5042,8 @@
       "aliases": [
         "阿葬",
         "费德里科"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/da/%E5%A4%B4%E5%83%8F_%E9%80%81%E8%91%AC%E4%BA%BA.png/96px-%E5%A4%B4%E5%83%8F_%E9%80%81%E8%91%AC%E4%BA%BA.png"
     },
     {
       "id": "char_281_popka",
@@ -4911,7 +5078,8 @@
       "japanese_name": "ポプカル",
       "aliases": [
         "小鲍勃"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/16/%E5%A4%B4%E5%83%8F_%E6%B3%A1%E6%99%AE%E5%8D%A1.png/96px-%E5%A4%B4%E5%83%8F_%E6%B3%A1%E6%99%AE%E5%8D%A1.png"
     },
     {
       "id": "char_282_catap",
@@ -4935,7 +5103,8 @@
         }
       ],
       "english_name": "Catapult",
-      "japanese_name": "カタパルト"
+      "japanese_name": "カタパルト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cd/%E5%A4%B4%E5%83%8F_%E7%A9%BA%E7%88%86.png/96px-%E5%A4%B4%E5%83%8F_%E7%A9%BA%E7%88%86.png"
     },
     {
       "id": "char_283_midn",
@@ -4959,7 +5128,8 @@
         }
       ],
       "english_name": "Midnight",
-      "japanese_name": "ミッドナイト"
+      "japanese_name": "ミッドナイト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b7/%E5%A4%B4%E5%83%8F_%E6%9C%88%E8%A7%81%E5%A4%9C.png/96px-%E5%A4%B4%E5%83%8F_%E6%9C%88%E8%A7%81%E5%A4%9C.png"
     },
     {
       "id": "char_284_spot",
@@ -4983,7 +5153,8 @@
         }
       ],
       "english_name": "Spot",
-      "japanese_name": "スポット"
+      "japanese_name": "スポット",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/30/%E5%A4%B4%E5%83%8F_%E6%96%91%E7%82%B9.png/96px-%E5%A4%B4%E5%83%8F_%E6%96%91%E7%82%B9.png"
     },
     {
       "id": "char_285_medic2",
@@ -5010,7 +5181,8 @@
         "医疗小车",
         "柳叶刀",
         "医疗车"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b6/%E5%A4%B4%E5%83%8F_Lancet-2.png/96px-%E5%A4%B4%E5%83%8F_Lancet-2.png"
     },
     {
       "id": "char_286_cast3",
@@ -5036,7 +5208,8 @@
       "aliases": [
         "近卫小车",
         "近卫车"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/82/%E5%A4%B4%E5%83%8F_Castle-3.png/96px-%E5%A4%B4%E5%83%8F_Castle-3.png"
     },
     {
       "id": "char_289_gyuki",
@@ -5060,7 +5233,8 @@
         }
       ],
       "english_name": "Matoimaru",
-      "japanese_name": "マトイマル"
+      "japanese_name": "マトイマル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/13/%E5%A4%B4%E5%83%8F_%E7%BC%A0%E4%B8%B8.png/96px-%E5%A4%B4%E5%83%8F_%E7%BC%A0%E4%B8%B8.png"
     },
     {
       "id": "char_290_vigna",
@@ -5095,7 +5269,8 @@
       "japanese_name": "ヴィグナ",
       "aliases": [
         "豆子龙"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/bb/%E5%A4%B4%E5%83%8F_%E7%BA%A2%E8%B1%86.png/96px-%E5%A4%B4%E5%83%8F_%E7%BA%A2%E8%B1%86.png"
     },
     {
       "id": "char_291_aglina",
@@ -5129,7 +5304,8 @@
         "洁哥",
         "安心院安洁莉娜",
         "安洁丽娜"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/ca/%E5%A4%B4%E5%83%8F_%E5%AE%89%E6%B4%81%E8%8E%89%E5%A8%9C.png/96px-%E5%A4%B4%E5%83%8F_%E5%AE%89%E6%B4%81%E8%8E%89%E5%A8%9C.png"
     },
     {
       "id": "char_293_thorns",
@@ -5164,7 +5340,8 @@
       "japanese_name": "ソーンズ",
       "aliases": [
         "荆棘"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2a/%E5%A4%B4%E5%83%8F_%E6%A3%98%E5%88%BA.png/96px-%E5%A4%B4%E5%83%8F_%E6%A3%98%E5%88%BA.png"
     },
     {
       "id": "char_294_ayer",
@@ -5188,7 +5365,8 @@
         }
       ],
       "english_name": "Ayerscarpe",
-      "japanese_name": "エアースカーペ"
+      "japanese_name": "エアースカーペ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ea/%E5%A4%B4%E5%83%8F_%E6%96%AD%E5%B4%96.png/96px-%E5%A4%B4%E5%83%8F_%E6%96%AD%E5%B4%96.png"
     },
     {
       "id": "char_297_hamoni",
@@ -5220,7 +5398,8 @@
         }
       ],
       "english_name": "Harmonie",
-      "japanese_name": "ハーモニー"
+      "japanese_name": "ハーモニー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ed/%E5%A4%B4%E5%83%8F_%E5%92%8C%E5%BC%A6.png/96px-%E5%A4%B4%E5%83%8F_%E5%92%8C%E5%BC%A6.png"
     },
     {
       "id": "char_298_susuro",
@@ -5252,7 +5431,8 @@
         }
       ],
       "english_name": "Sussurro",
-      "japanese_name": "ススーロ"
+      "japanese_name": "ススーロ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/63/%E5%A4%B4%E5%83%8F_%E8%8B%8F%E8%8B%8F%E6%B4%9B.png/96px-%E5%A4%B4%E5%83%8F_%E8%8B%8F%E8%8B%8F%E6%B4%9B.png"
     },
     {
       "id": "char_300_phenxi",
@@ -5289,7 +5469,8 @@
         "苦难陈述者",
         "肥鸭",
         "烈火爆炸狂"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b8/%E5%A4%B4%E5%83%8F_%E8%8F%B2%E4%BA%9A%E6%A2%85%E5%A1%94.png/96px-%E5%A4%B4%E5%83%8F_%E8%8F%B2%E4%BA%9A%E6%A2%85%E5%A1%94.png"
     },
     {
       "id": "char_301_cutter",
@@ -5313,7 +5494,8 @@
         }
       ],
       "english_name": "Cutter",
-      "japanese_name": "カッター"
+      "japanese_name": "カッター",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2c/%E5%A4%B4%E5%83%8F_%E5%88%BB%E5%88%80.png/96px-%E5%A4%B4%E5%83%8F_%E5%88%BB%E5%88%80.png"
     },
     {
       "id": "char_302_glaze",
@@ -5337,7 +5519,8 @@
         }
       ],
       "english_name": "Ambriel",
-      "japanese_name": "アンブリエル"
+      "japanese_name": "アンブリエル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/ff/%E5%A4%B4%E5%83%8F_%E5%AE%89%E6%AF%94%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%AE%89%E6%AF%94%E5%B0%94.png"
     },
     {
       "id": "char_304_zebra",
@@ -5361,7 +5544,8 @@
         }
       ],
       "english_name": "Heavyrain",
-      "japanese_name": "ヘビーレイン"
+      "japanese_name": "ヘビーレイン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f8/%E5%A4%B4%E5%83%8F_%E6%9A%B4%E9%9B%A8.png/96px-%E5%A4%B4%E5%83%8F_%E6%9A%B4%E9%9B%A8.png"
     },
     {
       "id": "char_306_leizi",
@@ -5388,7 +5572,8 @@
       "japanese_name": "レイズ",
       "aliases": [
         "雷子"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/81/%E5%A4%B4%E5%83%8F_%E6%83%8A%E8%9B%B0.png/96px-%E5%A4%B4%E5%83%8F_%E6%83%8A%E8%9B%B0.png"
     },
     {
       "id": "char_308_swire",
@@ -5417,7 +5602,8 @@
         "诗小姐",
         "碧翠克斯・施怀雅",
         "施怀雅"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/50/%E5%A4%B4%E5%83%8F_%E8%AF%97%E6%80%80%E9%9B%85.png/96px-%E5%A4%B4%E5%83%8F_%E8%AF%97%E6%80%80%E9%9B%85.png"
     },
     {
       "id": "char_311_mudrok",
@@ -5457,7 +5643,8 @@
         }
       ],
       "english_name": "Mudrock",
-      "japanese_name": "マドロック"
+      "japanese_name": "マドロック",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/06/%E5%A4%B4%E5%83%8F_%E6%B3%A5%E5%B2%A9.png/96px-%E5%A4%B4%E5%83%8F_%E6%B3%A5%E5%B2%A9.png"
     },
     {
       "id": "char_322_lmlee",
@@ -5500,7 +5687,8 @@
       "japanese_name": "リー",
       "aliases": [
         "鲤"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e5/%E5%A4%B4%E5%83%8F_%E8%80%81%E9%B2%A4.png/96px-%E5%A4%B4%E5%83%8F_%E8%80%81%E9%B2%A4.png"
     },
     {
       "id": "char_325_bison",
@@ -5527,7 +5715,8 @@
       "japanese_name": "バイソン",
       "aliases": [
         "白送"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b2/%E5%A4%B4%E5%83%8F_%E6%8B%9C%E6%9D%BE.png/96px-%E5%A4%B4%E5%83%8F_%E6%8B%9C%E6%9D%BE.png"
     },
     {
       "id": "char_326_glacus",
@@ -5554,7 +5743,8 @@
       "japanese_name": "グラウコス",
       "aliases": [
         "海蛞蝓"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/53/%E5%A4%B4%E5%83%8F_%E6%A0%BC%E5%8A%B3%E5%85%8B%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E6%A0%BC%E5%8A%B3%E5%85%8B%E6%96%AF.png"
     },
     {
       "id": "char_328_cammou",
@@ -5586,7 +5776,8 @@
         }
       ],
       "english_name": "Click",
-      "japanese_name": "カシャ"
+      "japanese_name": "カシャ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/43/%E5%A4%B4%E5%83%8F_%E5%8D%A1%E8%BE%BE.png/96px-%E5%A4%B4%E5%83%8F_%E5%8D%A1%E8%BE%BE.png"
     },
     {
       "id": "char_332_archet",
@@ -5621,7 +5812,8 @@
       "japanese_name": "アルケット",
       "aliases": [
         "席德佳"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/bb/%E5%A4%B4%E5%83%8F_%E7%A9%BA%E5%BC%A6.png/96px-%E5%A4%B4%E5%83%8F_%E7%A9%BA%E5%BC%A6.png"
     },
     {
       "id": "char_333_sidero",
@@ -5645,7 +5837,8 @@
         }
       ],
       "english_name": "Sideroca",
-      "japanese_name": "シデロカ"
+      "japanese_name": "シデロカ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/84/%E5%A4%B4%E5%83%8F_%E9%93%B8%E9%93%81.png/96px-%E5%A4%B4%E5%83%8F_%E9%93%B8%E9%93%81.png"
     },
     {
       "id": "char_336_folivo",
@@ -5677,7 +5870,8 @@
         }
       ],
       "english_name": "Scene",
-      "japanese_name": "シーン"
+      "japanese_name": "シーン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c6/%E5%A4%B4%E5%83%8F_%E7%A8%80%E9%9F%B3.png/96px-%E5%A4%B4%E5%83%8F_%E7%A8%80%E9%9F%B3.png"
     },
     {
       "id": "char_337_utage",
@@ -5709,7 +5903,8 @@
         }
       ],
       "english_name": "Utage",
-      "japanese_name": "ウタゲ"
+      "japanese_name": "ウタゲ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f4/%E5%A4%B4%E5%83%8F_%E5%AE%B4.png/96px-%E5%A4%B4%E5%83%8F_%E5%AE%B4.png"
     },
     {
       "id": "char_338_iris",
@@ -5736,7 +5931,8 @@
       "japanese_name": "アイリス",
       "aliases": [
         "仙女"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/9a/%E5%A4%B4%E5%83%8F_%E7%88%B1%E4%B8%BD%E4%B8%9D.png/96px-%E5%A4%B4%E5%83%8F_%E7%88%B1%E4%B8%BD%E4%B8%9D.png"
     },
     {
       "id": "char_340_shwaz",
@@ -5768,7 +5964,8 @@
         }
       ],
       "english_name": "Schwarz",
-      "japanese_name": "シュヴァルツ"
+      "japanese_name": "シュヴァルツ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d4/%E5%A4%B4%E5%83%8F_%E9%BB%91.png/96px-%E5%A4%B4%E5%83%8F_%E9%BB%91.png"
     },
     {
       "id": "char_341_sntlla",
@@ -5792,7 +5989,8 @@
         }
       ],
       "english_name": "Santalla",
-      "japanese_name": "サンタラ"
+      "japanese_name": "サンタラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cd/%E5%A4%B4%E5%83%8F_%E5%AF%92%E6%AA%80.png/96px-%E5%A4%B4%E5%83%8F_%E5%AF%92%E6%AA%80.png"
     },
     {
       "id": "char_343_tknogi",
@@ -5824,7 +6022,8 @@
         }
       ],
       "english_name": "Tsukinogi",
-      "japanese_name": "ツキノギ"
+      "japanese_name": "ツキノギ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b6/%E5%A4%B4%E5%83%8F_%E6%9C%88%E7%A6%BE.png/96px-%E5%A4%B4%E5%83%8F_%E6%9C%88%E7%A6%BE.png"
     },
     {
       "id": "char_344_beewax",
@@ -5856,7 +6055,8 @@
         }
       ],
       "english_name": "Beeswax",
-      "japanese_name": "ビーズワクス"
+      "japanese_name": "ビーズワクス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1d/%E5%A4%B4%E5%83%8F_%E8%9C%9C%E8%9C%A1.png/96px-%E5%A4%B4%E5%83%8F_%E8%9C%9C%E8%9C%A1.png"
     },
     {
       "id": "char_345_folnic",
@@ -5880,7 +6080,8 @@
         }
       ],
       "english_name": "Folinic",
-      "japanese_name": "フォリニック"
+      "japanese_name": "フォリニック",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b5/%E5%A4%B4%E5%83%8F_%E4%BA%9A%E5%8F%B6.png/96px-%E5%A4%B4%E5%83%8F_%E4%BA%9A%E5%8F%B6.png"
     },
     {
       "id": "char_346_aosta",
@@ -5904,7 +6105,8 @@
         }
       ],
       "english_name": "Aosta",
-      "japanese_name": "アオスタ"
+      "japanese_name": "アオスタ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/49/%E5%A4%B4%E5%83%8F_%E5%A5%A5%E6%96%AF%E5%A1%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%A5%A5%E6%96%AF%E5%A1%94.png"
     },
     {
       "id": "char_347_jaksel",
@@ -5928,7 +6130,8 @@
         }
       ],
       "english_name": "Jackie",
-      "japanese_name": "ジャッキー"
+      "japanese_name": "ジャッキー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d8/%E5%A4%B4%E5%83%8F_%E6%9D%B0%E5%85%8B.png/96px-%E5%A4%B4%E5%83%8F_%E6%9D%B0%E5%85%8B.png"
     },
     {
       "id": "char_348_ceylon",
@@ -5955,7 +6158,8 @@
       "japanese_name": "セイロン",
       "aliases": [
         "锡兰・道尔科斯"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/39/%E5%A4%B4%E5%83%8F_%E9%94%A1%E5%85%B0.png/96px-%E5%A4%B4%E5%83%8F_%E9%94%A1%E5%85%B0.png"
     },
     {
       "id": "char_349_chiave",
@@ -5982,7 +6186,8 @@
       "japanese_name": "キアーベ",
       "aliases": [
         "贾惟"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2a/%E5%A4%B4%E5%83%8F_%E8%B4%BE%E7%BB%B4.png/96px-%E5%A4%B4%E5%83%8F_%E8%B4%BE%E7%BB%B4.png"
     },
     {
       "id": "char_350_surtr",
@@ -6028,7 +6233,8 @@
         "苏尔特尔",
         "42t2",
         "42"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e1/%E5%A4%B4%E5%83%8F_%E5%8F%B2%E5%B0%94%E7%89%B9%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%B2%E5%B0%94%E7%89%B9%E5%B0%94.png"
     },
     {
       "id": "char_355_ethan",
@@ -6052,7 +6258,8 @@
         }
       ],
       "english_name": "Ethan",
-      "japanese_name": "イーサン"
+      "japanese_name": "イーサン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c1/%E5%A4%B4%E5%83%8F_%E4%BC%8A%E6%A1%91.png/96px-%E5%A4%B4%E5%83%8F_%E4%BC%8A%E6%A1%91.png"
     },
     {
       "id": "char_356_broca",
@@ -6076,7 +6283,8 @@
         }
       ],
       "english_name": "Broca",
-      "japanese_name": "ブローカ"
+      "japanese_name": "ブローカ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/04/%E5%A4%B4%E5%83%8F_%E5%B8%83%E6%B4%9B%E5%8D%A1.png/96px-%E5%A4%B4%E5%83%8F_%E5%B8%83%E6%B4%9B%E5%8D%A1.png"
     },
     {
       "id": "char_358_lisa",
@@ -6116,7 +6324,8 @@
         }
       ],
       "english_name": "Suzuran",
-      "japanese_name": "スズラン"
+      "japanese_name": "スズラン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/55/%E5%A4%B4%E5%83%8F_%E9%93%83%E5%85%B0.png/96px-%E5%A4%B4%E5%83%8F_%E9%93%83%E5%85%B0.png"
     },
     {
       "id": "char_362_saga",
@@ -6140,7 +6349,8 @@
         }
       ],
       "english_name": "Saga",
-      "japanese_name": "サガ"
+      "japanese_name": "サガ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/6d/%E5%A4%B4%E5%83%8F_%E5%B5%AF%E5%B3%A8.png/96px-%E5%A4%B4%E5%83%8F_%E5%B5%AF%E5%B3%A8.png"
     },
     {
       "id": "char_363_toddi",
@@ -6156,7 +6366,8 @@
         }
       ],
       "english_name": "Toddifons",
-      "japanese_name": "トギフォンス"
+      "japanese_name": "トギフォンス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/34/%E5%A4%B4%E5%83%8F_%E7%86%94%E6%B3%89.png/96px-%E5%A4%B4%E5%83%8F_%E7%86%94%E6%B3%89.png"
     },
     {
       "id": "char_365_aprl",
@@ -6180,7 +6391,8 @@
         }
       ],
       "english_name": "April",
-      "japanese_name": "エイプリル"
+      "japanese_name": "エイプリル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d3/%E5%A4%B4%E5%83%8F_%E5%9B%9B%E6%9C%88.png/96px-%E5%A4%B4%E5%83%8F_%E5%9B%9B%E6%9C%88.png"
     },
     {
       "id": "char_366_acdrop",
@@ -6212,7 +6424,8 @@
         }
       ],
       "english_name": "Aciddrop",
-      "japanese_name": "アシッドドロップ"
+      "japanese_name": "アシッドドロップ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e9/%E5%A4%B4%E5%83%8F_%E9%85%B8%E7%B3%96.png/96px-%E5%A4%B4%E5%83%8F_%E9%85%B8%E7%B3%96.png"
     },
     {
       "id": "char_367_swllow",
@@ -6236,7 +6449,8 @@
         }
       ],
       "english_name": "GreyThroat",
-      "japanese_name": "グレースロート"
+      "japanese_name": "グレースロート",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3b/%E5%A4%B4%E5%83%8F_%E7%81%B0%E5%96%89.png/96px-%E5%A4%B4%E5%83%8F_%E7%81%B0%E5%96%89.png"
     },
     {
       "id": "char_369_bena",
@@ -6263,7 +6477,8 @@
       "japanese_name": "ベナ",
       "aliases": [
         "安妮"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/95/%E5%A4%B4%E5%83%8F_%E8%B4%9D%E5%A8%9C.png/96px-%E5%A4%B4%E5%83%8F_%E8%B4%9D%E5%A8%9C.png"
     },
     {
       "id": "char_373_lionhd",
@@ -6299,7 +6514,8 @@
       "aliases": [
         "莱因哈特",
         "莱茵哈特"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/03/%E5%A4%B4%E5%83%8F_%E8%8E%B1%E6%81%A9%E5%93%88%E7%89%B9.png/96px-%E5%A4%B4%E5%83%8F_%E8%8E%B1%E6%81%A9%E5%93%88%E7%89%B9.png"
     },
     {
       "id": "char_376_therex",
@@ -6327,7 +6543,8 @@
         "自爆车",
         "Thermal-EX",
         "Thrm-ex"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d8/%E5%A4%B4%E5%83%8F_THRM-EX.png/96px-%E5%A4%B4%E5%83%8F_THRM-EX.png"
     },
     {
       "id": "char_377_gdglow",
@@ -6370,7 +6587,8 @@
       "japanese_name": "ゴールデングロー",
       "aliases": [
         "粉毛"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ab/%E5%A4%B4%E5%83%8F_%E6%BE%84%E9%97%AA.png/96px-%E5%A4%B4%E5%83%8F_%E6%BE%84%E9%97%AA.png"
     },
     {
       "id": "char_378_asbest",
@@ -6394,7 +6612,8 @@
         }
       ],
       "english_name": "Asbestos",
-      "japanese_name": "アスベストス"
+      "japanese_name": "アスベストス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/18/%E5%A4%B4%E5%83%8F_%E7%9F%B3%E6%A3%89.png/96px-%E5%A4%B4%E5%83%8F_%E7%9F%B3%E6%A3%89.png"
     },
     {
       "id": "char_379_sesa",
@@ -6422,7 +6641,8 @@
       "aliases": [
         "沙子哥",
         "砂子哥"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e7/%E5%A4%B4%E5%83%8F_%E6%85%91%E7%A0%82.png/96px-%E5%A4%B4%E5%83%8F_%E6%85%91%E7%A0%82.png"
     },
     {
       "id": "char_381_bubble",
@@ -6446,7 +6666,8 @@
         }
       ],
       "english_name": "Bubble",
-      "japanese_name": "バブル"
+      "japanese_name": "バブル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/28/%E5%A4%B4%E5%83%8F_%E6%B3%A1%E6%B3%A1.png/96px-%E5%A4%B4%E5%83%8F_%E6%B3%A1%E6%B3%A1.png"
     },
     {
       "id": "char_383_snsant",
@@ -6474,7 +6695,8 @@
       "aliases": [
         "雪鸡",
         "雪稚"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/24/%E5%A4%B4%E5%83%8F_%E9%9B%AA%E9%9B%89.png/96px-%E5%A4%B4%E5%83%8F_%E9%9B%AA%E9%9B%89.png"
     },
     {
       "id": "char_385_finlpp",
@@ -6498,7 +6720,8 @@
         }
       ],
       "english_name": "Purestream",
-      "japanese_name": "セイリュウ"
+      "japanese_name": "セイリュウ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/19/%E5%A4%B4%E5%83%8F_%E6%B8%85%E6%B5%81.png/96px-%E5%A4%B4%E5%83%8F_%E6%B8%85%E6%B5%81.png"
     },
     {
       "id": "char_388_mint",
@@ -6530,7 +6753,8 @@
         }
       ],
       "english_name": "Mint",
-      "japanese_name": "ミント"
+      "japanese_name": "ミント",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/30/%E5%A4%B4%E5%83%8F_%E8%96%84%E7%BB%BF.png/96px-%E5%A4%B4%E5%83%8F_%E8%96%84%E7%BB%BF.png"
     },
     {
       "id": "char_391_rosmon",
@@ -6562,7 +6786,8 @@
         }
       ],
       "english_name": "Rosmontis",
-      "japanese_name": "ロスモンティス"
+      "japanese_name": "ロスモンティス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3b/%E5%A4%B4%E5%83%8F_%E8%BF%B7%E8%BF%AD%E9%A6%99.png/96px-%E5%A4%B4%E5%83%8F_%E8%BF%B7%E8%BF%AD%E9%A6%99.png"
     },
     {
       "id": "char_394_hadiya",
@@ -6578,7 +6803,8 @@
         }
       ],
       "english_name": "Hadiya",
-      "japanese_name": "ハディヤ"
+      "japanese_name": "ハディヤ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3c/%E5%A4%B4%E5%83%8F_%E5%93%88%E8%92%82%E5%A8%85.png/96px-%E5%A4%B4%E5%83%8F_%E5%93%88%E8%92%82%E5%A8%85.png"
     },
     {
       "id": "char_4000_jnight",
@@ -6607,7 +6833,8 @@
         "\"Justice Knight\"",
         "Justice Knight",
         "狙击小车"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c5/%E5%A4%B4%E5%83%8F_%E6%AD%A3%E4%B9%89%E9%AA%91%E5%A3%AB%E5%8F%B7.png/96px-%E5%A4%B4%E5%83%8F_%E6%AD%A3%E4%B9%89%E9%AA%91%E5%A3%AB%E5%8F%B7.png"
     },
     {
       "id": "char_4004_pudd",
@@ -6631,7 +6858,8 @@
         }
       ],
       "english_name": "Pudding",
-      "japanese_name": "プリン"
+      "japanese_name": "プリン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b0/%E5%A4%B4%E5%83%8F_%E5%B8%83%E4%B8%81.png/96px-%E5%A4%B4%E5%83%8F_%E5%B8%83%E4%B8%81.png"
     },
     {
       "id": "char_4006_melnte",
@@ -6655,7 +6883,8 @@
         }
       ],
       "english_name": "Melanite",
-      "japanese_name": "メラナイト"
+      "japanese_name": "メラナイト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ab/%E5%A4%B4%E5%83%8F_%E7%8E%AB%E6%8B%89.png/96px-%E5%A4%B4%E5%83%8F_%E7%8E%AB%E6%8B%89.png"
     },
     {
       "id": "char_4009_irene",
@@ -6691,7 +6920,8 @@
       "aliases": [
         "审判官",
         "小鸟"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/57/%E5%A4%B4%E5%83%8F_%E8%89%BE%E4%B8%BD%E5%A6%AE.png/96px-%E5%A4%B4%E5%83%8F_%E8%89%BE%E4%B8%BD%E5%A6%AE.png"
     },
     {
       "id": "char_400_weedy",
@@ -6723,7 +6953,8 @@
         }
       ],
       "english_name": "Weedy",
-      "japanese_name": "ウィーディ"
+      "japanese_name": "ウィーディ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/93/%E5%A4%B4%E5%83%8F_%E6%B8%A9%E8%92%82.png/96px-%E5%A4%B4%E5%83%8F_%E6%B8%A9%E8%92%82.png"
     },
     {
       "id": "char_4010_etlchi",
@@ -6751,7 +6982,8 @@
       "aliases": [
         "隐德莱希",
         "隐隐"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4c/%E5%A4%B4%E5%83%8F_%E9%9A%90%E5%BE%B7%E6%9D%A5%E5%B8%8C.png/96px-%E5%A4%B4%E5%83%8F_%E9%9A%90%E5%BE%B7%E6%9D%A5%E5%B8%8C.png"
     },
     {
       "id": "char_4011_lessng",
@@ -6775,7 +7007,8 @@
         }
       ],
       "english_name": "Lessing",
-      "japanese_name": "レッシング"
+      "japanese_name": "レッシング",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/72/%E5%A4%B4%E5%83%8F_%E6%AD%A2%E9%A2%82.png/96px-%E5%A4%B4%E5%83%8F_%E6%AD%A2%E9%A2%82.png"
     },
     {
       "id": "char_4013_kjera",
@@ -6799,7 +7032,8 @@
         }
       ],
       "english_name": "Kjera",
-      "japanese_name": "イェラ"
+      "japanese_name": "イェラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/71/%E5%A4%B4%E5%83%8F_%E8%80%B6%E6%8B%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%80%B6%E6%8B%89.png"
     },
     {
       "id": "char_4014_lunacu",
@@ -6823,7 +7057,8 @@
         }
       ],
       "english_name": "Lunacub",
-      "japanese_name": "ルナカブ"
+      "japanese_name": "ルナカブ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/db/%E5%A4%B4%E5%83%8F_%E5%AD%90%E6%9C%88.png/96px-%E5%A4%B4%E5%83%8F_%E5%AD%90%E6%9C%88.png"
     },
     {
       "id": "char_4015_spuria",
@@ -6839,7 +7074,8 @@
         }
       ],
       "english_name": "Spuria",
-      "japanese_name": "スプリア"
+      "japanese_name": "スプリア",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d1/%E5%A4%B4%E5%83%8F_%E7%A9%BA%E6%9E%84.png/96px-%E5%A4%B4%E5%83%8F_%E7%A9%BA%E6%9E%84.png"
     },
     {
       "id": "char_4016_kazema",
@@ -6863,7 +7099,8 @@
         }
       ],
       "english_name": "Kazemaru",
-      "japanese_name": "カゼマル"
+      "japanese_name": "カゼマル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/12/%E5%A4%B4%E5%83%8F_%E9%A3%8E%E4%B8%B8.png/96px-%E5%A4%B4%E5%83%8F_%E9%A3%8E%E4%B8%B8.png"
     },
     {
       "id": "char_4017_puzzle",
@@ -6895,7 +7132,8 @@
         }
       ],
       "english_name": "Puzzle",
-      "japanese_name": "パズル"
+      "japanese_name": "パズル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/79/%E5%A4%B4%E5%83%8F_%E8%B0%9C%E5%9B%BE.png/96px-%E5%A4%B4%E5%83%8F_%E8%B0%9C%E5%9B%BE.png"
     },
     {
       "id": "char_4019_ncdeer",
@@ -6918,7 +7156,8 @@
           ]
         }
       ],
-      "english_name": "Nine-Colored Deer"
+      "english_name": "Nine-Colored Deer",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ab/%E5%A4%B4%E5%83%8F_%E4%B9%9D%E8%89%B2%E9%B9%BF.png/96px-%E5%A4%B4%E5%83%8F_%E4%B9%9D%E8%89%B2%E9%B9%BF.png"
     },
     {
       "id": "char_401_elysm",
@@ -6953,7 +7192,8 @@
       "japanese_name": "エリジウム",
       "aliases": [
         "极乐"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/97/%E5%A4%B4%E5%83%8F_%E6%9E%81%E5%A2%83.png/96px-%E5%A4%B4%E5%83%8F_%E6%9E%81%E5%A2%83.png"
     },
     {
       "id": "char_4023_rfalcn",
@@ -6977,7 +7217,8 @@
         }
       ],
       "english_name": "Kestrel",
-      "japanese_name": "ケストレル"
+      "japanese_name": "ケストレル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/45/%E5%A4%B4%E5%83%8F_%E7%BA%A2%E9%9A%BC.png/96px-%E5%A4%B4%E5%83%8F_%E7%BA%A2%E9%9A%BC.png"
     },
     {
       "id": "char_4025_aprot2",
@@ -7001,7 +7242,8 @@
         }
       ],
       "english_name": "Shalem",
-      "japanese_name": "シャレム"
+      "japanese_name": "シャレム",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fb/%E5%A4%B4%E5%83%8F_%E6%9A%AE%E8%90%BD.png/96px-%E5%A4%B4%E5%83%8F_%E6%9A%AE%E8%90%BD.png"
     },
     {
       "id": "char_4026_vulpis",
@@ -7025,7 +7267,8 @@
         }
       ],
       "english_name": "Vulpisfoglia",
-      "japanese_name": "ウルピスフォリア"
+      "japanese_name": "ウルピスフォリア",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/79/%E5%A4%B4%E5%83%8F_%E5%BF%8D%E5%86%AC.png/96px-%E5%A4%B4%E5%83%8F_%E5%BF%8D%E5%86%AC.png"
     },
     {
       "id": "char_4027_heyak",
@@ -7060,7 +7303,8 @@
       "japanese_name": "ホルハイヤ",
       "aliases": [
         "Hoolheyak"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/9e/%E5%A4%B4%E5%83%8F_%E9%9C%8D%E5%B0%94%E6%B5%B7%E9%9B%85.png/96px-%E5%A4%B4%E5%83%8F_%E9%9C%8D%E5%B0%94%E6%B5%B7%E9%9B%85.png"
     },
     {
       "id": "char_402_tuye",
@@ -7084,7 +7328,8 @@
         }
       ],
       "english_name": "Tuye",
-      "japanese_name": "トゥイエ"
+      "japanese_name": "トゥイエ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/93/%E5%A4%B4%E5%83%8F_%E5%9B%BE%E8%80%B6.png/96px-%E5%A4%B4%E5%83%8F_%E5%9B%BE%E8%80%B6.png"
     },
     {
       "id": "char_4031_liesel",
@@ -7101,7 +7346,8 @@
       ],
       "aliases": [
         "Ripresa"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/61/%E5%A4%B4%E5%83%8F_%E5%A4%8D%E5%A5%8F.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%8D%E5%A5%8F.png"
     },
     {
       "id": "char_4032_provs",
@@ -7133,7 +7379,8 @@
         }
       ],
       "english_name": "Proviso",
-      "japanese_name": "プロヴァイゾ"
+      "japanese_name": "プロヴァイゾ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b0/%E5%A4%B4%E5%83%8F_%E4%BD%86%E4%B9%A6.png/96px-%E5%A4%B4%E5%83%8F_%E4%BD%86%E4%B9%A6.png"
     },
     {
       "id": "char_4036_forcer",
@@ -7157,7 +7404,8 @@
         }
       ],
       "english_name": "Enforcer",
-      "japanese_name": "エンフォーサー"
+      "japanese_name": "エンフォーサー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d2/%E5%A4%B4%E5%83%8F_%E8%A7%81%E8%A1%8C%E8%80%85.png/96px-%E5%A4%B4%E5%83%8F_%E8%A7%81%E8%A1%8C%E8%80%85.png"
     },
     {
       "id": "char_4037_demetr",
@@ -7174,7 +7422,8 @@
       ],
       "aliases": [
         "Bellone"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/83/%E5%A4%B4%E5%83%8F_%E8%B4%9D%E6%B4%9B%E5%86%85.png/96px-%E5%A4%B4%E5%83%8F_%E8%B4%9D%E6%B4%9B%E5%86%85.png"
     },
     {
       "id": "char_4039_horn",
@@ -7198,7 +7447,8 @@
         }
       ],
       "english_name": "Horn",
-      "japanese_name": "ホルン"
+      "japanese_name": "ホルン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3f/%E5%A4%B4%E5%83%8F_%E5%8F%B7%E8%A7%92.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%B7%E8%A7%92.png"
     },
     {
       "id": "char_4040_rockr",
@@ -7222,7 +7472,8 @@
         }
       ],
       "english_name": "Rockrock",
-      "japanese_name": "ロックロック"
+      "japanese_name": "ロックロック",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d4/%E5%A4%B4%E5%83%8F_%E6%B4%9B%E6%B4%9B.png/96px-%E5%A4%B4%E5%83%8F_%E6%B4%9B%E6%B4%9B.png"
     },
     {
       "id": "char_4041_chnut",
@@ -7249,7 +7500,8 @@
       "japanese_name": "チェストナット",
       "aliases": [
         "チェストナッツ"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/58/%E5%A4%B4%E5%83%8F_%E8%A4%90%E6%9E%9C.png/96px-%E5%A4%B4%E5%83%8F_%E8%A4%90%E6%9E%9C.png"
     },
     {
       "id": "char_4042_lumen",
@@ -7281,7 +7533,8 @@
         }
       ],
       "english_name": "Lumen",
-      "japanese_name": "ルーメン"
+      "japanese_name": "ルーメン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/72/%E5%A4%B4%E5%83%8F_%E6%B5%81%E6%98%8E.png/96px-%E5%A4%B4%E5%83%8F_%E6%B5%81%E6%98%8E.png"
     },
     {
       "id": "char_4043_erato",
@@ -7305,7 +7558,8 @@
         }
       ],
       "english_name": "Erato",
-      "japanese_name": "エラト"
+      "japanese_name": "エラト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/34/%E5%A4%B4%E5%83%8F_%E5%9F%83%E6%8B%89%E6%89%98.png/96px-%E5%A4%B4%E5%83%8F_%E5%9F%83%E6%8B%89%E6%89%98.png"
     },
     {
       "id": "char_4045_heidi",
@@ -7327,7 +7581,8 @@
         }
       ],
       "english_name": "Heidi",
-      "japanese_name": "ハイディ"
+      "japanese_name": "ハイディ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d9/%E5%A4%B4%E5%83%8F_%E6%B5%B7%E8%92%82.png/96px-%E5%A4%B4%E5%83%8F_%E6%B5%B7%E8%92%82.png"
     },
     {
       "id": "char_4046_ebnhlz",
@@ -7351,7 +7606,8 @@
         }
       ],
       "english_name": "Ebenholz",
-      "japanese_name": "エーベンホルツ"
+      "japanese_name": "エーベンホルツ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1e/%E5%A4%B4%E5%83%8F_%E9%BB%91%E9%94%AE.png/96px-%E5%A4%B4%E5%83%8F_%E9%BB%91%E9%94%AE.png"
     },
     {
       "id": "char_4047_pianst",
@@ -7375,7 +7631,8 @@
         }
       ],
       "english_name": "Czerny",
-      "japanese_name": "ツェルニー"
+      "japanese_name": "ツェルニー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1c/%E5%A4%B4%E5%83%8F_%E8%BD%A6%E5%B0%94%E5%B0%BC.png/96px-%E5%A4%B4%E5%83%8F_%E8%BD%A6%E5%B0%94%E5%B0%BC.png"
     },
     {
       "id": "char_4048_doroth",
@@ -7403,7 +7660,8 @@
       "aliases": [
         "桃乐丝",
         "多罗西"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4f/%E5%A4%B4%E5%83%8F_%E5%A4%9A%E8%90%9D%E8%A5%BF.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%9A%E8%90%9D%E8%A5%BF.png"
     },
     {
       "id": "char_4051_akkord",
@@ -7419,7 +7677,8 @@
         }
       ],
       "english_name": "Akkord",
-      "japanese_name": "アコルト"
+      "japanese_name": "アコルト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8e/%E5%A4%B4%E5%83%8F_%E5%8D%8F%E5%BE%8B.png/96px-%E5%A4%B4%E5%83%8F_%E5%8D%8F%E5%BE%8B.png"
     },
     {
       "id": "char_4052_surfer",
@@ -7443,7 +7702,8 @@
         }
       ],
       "english_name": "Surfer",
-      "japanese_name": "サーファー"
+      "japanese_name": "サーファー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/65/%E5%A4%B4%E5%83%8F_%E5%AF%BB%E6%BE%9C.png/96px-%E5%A4%B4%E5%83%8F_%E5%AF%BB%E6%BE%9C.png"
     },
     {
       "id": "char_4054_malist",
@@ -7467,7 +7727,8 @@
         }
       ],
       "english_name": "Minimalist",
-      "japanese_name": "ミニマリスト"
+      "japanese_name": "ミニマリスト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/98/%E5%A4%B4%E5%83%8F_%E8%87%B3%E7%AE%80.png/96px-%E5%A4%B4%E5%83%8F_%E8%87%B3%E7%AE%80.png"
     },
     {
       "id": "char_4055_bgsnow",
@@ -7502,7 +7763,8 @@
       "japanese_name": "パゼオンカ",
       "aliases": [
         "Позёмка"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1b/%E5%A4%B4%E5%83%8F_%E9%B8%BF%E9%9B%AA.png/96px-%E5%A4%B4%E5%83%8F_%E9%B8%BF%E9%9B%AA.png"
     },
     {
       "id": "char_4056_titi",
@@ -7520,7 +7782,8 @@
       "aliases": [
         "Titi",
         "提提"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/aa/%E5%A4%B4%E5%83%8F_%E7%BC%87%E7%BC%87.png/96px-%E5%A4%B4%E5%83%8F_%E7%BC%87%E7%BC%87.png"
     },
     {
       "id": "char_4058_pepe",
@@ -7544,7 +7807,8 @@
         }
       ],
       "english_name": "Pepe",
-      "japanese_name": "ペペ"
+      "japanese_name": "ペペ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/85/%E5%A4%B4%E5%83%8F_%E4%BD%A9%E4%BD%A9.png/96px-%E5%A4%B4%E5%83%8F_%E4%BD%A9%E4%BD%A9.png"
     },
     {
       "id": "char_405_absin",
@@ -7568,7 +7832,8 @@
         }
       ],
       "english_name": "Absinthe",
-      "japanese_name": "アブサント"
+      "japanese_name": "アブサント",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e9/%E5%A4%B4%E5%83%8F_%E8%8B%A6%E8%89%BE.png/96px-%E5%A4%B4%E5%83%8F_%E8%8B%A6%E8%89%BE.png"
     },
     {
       "id": "char_4062_totter",
@@ -7592,7 +7857,8 @@
         }
       ],
       "english_name": "Totter",
-      "japanese_name": "トター"
+      "japanese_name": "トター",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/87/%E5%A4%B4%E5%83%8F_%E9%93%85%E8%B8%9D.png/96px-%E5%A4%B4%E5%83%8F_%E9%93%85%E8%B8%9D.png"
     },
     {
       "id": "char_4063_quartz",
@@ -7616,7 +7882,8 @@
         }
       ],
       "english_name": "Quartz",
-      "japanese_name": "クォーツ"
+      "japanese_name": "クォーツ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/bc/%E5%A4%B4%E5%83%8F_%E7%9F%B3%E8%8B%B1.png/96px-%E5%A4%B4%E5%83%8F_%E7%9F%B3%E8%8B%B1.png"
     },
     {
       "id": "char_4064_mlynar",
@@ -7652,7 +7919,8 @@
       "aliases": [
         "叔叔",
         "Mlynar"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/08/%E5%A4%B4%E5%83%8F_%E7%8E%9B%E6%81%A9%E7%BA%B3.png/96px-%E5%A4%B4%E5%83%8F_%E7%8E%9B%E6%81%A9%E7%BA%B3.png"
     },
     {
       "id": "char_4065_judge",
@@ -7684,7 +7952,8 @@
         }
       ],
       "english_name": "Penance",
-      "japanese_name": "ペナンス"
+      "japanese_name": "ペナンス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1c/%E5%A4%B4%E5%83%8F_%E6%96%A5%E7%BD%AA.png/96px-%E5%A4%B4%E5%83%8F_%E6%96%A5%E7%BD%AA.png"
     },
     {
       "id": "char_4066_highmo",
@@ -7716,7 +7985,8 @@
         }
       ],
       "english_name": "Highmore",
-      "japanese_name": "ハイモア"
+      "japanese_name": "ハイモア",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/6c/%E5%A4%B4%E5%83%8F_%E6%B5%B7%E6%B2%AB.png/96px-%E5%A4%B4%E5%83%8F_%E6%B5%B7%E6%B2%AB.png"
     },
     {
       "id": "char_4067_lolxh",
@@ -7735,7 +8005,8 @@
       "japanese_name": "羅小黒",
       "aliases": [
         "小黑"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/50/%E5%A4%B4%E5%83%8F_%E7%BD%97%E5%B0%8F%E9%BB%91.png/96px-%E5%A4%B4%E5%83%8F_%E7%BD%97%E5%B0%8F%E9%BB%91.png"
     },
     {
       "id": "char_4071_peper",
@@ -7759,7 +8030,8 @@
         }
       ],
       "english_name": "Paprika",
-      "japanese_name": "パプリカ"
+      "japanese_name": "パプリカ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3f/%E5%A4%B4%E5%83%8F_%E6%98%8E%E6%A4%92.png/96px-%E5%A4%B4%E5%83%8F_%E6%98%8E%E6%A4%92.png"
     },
     {
       "id": "char_4072_ironmn",
@@ -7791,7 +8063,8 @@
         }
       ],
       "english_name": "Stainless",
-      "japanese_name": "ステインレス"
+      "japanese_name": "ステインレス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2e/%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%93%81.png/96px-%E5%A4%B4%E5%83%8F_%E7%99%BD%E9%93%81.png"
     },
     {
       "id": "char_4077_palico",
@@ -7818,7 +8091,8 @@
       "japanese_name": "テラ大陸調査団",
       "aliases": [
         "艾露猫"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/70/%E5%A4%B4%E5%83%8F_%E6%B3%B0%E6%8B%89%E5%A4%A7%E9%99%86%E8%B0%83%E6%9F%A5%E5%9B%A2.png/96px-%E5%A4%B4%E5%83%8F_%E6%B3%B0%E6%8B%89%E5%A4%A7%E9%99%86%E8%B0%83%E6%9F%A5%E5%9B%A2.png"
     },
     {
       "id": "char_4078_bdhkgt",
@@ -7842,7 +8116,8 @@
         }
       ],
       "english_name": "Jieyun",
-      "japanese_name": "ジエユン"
+      "japanese_name": "ジエユン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/81/%E5%A4%B4%E5%83%8F_%E6%88%AA%E4%BA%91.png/96px-%E5%A4%B4%E5%83%8F_%E6%88%AA%E4%BA%91.png"
     },
     {
       "id": "char_4079_haini",
@@ -7866,7 +8141,8 @@
         }
       ],
       "english_name": "Lucilla",
-      "japanese_name": "ルシーラ"
+      "japanese_name": "ルシーラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/72/%E5%A4%B4%E5%83%8F_%E6%B5%B7%E9%9C%93.png/96px-%E5%A4%B4%E5%83%8F_%E6%B5%B7%E9%9C%93.png"
     },
     {
       "id": "char_4080_lin",
@@ -7909,7 +8185,8 @@
       "japanese_name": "リン",
       "aliases": [
         "林雨霞"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/aa/%E5%A4%B4%E5%83%8F_%E6%9E%97.png/96px-%E5%A4%B4%E5%83%8F_%E6%9E%97.png"
     },
     {
       "id": "char_4081_warmy",
@@ -7936,7 +8213,8 @@
       "japanese_name": "ウォーミー",
       "aliases": [
         "小锅盖"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3f/%E5%A4%B4%E5%83%8F_%E6%B8%A9%E7%B1%B3.png/96px-%E5%A4%B4%E5%83%8F_%E6%B8%A9%E7%B1%B3.png"
     },
     {
       "id": "char_4082_qiubai",
@@ -7968,7 +8246,8 @@
         }
       ],
       "english_name": "Qiubai",
-      "japanese_name": "チューバイ"
+      "japanese_name": "チューバイ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8a/%E5%A4%B4%E5%83%8F_%E4%BB%87%E7%99%BD.png/96px-%E5%A4%B4%E5%83%8F_%E4%BB%87%E7%99%BD.png"
     },
     {
       "id": "char_4083_chimes",
@@ -7992,7 +8271,8 @@
         }
       ],
       "english_name": "Wind Chimes",
-      "japanese_name": "ウィンドチャイム"
+      "japanese_name": "ウィンドチャイム",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4a/%E5%A4%B4%E5%83%8F_%E9%93%8E%E9%93%83.png/96px-%E5%A4%B4%E5%83%8F_%E9%93%8E%E9%93%83.png"
     },
     {
       "id": "char_4087_ines",
@@ -8028,7 +8308,8 @@
       "aliases": [
         "伊内斯",
         "Ins"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8c/%E5%A4%B4%E5%83%8F_%E4%BC%8A%E5%86%85%E4%B8%9D.png/96px-%E5%A4%B4%E5%83%8F_%E4%BC%8A%E5%86%85%E4%B8%9D.png"
     },
     {
       "id": "char_4088_hodrer",
@@ -8056,7 +8337,8 @@
       "aliases": [
         "へドリー",
         "何大雷"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f8/%E5%A4%B4%E5%83%8F_%E8%B5%AB%E5%BE%B7%E9%9B%B7.png/96px-%E5%A4%B4%E5%83%8F_%E8%B5%AB%E5%BE%B7%E9%9B%B7.png"
     },
     {
       "id": "char_4091_ulika",
@@ -8081,7 +8363,8 @@
         "尤里卡",
         "U-Offical",
         "U-Offcial"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/45/%E5%A4%B4%E5%83%8F_U-Official.png/96px-%E5%A4%B4%E5%83%8F_U-Official.png"
     },
     {
       "id": "char_4093_frston",
@@ -8098,7 +8381,8 @@
       ],
       "aliases": [
         "重装小车"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cf/%E5%A4%B4%E5%83%8F_Friston-3.png/96px-%E5%A4%B4%E5%83%8F_Friston-3.png"
     },
     {
       "id": "char_4098_vvana",
@@ -8125,7 +8409,8 @@
       "japanese_name": "ヴィヴィアナ",
       "aliases": [
         "Vvan"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4a/%E5%A4%B4%E5%83%8F_%E8%96%87%E8%96%87%E5%AE%89%E5%A8%9C.png/96px-%E5%A4%B4%E5%83%8F_%E8%96%87%E8%96%87%E5%AE%89%E5%A8%9C.png"
     },
     {
       "id": "char_4100_caper",
@@ -8149,7 +8434,8 @@
         }
       ],
       "english_name": "Caper",
-      "japanese_name": "ケイパー"
+      "japanese_name": "ケイパー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/aa/%E5%A4%B4%E5%83%8F_%E8%B7%83%E8%B7%83.png/96px-%E5%A4%B4%E5%83%8F_%E8%B7%83%E8%B7%83.png"
     },
     {
       "id": "char_4102_threye",
@@ -8173,7 +8459,8 @@
         }
       ],
       "english_name": "Valarqvin",
-      "japanese_name": "ヴァラルクビン"
+      "japanese_name": "ヴァラルクビン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e3/%E5%A4%B4%E5%83%8F_%E5%87%9B%E8%A7%86.png/96px-%E5%A4%B4%E5%83%8F_%E5%87%9B%E8%A7%86.png"
     },
     {
       "id": "char_4104_coldst",
@@ -8197,7 +8484,8 @@
         }
       ],
       "english_name": "Coldshot",
-      "japanese_name": "コールドショット"
+      "japanese_name": "コールドショット",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cf/%E5%A4%B4%E5%83%8F_%E5%86%B0%E9%85%BF.png/96px-%E5%A4%B4%E5%83%8F_%E5%86%B0%E9%85%BF.png"
     },
     {
       "id": "char_4105_almond",
@@ -8221,7 +8509,8 @@
         }
       ],
       "english_name": "Almond",
-      "japanese_name": "アーモンド"
+      "japanese_name": "アーモンド",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2e/%E5%A4%B4%E5%83%8F_%E6%9D%8F%E4%BB%81.png/96px-%E5%A4%B4%E5%83%8F_%E6%9D%8F%E4%BB%81.png"
     },
     {
       "id": "char_4106_bryota",
@@ -8245,7 +8534,8 @@
         }
       ],
       "english_name": "Bryophyta",
-      "japanese_name": "ブライオファイタ"
+      "japanese_name": "ブライオファイタ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/95/%E5%A4%B4%E5%83%8F_%E8%8B%8D%E8%8B%94.png/96px-%E5%A4%B4%E5%83%8F_%E8%8B%8D%E8%8B%94.png"
     },
     {
       "id": "char_4107_vrdant",
@@ -8269,7 +8559,8 @@
         }
       ],
       "english_name": "Verdant",
-      "japanese_name": "ヴァーダント"
+      "japanese_name": "ヴァーダント",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/97/%E5%A4%B4%E5%83%8F_%E7%BB%B4%E8%8D%BB.png/96px-%E5%A4%B4%E5%83%8F_%E7%BB%B4%E8%8D%BB.png"
     },
     {
       "id": "char_4109_baslin",
@@ -8293,7 +8584,8 @@
         }
       ],
       "english_name": "Bassline",
-      "japanese_name": "ベースライン"
+      "japanese_name": "ベースライン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d8/%E5%A4%B4%E5%83%8F_%E6%B7%B1%E5%BE%8B.png/96px-%E5%A4%B4%E5%83%8F_%E6%B7%B1%E5%BE%8B.png"
     },
     {
       "id": "char_4110_delphn",
@@ -8309,7 +8601,8 @@
         }
       ],
       "english_name": "Delphine",
-      "japanese_name": "デルフィーン"
+      "japanese_name": "デルフィーン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/28/%E5%A4%B4%E5%83%8F_%E6%88%B4%E8%8F%B2%E6%81%A9.png/96px-%E5%A4%B4%E5%83%8F_%E6%88%B4%E8%8F%B2%E6%81%A9.png"
     },
     {
       "id": "char_4114_harold",
@@ -8333,7 +8626,8 @@
         }
       ],
       "english_name": "Harold",
-      "japanese_name": "ハロルド"
+      "japanese_name": "ハロルド",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/22/%E5%A4%B4%E5%83%8F_%E5%93%88%E6%B4%9B%E5%BE%B7.png/96px-%E5%A4%B4%E5%83%8F_%E5%93%88%E6%B4%9B%E5%BE%B7.png"
     },
     {
       "id": "char_4116_blkkgt",
@@ -8360,7 +8654,8 @@
       "japanese_name": "デーゲンブレヒャー",
       "aliases": [
         "黑骑士"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/0f/%E5%A4%B4%E5%83%8F_%E9%94%8F.png/96px-%E5%A4%B4%E5%83%8F_%E9%94%8F.png"
     },
     {
       "id": "char_4117_ray",
@@ -8395,7 +8690,8 @@
       "japanese_name": "レイ",
       "aliases": [
         "莱依"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/6a/%E5%A4%B4%E5%83%8F_%E8%8E%B1%E4%BC%8A.png/96px-%E5%A4%B4%E5%83%8F_%E8%8E%B1%E4%BC%8A.png"
     },
     {
       "id": "char_4119_wanqin",
@@ -8419,7 +8715,8 @@
         }
       ],
       "english_name": "Wanqing",
-      "japanese_name": "ワンチィン"
+      "japanese_name": "ワンチィン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ad/%E5%A4%B4%E5%83%8F_%E4%B8%87%E9%A1%B7.png/96px-%E5%A4%B4%E5%83%8F_%E4%B8%87%E9%A1%B7.png"
     },
     {
       "id": "char_411_tomimi",
@@ -8443,7 +8740,8 @@
         }
       ],
       "english_name": "Tomimi",
-      "japanese_name": "トミミ"
+      "japanese_name": "トミミ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b9/%E5%A4%B4%E5%83%8F_%E7%89%B9%E7%B1%B3%E7%B1%B3.png/96px-%E5%A4%B4%E5%83%8F_%E7%89%B9%E7%B1%B3%E7%B1%B3.png"
     },
     {
       "id": "char_4121_zuole",
@@ -8475,7 +8773,8 @@
         }
       ],
       "english_name": "Zuo Le",
-      "japanese_name": "ズオ・ラウ"
+      "japanese_name": "ズオ・ラウ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e0/%E5%A4%B4%E5%83%8F_%E5%B7%A6%E4%B9%90.png/96px-%E5%A4%B4%E5%83%8F_%E5%B7%A6%E4%B9%90.png"
     },
     {
       "id": "char_4122_grabds",
@@ -8499,7 +8798,8 @@
         }
       ],
       "english_name": "Grain Buds",
-      "japanese_name": "グレインバッズ"
+      "japanese_name": "グレインバッズ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1d/%E5%A4%B4%E5%83%8F_%E5%B0%8F%E6%BB%A1.png/96px-%E5%A4%B4%E5%83%8F_%E5%B0%8F%E6%BB%A1.png"
     },
     {
       "id": "char_4123_ela",
@@ -8523,7 +8823,8 @@
         }
       ],
       "english_name": "Ela",
-      "japanese_name": "Ela"
+      "japanese_name": "Ela",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/26/%E5%A4%B4%E5%83%8F_%E8%89%BE%E6%8B%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%89%BE%E6%8B%89.png"
     },
     {
       "id": "char_4124_iana",
@@ -8547,7 +8848,8 @@
         }
       ],
       "english_name": "Iana",
-      "japanese_name": "Iana"
+      "japanese_name": "Iana",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/ff/%E5%A4%B4%E5%83%8F_%E5%8F%8C%E6%9C%88.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%8C%E6%9C%88.png"
     },
     {
       "id": "char_4125_rdoc",
@@ -8571,7 +8873,8 @@
         }
       ],
       "english_name": "Doc",
-      "japanese_name": "Doc"
+      "japanese_name": "Doc",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/11/%E5%A4%B4%E5%83%8F_%E5%8C%BB%E7%94%9F.png/96px-%E5%A4%B4%E5%83%8F_%E5%8C%BB%E7%94%9F.png"
     },
     {
       "id": "char_4126_fuze",
@@ -8587,7 +8890,8 @@
         }
       ],
       "english_name": "Fuze",
-      "japanese_name": "Fuze"
+      "japanese_name": "Fuze",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/70/%E5%A4%B4%E5%83%8F_%E5%AF%BC%E7%81%AB%E7%B4%A2.png/96px-%E5%A4%B4%E5%83%8F_%E5%AF%BC%E7%81%AB%E7%B4%A2.png"
     },
     {
       "id": "char_4130_luton",
@@ -8611,7 +8915,8 @@
         }
       ],
       "english_name": "Lutonada",
-      "japanese_name": "ルトナダ"
+      "japanese_name": "ルトナダ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/77/%E5%A4%B4%E5%83%8F_%E9%9C%B2%E6%89%98.png/96px-%E5%A4%B4%E5%83%8F_%E9%9C%B2%E6%89%98.png"
     },
     {
       "id": "char_4131_odda",
@@ -8635,7 +8940,8 @@
         }
       ],
       "english_name": "Odda",
-      "japanese_name": "オッダ"
+      "japanese_name": "オッダ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/29/%E5%A4%B4%E5%83%8F_%E5%A5%A5%E8%BE%BE.png/96px-%E5%A4%B4%E5%83%8F_%E5%A5%A5%E8%BE%BE.png"
     },
     {
       "id": "char_4132_ascln",
@@ -8664,7 +8970,8 @@
         "阿斯卡伦",
         "Askl",
         "24"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/76/%E5%A4%B4%E5%83%8F_%E9%98%BF%E6%96%AF%E5%8D%A1%E7%BA%B6.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF%E6%96%AF%E5%8D%A1%E7%BA%B6.png"
     },
     {
       "id": "char_4133_logos",
@@ -8688,7 +8995,8 @@
         }
       ],
       "english_name": "Logos",
-      "japanese_name": "ロゴス"
+      "japanese_name": "ロゴス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/44/%E5%A4%B4%E5%83%8F_%E9%80%BB%E5%90%84%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E9%80%BB%E5%90%84%E6%96%AF.png"
     },
     {
       "id": "char_4134_cetsyr",
@@ -8710,7 +9018,8 @@
         }
       ],
       "english_name": "Civilight Eterna",
-      "japanese_name": "シヴィライト・エテルナ"
+      "japanese_name": "シヴィライト・エテルナ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/de/%E5%A4%B4%E5%83%8F_%E9%AD%94%E7%8E%8B.png/96px-%E5%A4%B4%E5%83%8F_%E9%AD%94%E7%8E%8B.png"
     },
     {
       "id": "char_4136_phonor",
@@ -8732,7 +9041,8 @@
             "背面"
           ]
         }
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3d/%E5%A4%B4%E5%83%8F_PhonoR-0.png/96px-%E5%A4%B4%E5%83%8F_PhonoR-0.png"
     },
     {
       "id": "char_4137_udflow",
@@ -8756,7 +9066,8 @@
         }
       ],
       "english_name": "Underflow",
-      "japanese_name": "アンダーフロー"
+      "japanese_name": "アンダーフロー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/bd/%E5%A4%B4%E5%83%8F_%E6%B7%B1%E5%B7%A1.png/96px-%E5%A4%B4%E5%83%8F_%E6%B7%B1%E5%B7%A1.png"
     },
     {
       "id": "char_4138_narant",
@@ -8793,7 +9104,8 @@
         "娜仁图娅",
         "大姨",
         "娜仁图雅"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/ba/%E5%A4%B4%E5%83%8F_%E5%A8%9C%E4%BB%81%E5%9B%BE%E4%BA%9A.png/96px-%E5%A4%B4%E5%83%8F_%E5%A8%9C%E4%BB%81%E5%9B%BE%E4%BA%9A.png"
     },
     {
       "id": "char_4139_papyrs",
@@ -8817,7 +9129,8 @@
         }
       ],
       "english_name": "Papyrus",
-      "japanese_name": "パピルス"
+      "japanese_name": "パピルス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3d/%E5%A4%B4%E5%83%8F_%E8%8E%8E%E8%8D%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%8E%8E%E8%8D%89.png"
     },
     {
       "id": "char_4140_lasher",
@@ -8841,7 +9154,8 @@
         }
       ],
       "english_name": "Sand Reckoner",
-      "japanese_name": "サンドレコナー"
+      "japanese_name": "サンドレコナー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f8/%E5%A4%B4%E5%83%8F_%E8%A1%A1%E6%B2%99.png/96px-%E5%A4%B4%E5%83%8F_%E8%A1%A1%E6%B2%99.png"
     },
     {
       "id": "char_4141_marcil",
@@ -8868,7 +9182,8 @@
       "japanese_name": "マルシル",
       "aliases": [
         "玛露希尔"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/84/%E5%A4%B4%E5%83%8F_%E7%8E%9B%E9%9C%B2%E8%A5%BF%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E7%8E%9B%E9%9C%B2%E8%A5%BF%E5%B0%94.png"
     },
     {
       "id": "char_4142_laios",
@@ -8884,7 +9199,8 @@
         }
       ],
       "english_name": "Laios",
-      "japanese_name": "ライオス"
+      "japanese_name": "ライオス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/9c/%E5%A4%B4%E5%83%8F_%E8%8E%B1%E6%AC%A7%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E8%8E%B1%E6%AC%A7%E6%96%AF.png"
     },
     {
       "id": "char_4143_sensi",
@@ -8900,7 +9216,8 @@
         }
       ],
       "english_name": "Senshi",
-      "japanese_name": "センシ"
+      "japanese_name": "センシ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e7/%E5%A4%B4%E5%83%8F_%E6%A3%AE%E8%A5%BF.png/96px-%E5%A4%B4%E5%83%8F_%E6%A3%AE%E8%A5%BF.png"
     },
     {
       "id": "char_4144_chilc",
@@ -8919,7 +9236,8 @@
       "japanese_name": "チルチャック",
       "aliases": [
         "奇尔查克"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/42/%E5%A4%B4%E5%83%8F_%E9%BD%90%E5%B0%94%E6%9F%A5%E5%85%8B.png/96px-%E5%A4%B4%E5%83%8F_%E9%BD%90%E5%B0%94%E6%9F%A5%E5%85%8B.png"
     },
     {
       "id": "char_4145_ulpia",
@@ -8947,7 +9265,8 @@
       "aliases": [
         "三队长",
         "52"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/33/%E5%A4%B4%E5%83%8F_%E4%B9%8C%E5%B0%94%E6%AF%94%E5%AE%89.png/96px-%E5%A4%B4%E5%83%8F_%E4%B9%8C%E5%B0%94%E6%AF%94%E5%AE%89.png"
     },
     {
       "id": "char_4146_nymph",
@@ -8979,7 +9298,8 @@
         }
       ],
       "english_name": "Nymph",
-      "japanese_name": "ニンフ"
+      "japanese_name": "ニンフ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1a/%E5%A4%B4%E5%83%8F_%E5%A6%AE%E8%8A%99.png/96px-%E5%A4%B4%E5%83%8F_%E5%A6%AE%E8%8A%99.png"
     },
     {
       "id": "char_4147_mitm",
@@ -9003,7 +9323,8 @@
         }
       ],
       "english_name": "Mitm",
-      "japanese_name": "ミトム"
+      "japanese_name": "ミトム",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fd/%E5%A4%B4%E5%83%8F_%E6%B8%A1%E6%A1%A5.png/96px-%E5%A4%B4%E5%83%8F_%E6%B8%A1%E6%A1%A5.png"
     },
     {
       "id": "char_4148_philae",
@@ -9027,7 +9348,8 @@
         }
       ],
       "english_name": "Philae",
-      "japanese_name": "フィラエ"
+      "japanese_name": "フィラエ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/00/%E5%A4%B4%E5%83%8F_%E8%8F%B2%E8%8E%B1.png/96px-%E5%A4%B4%E5%83%8F_%E8%8F%B2%E8%8E%B1.png"
     },
     {
       "id": "char_4151_tinman",
@@ -9051,7 +9373,8 @@
         }
       ],
       "english_name": "Tin Man",
-      "japanese_name": "ブリキ"
+      "japanese_name": "ブリキ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a1/%E5%A4%B4%E5%83%8F_%E9%94%A1%E4%BA%BA.png/96px-%E5%A4%B4%E5%83%8F_%E9%94%A1%E4%BA%BA.png"
     },
     {
       "id": "char_4155_talr",
@@ -9075,7 +9398,8 @@
         }
       ],
       "english_name": "Figurino",
-      "japanese_name": "フィグリーノ"
+      "japanese_name": "フィグリーノ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4a/%E5%A4%B4%E5%83%8F_%E8%A3%81%E5%BA%A6.png/96px-%E5%A4%B4%E5%83%8F_%E8%A3%81%E5%BA%A6.png"
     },
     {
       "id": "char_415_flint",
@@ -9099,7 +9423,8 @@
         }
       ],
       "english_name": "Flint",
-      "japanese_name": "フリント"
+      "japanese_name": "フリント",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ac/%E5%A4%B4%E5%83%8F_%E7%87%A7%E7%9F%B3.png/96px-%E5%A4%B4%E5%83%8F_%E7%87%A7%E7%9F%B3.png"
     },
     {
       "id": "char_4162_cathy",
@@ -9115,7 +9440,8 @@
         }
       ],
       "english_name": "Catherine",
-      "japanese_name": "キャサリン"
+      "japanese_name": "キャサリン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e9/%E5%A4%B4%E5%83%8F_%E5%87%AF%E7%91%9F%E7%90%B3.png/96px-%E5%A4%B4%E5%83%8F_%E5%87%AF%E7%91%9F%E7%90%B3.png"
     },
     {
       "id": "char_4163_rosesa",
@@ -9142,7 +9468,8 @@
       "japanese_name": "ローズソルト",
       "aliases": [
         "帕斯卡拉"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8a/%E5%A4%B4%E5%83%8F_%E7%91%B0%E7%9B%90.png/96px-%E5%A4%B4%E5%83%8F_%E7%91%B0%E7%9B%90.png"
     },
     {
       "id": "char_4164_tecno",
@@ -9158,7 +9485,8 @@
         }
       ],
       "english_name": "Tecno",
-      "japanese_name": "テクノ"
+      "japanese_name": "テクノ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2e/%E5%A4%B4%E5%83%8F_%E7%89%B9%E5%85%8B%E8%AF%BA.png/96px-%E5%A4%B4%E5%83%8F_%E7%89%B9%E5%85%8B%E8%AF%BA.png"
     },
     {
       "id": "char_4165_ctrail",
@@ -9174,7 +9502,8 @@
         }
       ],
       "english_name": "Contrail",
-      "japanese_name": "コントレイル"
+      "japanese_name": "コントレイル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/67/%E5%A4%B4%E5%83%8F_%E4%BA%91%E8%BF%B9.png/96px-%E5%A4%B4%E5%83%8F_%E4%BA%91%E8%BF%B9.png"
     },
     {
       "id": "char_4166_varkis",
@@ -9191,7 +9520,8 @@
       ],
       "aliases": [
         "Varkáris"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e4/%E5%A4%B4%E5%83%8F_%E6%91%86%E6%B8%A1%E4%BA%BA.png/96px-%E5%A4%B4%E5%83%8F_%E6%91%86%E6%B8%A1%E4%BA%BA.png"
     },
     {
       "id": "char_416_zumama",
@@ -9218,7 +9548,8 @@
       "japanese_name": "ユーネクテス",
       "aliases": [
         "祖玛玛"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/74/%E5%A4%B4%E5%83%8F_%E6%A3%AE%E8%9A%BA.png/96px-%E5%A4%B4%E5%83%8F_%E6%A3%AE%E8%9A%BA.png"
     },
     {
       "id": "char_4171_wulfen",
@@ -9242,7 +9573,8 @@
         }
       ],
       "english_name": "Wulfenite",
-      "japanese_name": "ウルフェナイト"
+      "japanese_name": "ウルフェナイト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/20/%E5%A4%B4%E5%83%8F_%E9%92%BC%E9%93%85.png/96px-%E5%A4%B4%E5%83%8F_%E9%92%BC%E9%93%85.png"
     },
     {
       "id": "char_4172_xingzh",
@@ -9266,7 +9598,8 @@
         }
       ],
       "english_name": "Xingzhu",
-      "japanese_name": "シィンズゥ"
+      "japanese_name": "シィンズゥ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/42/%E5%A4%B4%E5%83%8F_%E8%A1%8C%E7%AE%B8.png/96px-%E5%A4%B4%E5%83%8F_%E8%A1%8C%E7%AE%B8.png"
     },
     {
       "id": "char_4173_nowell",
@@ -9290,7 +9623,8 @@
         }
       ],
       "english_name": "Nowell",
-      "japanese_name": "ノウエル"
+      "japanese_name": "ノウエル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/69/%E5%A4%B4%E5%83%8F_%E8%AF%BA%E5%A8%81%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E8%AF%BA%E5%A8%81%E5%B0%94.png"
     },
     {
       "id": "char_4177_brigid",
@@ -9314,7 +9648,8 @@
         }
       ],
       "english_name": "Brigid",
-      "japanese_name": "ブリギッド"
+      "japanese_name": "ブリギッド",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/3b/%E5%A4%B4%E5%83%8F_%E6%B0%B4%E7%81%AF%E5%BF%83.png/96px-%E5%A4%B4%E5%83%8F_%E6%B0%B4%E7%81%AF%E5%BF%83.png"
     },
     {
       "id": "char_4178_alanna",
@@ -9330,7 +9665,8 @@
         }
       ],
       "english_name": "Alanna",
-      "japanese_name": "アランナ"
+      "japanese_name": "アランナ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b6/%E5%A4%B4%E5%83%8F_%E9%98%BF%E5%85%B0%E5%A8%9C.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF%E5%85%B0%E5%A8%9C.png"
     },
     {
       "id": "char_4179_monstr",
@@ -9355,7 +9691,8 @@
       ],
       "aliases": [
         "M3"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/2a/%E5%A4%B4%E5%83%8F_Mon3tr.png/96px-%E5%A4%B4%E5%83%8F_Mon3tr.png"
     },
     {
       "id": "char_4182_oblvns",
@@ -9385,7 +9722,8 @@
         "祥子",
         "Saki",
         "大祥"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cb/%E5%A4%B4%E5%83%8F_%E4%B8%B0%E5%B7%9D%E7%A5%A5%E5%AD%90.png/96px-%E5%A4%B4%E5%83%8F_%E4%B8%B0%E5%B7%9D%E7%A5%A5%E5%AD%90.png"
     },
     {
       "id": "char_4183_mortis",
@@ -9413,7 +9751,8 @@
       "aliases": [
         "Wakaba Mutsumi",
         "睦"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a0/%E5%A4%B4%E5%83%8F_%E8%8B%A5%E5%8F%B6%E7%9D%A6.png/96px-%E5%A4%B4%E5%83%8F_%E8%8B%A5%E5%8F%B6%E7%9D%A6.png"
     },
     {
       "id": "char_4184_dolris",
@@ -9440,7 +9779,8 @@
         "Misumi Uika",
         "初华",
         "三角初音"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b4/%E5%A4%B4%E5%83%8F_%E4%B8%89%E8%A7%92%E5%88%9D%E5%8D%8E.png/96px-%E5%A4%B4%E5%83%8F_%E4%B8%89%E8%A7%92%E5%88%9D%E5%8D%8E.png"
     },
     {
       "id": "char_4185_amoris",
@@ -9470,7 +9810,8 @@
         "若麦",
         "喵梦",
         "喵梦亲"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/df/%E5%A4%B4%E5%83%8F_%E7%A5%90%E5%A4%A9%E5%AF%BA%E8%8B%A5%E9%BA%A6.png/96px-%E5%A4%B4%E5%83%8F_%E7%A5%90%E5%A4%A9%E5%AF%BA%E8%8B%A5%E9%BA%A6.png"
     },
     {
       "id": "char_4186_tmoris",
@@ -9500,7 +9841,8 @@
         "海铃",
         "八幡海玲",
         "海玲"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f2/%E5%A4%B4%E5%83%8F_%E5%85%AB%E5%B9%A1%E6%B5%B7%E9%93%83.png/96px-%E5%A4%B4%E5%83%8F_%E5%85%AB%E5%B9%A1%E6%B5%B7%E9%93%83.png"
     },
     {
       "id": "char_4187_graceb",
@@ -9524,7 +9866,8 @@
         }
       ],
       "english_name": "Gracebearer",
-      "japanese_name": "グレースベアラー"
+      "japanese_name": "グレースベアラー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/10/%E5%A4%B4%E5%83%8F_%E8%81%86%E9%9F%B3.png/96px-%E5%A4%B4%E5%83%8F_%E8%81%86%E9%9F%B3.png"
     },
     {
       "id": "char_4188_confes",
@@ -9541,7 +9884,8 @@
       ],
       "aliases": [
         "先锋小车"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c4/%E5%A4%B4%E5%83%8F_CONFESS-47.png/96px-%E5%A4%B4%E5%83%8F_CONFESS-47.png"
     },
     {
       "id": "char_4191_tippi",
@@ -9557,7 +9901,8 @@
         }
       ],
       "english_name": "Tippi",
-      "japanese_name": "ティッピ"
+      "japanese_name": "ティッピ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/09/%E5%A4%B4%E5%83%8F_%E8%92%82%E6%AF%94.png/96px-%E5%A4%B4%E5%83%8F_%E8%92%82%E6%AF%94.png"
     },
     {
       "id": "char_4193_lemuen",
@@ -9584,7 +9929,8 @@
       "japanese_name": "レミュアン",
       "aliases": [
         "安姐"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c5/%E5%A4%B4%E5%83%8F_%E8%95%BE%E7%BC%AA%E5%AE%89.png/96px-%E5%A4%B4%E5%83%8F_%E8%95%BE%E7%BC%AA%E5%AE%89.png"
     },
     {
       "id": "char_4194_rmixer",
@@ -9608,7 +9954,8 @@
         }
       ],
       "english_name": "Sankta Miksaparato",
-      "japanese_name": "サンクタ・ミキサー"
+      "japanese_name": "サンクタ・ミキサー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/13/%E5%A4%B4%E5%83%8F_%E4%BF%A1%E4%BB%B0%E6%90%85%E6%8B%8C%E6%9C%BA.png/96px-%E5%A4%B4%E5%83%8F_%E4%BF%A1%E4%BB%B0%E6%90%85%E6%8B%8C%E6%9C%BA.png"
     },
     {
       "id": "char_4195_radian",
@@ -9635,7 +9982,8 @@
       "japanese_name": "レイディアン",
       "aliases": [
         "Radian"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/56/%E5%A4%B4%E5%83%8F_%E7%94%B5%E5%BC%A7.png/96px-%E5%A4%B4%E5%83%8F_%E7%94%B5%E5%BC%A7.png"
     },
     {
       "id": "char_4196_reckpr",
@@ -9651,7 +9999,8 @@
         }
       ],
       "english_name": "Record Keeper",
-      "japanese_name": "レコードキーパー"
+      "japanese_name": "レコードキーパー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/09/%E5%A4%B4%E5%83%8F_%E5%BD%95%E6%AD%A6%E5%AE%98.png/96px-%E5%A4%B4%E5%83%8F_%E5%BD%95%E6%AD%A6%E5%AE%98.png"
     },
     {
       "id": "char_4198_christ",
@@ -9670,7 +10019,8 @@
       "aliases": [
         "Miss Christine",
         "Christine"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/10/%E5%A4%B4%E5%83%8F_Miss.Christine.png/96px-%E5%A4%B4%E5%83%8F_Miss.Christine.png"
     },
     {
       "id": "char_4199_makiri",
@@ -9686,7 +10036,8 @@
         }
       ],
       "english_name": "Matsukiri",
-      "japanese_name": "マツキリ"
+      "japanese_name": "マツキリ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/56/%E5%A4%B4%E5%83%8F_%E6%9D%BE%E6%A1%90.png/96px-%E5%A4%B4%E5%83%8F_%E6%9D%BE%E6%A1%90.png"
     },
     {
       "id": "char_4202_haruka",
@@ -9716,7 +10067,8 @@
         "萌萌香",
         "紫野遥",
         "Mmk"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/ec/%E5%A4%B4%E5%83%8F_%E9%81%A5.png/96px-%E5%A4%B4%E5%83%8F_%E9%81%A5.png"
     },
     {
       "id": "char_4203_kichi",
@@ -9732,7 +10084,8 @@
         }
       ],
       "english_name": "Kichisei",
-      "japanese_name": "キチセイ"
+      "japanese_name": "キチセイ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fa/%E5%A4%B4%E5%83%8F_%E5%90%89%E6%98%9F.png/96px-%E5%A4%B4%E5%83%8F_%E5%90%89%E6%98%9F.png"
     },
     {
       "id": "char_4204_mantra",
@@ -9748,7 +10101,8 @@
         }
       ],
       "english_name": "Mantra",
-      "japanese_name": "マントラ"
+      "japanese_name": "マントラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/63/%E5%A4%B4%E5%83%8F_%E7%9C%9F%E8%A8%80.png/96px-%E5%A4%B4%E5%83%8F_%E7%9C%9F%E8%A8%80.png"
     },
     {
       "id": "char_4207_branch",
@@ -9775,7 +10129,8 @@
       "japanese_name": "ヴェトチキ",
       "aliases": [
         "Веточки"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a0/%E5%A4%B4%E5%83%8F_%E6%8A%98%E6%A1%A0.png/96px-%E5%A4%B4%E5%83%8F_%E6%8A%98%E6%A1%A0.png"
     },
     {
       "id": "char_4208_wintim",
@@ -9794,7 +10149,8 @@
       "japanese_name": "スネグーラチカ",
       "aliases": [
         "Снегyрочка"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/27/%E5%A4%B4%E5%83%8F_%E5%86%AC%E6%97%B6.png/96px-%E5%A4%B4%E5%83%8F_%E5%86%AC%E6%97%B6.png"
     },
     {
       "id": "char_420_flamtl",
@@ -9818,7 +10174,8 @@
         }
       ],
       "english_name": "Flametail",
-      "japanese_name": "フレイムテイル"
+      "japanese_name": "フレイムテイル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c8/%E5%A4%B4%E5%83%8F_%E7%84%B0%E5%B0%BE.png/96px-%E5%A4%B4%E5%83%8F_%E7%84%B0%E5%B0%BE.png"
     },
     {
       "id": "char_4211_snhunt",
@@ -9834,7 +10191,8 @@
         }
       ],
       "english_name": "Snow Hunter",
-      "japanese_name": "スノーハンター"
+      "japanese_name": "スノーハンター",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cc/%E5%A4%B4%E5%83%8F_%E9%9B%AA%E7%8C%8E.png/96px-%E5%A4%B4%E5%83%8F_%E9%9B%AA%E7%8C%8E.png"
     },
     {
       "id": "char_4212_nasti",
@@ -9850,7 +10208,8 @@
         }
       ],
       "english_name": "Nasti",
-      "japanese_name": "ナスティ"
+      "japanese_name": "ナスティ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/97/%E5%A4%B4%E5%83%8F_%E5%A8%9C%E6%96%AF%E6%8F%90.png/96px-%E5%A4%B4%E5%83%8F_%E5%A8%9C%E6%96%AF%E6%8F%90.png"
     },
     {
       "id": "char_4213_skybx",
@@ -9866,7 +10225,8 @@
         }
       ],
       "english_name": "Skybox",
-      "japanese_name": "スカイボックス"
+      "japanese_name": "スカイボックス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d9/%E5%A4%B4%E5%83%8F_%E5%A4%A9%E7%A9%BA%E7%9B%92.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%A9%E7%A9%BA%E7%9B%92.png"
     },
     {
       "id": "char_4214_cairn",
@@ -9882,7 +10242,8 @@
         }
       ],
       "english_name": "Cairn",
-      "japanese_name": "ケルン"
+      "japanese_name": "ケルン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/52/%E5%A4%B4%E5%83%8F_%E5%93%8D%E7%9F%B3.png/96px-%E5%A4%B4%E5%83%8F_%E5%93%8D%E7%9F%B3.png"
     },
     {
       "id": "char_4215_buddy",
@@ -9907,7 +10268,8 @@
       ],
       "aliases": [
         "Rhodes Island Recon"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/84/%E5%A4%B4%E5%83%8F_%E7%BD%97%E5%BE%B7%E5%B2%9B%E9%9A%90%E7%A7%98%E9%98%9F.png/96px-%E5%A4%B4%E5%83%8F_%E7%BD%97%E5%BE%B7%E5%B2%9B%E9%9A%90%E7%A7%98%E9%98%9F.png"
     },
     {
       "id": "char_421_crow",
@@ -9931,7 +10293,8 @@
         }
       ],
       "english_name": "La Pluma",
-      "japanese_name": "ラ・プルマ"
+      "japanese_name": "ラ・プルマ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b8/%E5%A4%B4%E5%83%8F_%E7%BE%BD%E6%AF%9B%E7%AC%94.png/96px-%E5%A4%B4%E5%83%8F_%E7%BE%BD%E6%AF%9B%E7%AC%94.png"
     },
     {
       "id": "char_4221_ju",
@@ -9948,7 +10311,8 @@
       ],
       "aliases": [
         "Ju"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a8/%E5%A4%B4%E5%83%8F_%E7%9F%A9.png/96px-%E5%A4%B4%E5%83%8F_%E7%9F%A9.png"
     },
     {
       "id": "char_4222_taraxa",
@@ -9965,7 +10329,8 @@
       ],
       "aliases": [
         "Taraxacum"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1c/%E5%A4%B4%E5%83%8F_%E9%A3%8E%E7%B5%AE.png/96px-%E5%A4%B4%E5%83%8F_%E9%A3%8E%E7%B5%AE.png"
     },
     {
       "id": "char_4223_botany",
@@ -9982,7 +10347,8 @@
       ],
       "aliases": [
         "Ботани"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/4d/%E5%A4%B4%E5%83%8F_%E4%BC%AF%E5%A1%94%E5%B0%BC.png/96px-%E5%A4%B4%E5%83%8F_%E4%BC%AF%E5%A1%94%E5%B0%BC.png"
     },
     {
       "id": "char_4224_turdus",
@@ -9999,7 +10365,8 @@
       ],
       "aliases": [
         "Укусик"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/55/%E5%A4%B4%E5%83%8F_%E4%B9%8C%E5%95%BE.png/96px-%E5%A4%B4%E5%83%8F_%E4%B9%8C%E5%95%BE.png"
     },
     {
       "id": "char_4225_tanya",
@@ -10016,7 +10383,8 @@
       ],
       "aliases": [
         "Crackborne"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d6/%E5%A4%B4%E5%83%8F_%E8%A3%82%E5%93%8D.png/96px-%E5%A4%B4%E5%83%8F_%E8%A3%82%E5%93%8D.png"
     },
     {
       "id": "char_4226_veen",
@@ -10033,7 +10401,8 @@
       ],
       "aliases": [
         "Вий"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/56/%E5%A4%B4%E5%83%8F_%E7%BB%B4%E4%BC%8A.png/96px-%E5%A4%B4%E5%83%8F_%E7%BB%B4%E4%BC%8A.png"
     },
     {
       "id": "char_4227_gallus",
@@ -10055,7 +10424,8 @@
         "术师小车",
         "Gallus",
         "原鸡"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d7/%E5%A4%B4%E5%83%8F_GALLUS%C2%B2.png/96px-%E5%A4%B4%E5%83%8F_GALLUS%C2%B2.png"
     },
     {
       "id": "char_4228_closur",
@@ -10073,7 +10443,8 @@
       "aliases": [
         "Closure",
         "可露西尔"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a5/%E5%A4%B4%E5%83%8F_%E5%8F%AF%E9%9C%B2%E5%B8%8C%E5%B0%94.png/96px-%E5%A4%B4%E5%83%8F_%E5%8F%AF%E9%9C%B2%E5%B8%8C%E5%B0%94.png"
     },
     {
       "id": "char_422_aurora",
@@ -10097,7 +10468,8 @@
         }
       ],
       "english_name": "Aurora",
-      "japanese_name": "オーロラ"
+      "japanese_name": "オーロラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/43/%E5%A4%B4%E5%83%8F_%E6%9E%81%E5%85%89.png/96px-%E5%A4%B4%E5%83%8F_%E6%9E%81%E5%85%89.png"
     },
     {
       "id": "char_423_blemsh",
@@ -10133,7 +10505,8 @@
       "aliases": [
         "暇光",
         "霞光"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f7/%E5%A4%B4%E5%83%8F_%E7%91%95%E5%85%89.png/96px-%E5%A4%B4%E5%83%8F_%E7%91%95%E5%85%89.png"
     },
     {
       "id": "char_426_billro",
@@ -10165,7 +10538,8 @@
         }
       ],
       "english_name": "Carnelian",
-      "japanese_name": "カーネリアン"
+      "japanese_name": "カーネリアン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/dd/%E5%A4%B4%E5%83%8F_%E5%8D%A1%E6%B6%85%E5%88%A9%E5%AE%89.png/96px-%E5%A4%B4%E5%83%8F_%E5%8D%A1%E6%B6%85%E5%88%A9%E5%AE%89.png"
     },
     {
       "id": "char_427_vigil",
@@ -10192,7 +10566,8 @@
       "japanese_name": "ヴィジェル",
       "aliases": [
         "四爷"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/df/%E5%A4%B4%E5%83%8F_%E4%BC%BA%E5%A4%9C.png/96px-%E5%A4%B4%E5%83%8F_%E4%BC%BA%E5%A4%9C.png"
     },
     {
       "id": "char_430_fartth",
@@ -10216,7 +10591,8 @@
         }
       ],
       "english_name": "Fartooth",
-      "japanese_name": "ファートゥース"
+      "japanese_name": "ファートゥース",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a1/%E5%A4%B4%E5%83%8F_%E8%BF%9C%E7%89%99.png/96px-%E5%A4%B4%E5%83%8F_%E8%BF%9C%E7%89%99.png"
     },
     {
       "id": "char_431_ashlok",
@@ -10243,7 +10619,8 @@
       "japanese_name": "アッシュロック",
       "aliases": [
         "灰豪"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/21/%E5%A4%B4%E5%83%8F_%E7%81%B0%E6%AF%AB.png/96px-%E5%A4%B4%E5%83%8F_%E7%81%B0%E6%AF%AB.png"
     },
     {
       "id": "char_433_windft",
@@ -10259,7 +10636,8 @@
         }
       ],
       "english_name": "Windflit",
-      "japanese_name": "ウインドフリット"
+      "japanese_name": "ウインドフリット",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/5c/%E5%A4%B4%E5%83%8F_%E6%8E%A0%E9%A3%8E.png/96px-%E5%A4%B4%E5%83%8F_%E6%8E%A0%E9%A3%8E.png"
     },
     {
       "id": "char_436_whispr",
@@ -10291,7 +10669,8 @@
         }
       ],
       "english_name": "Whisperain",
-      "japanese_name": "ウィスパーレイン"
+      "japanese_name": "ウィスパーレイン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/34/%E5%A4%B4%E5%83%8F_%E7%B5%AE%E9%9B%A8.png/96px-%E5%A4%B4%E5%83%8F_%E7%B5%AE%E9%9B%A8.png"
     },
     {
       "id": "char_437_mizuki",
@@ -10323,7 +10702,8 @@
         }
       ],
       "english_name": "Mizuki",
-      "japanese_name": "ミヅキ"
+      "japanese_name": "ミヅキ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/05/%E5%A4%B4%E5%83%8F_%E6%B0%B4%E6%9C%88.png/96px-%E5%A4%B4%E5%83%8F_%E6%B0%B4%E6%9C%88.png"
     },
     {
       "id": "char_440_pinecn",
@@ -10358,7 +10738,8 @@
       "japanese_name": "パインコーン",
       "aliases": [
         "米娜"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/5e/%E5%A4%B4%E5%83%8F_%E6%9D%BE%E6%9E%9C.png/96px-%E5%A4%B4%E5%83%8F_%E6%9D%BE%E6%9E%9C.png"
     },
     {
       "id": "char_445_wscoot",
@@ -10385,7 +10766,8 @@
       "japanese_name": "ウィンドスクート",
       "aliases": [
         "聘风"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fe/%E5%A4%B4%E5%83%8F_%E9%AA%8B%E9%A3%8E.png/96px-%E5%A4%B4%E5%83%8F_%E9%AA%8B%E9%A3%8E.png"
     },
     {
       "id": "char_446_aroma",
@@ -10409,7 +10791,8 @@
         }
       ],
       "english_name": "Aroma",
-      "japanese_name": "アロマ"
+      "japanese_name": "アロマ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f6/%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%BD%97%E7%8E%9B.png/96px-%E5%A4%B4%E5%83%8F_%E9%98%BF%E7%BD%97%E7%8E%9B.png"
     },
     {
       "id": "char_449_glider",
@@ -10444,7 +10827,8 @@
       "japanese_name": "ハニーベリー",
       "aliases": [
         "密莓"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/29/%E5%A4%B4%E5%83%8F_%E8%9C%9C%E8%8E%93.png/96px-%E5%A4%B4%E5%83%8F_%E8%9C%9C%E8%8E%93.png"
     },
     {
       "id": "char_450_necras",
@@ -10476,7 +10860,8 @@
         }
       ],
       "english_name": "Necrass",
-      "japanese_name": "ネクラス"
+      "japanese_name": "ネクラス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d9/%E5%A4%B4%E5%83%8F_%E6%AD%BB%E8%8A%92.png/96px-%E5%A4%B4%E5%83%8F_%E6%AD%BB%E8%8A%92.png"
     },
     {
       "id": "char_451_robin",
@@ -10500,7 +10885,8 @@
         }
       ],
       "english_name": "Robin",
-      "japanese_name": "ロビン"
+      "japanese_name": "ロビン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/1f/%E5%A4%B4%E5%83%8F_%E7%BD%97%E5%AE%BE.png/96px-%E5%A4%B4%E5%83%8F_%E7%BD%97%E5%AE%BE.png"
     },
     {
       "id": "char_452_bstalk",
@@ -10532,7 +10918,8 @@
         }
       ],
       "english_name": "Beanstalk",
-      "japanese_name": "ビーンストーク"
+      "japanese_name": "ビーンストーク",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cb/%E5%A4%B4%E5%83%8F_%E8%B1%86%E8%8B%97.png/96px-%E5%A4%B4%E5%83%8F_%E8%B1%86%E8%8B%97.png"
     },
     {
       "id": "char_455_nothin",
@@ -10559,7 +10946,8 @@
       "japanese_name": "ウユウ",
       "aliases": [
         "Mr.Nothing"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/04/%E5%A4%B4%E5%83%8F_%E4%B9%8C%E6%9C%89.png/96px-%E5%A4%B4%E5%83%8F_%E4%B9%8C%E6%9C%89.png"
     },
     {
       "id": "char_456_ash",
@@ -10583,7 +10971,8 @@
         }
       ],
       "english_name": "Ash",
-      "japanese_name": "Ash"
+      "japanese_name": "Ash",
+      "thumbnail_url": "https://media.prts.wiki/thumb/6/64/%E5%A4%B4%E5%83%8F_%E7%81%B0%E7%83%AC.png/96px-%E5%A4%B4%E5%83%8F_%E7%81%B0%E7%83%AC.png"
     },
     {
       "id": "char_457_blitz",
@@ -10599,7 +10988,8 @@
         }
       ],
       "english_name": "Blitz",
-      "japanese_name": "Blitz"
+      "japanese_name": "Blitz",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c1/%E5%A4%B4%E5%83%8F_%E9%97%AA%E5%87%BB.png/96px-%E5%A4%B4%E5%83%8F_%E9%97%AA%E5%87%BB.png"
     },
     {
       "id": "char_458_rfrost",
@@ -10615,7 +11005,8 @@
         }
       ],
       "english_name": "Frost",
-      "japanese_name": "Frost"
+      "japanese_name": "Frost",
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/51/%E5%A4%B4%E5%83%8F_%E9%9C%9C%E5%8D%8E.png/96px-%E5%A4%B4%E5%83%8F_%E9%9C%9C%E5%8D%8E.png"
     },
     {
       "id": "char_459_tachak",
@@ -10639,7 +11030,8 @@
         }
       ],
       "english_name": "Tachanka",
-      "japanese_name": "Tachanka"
+      "japanese_name": "Tachanka",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cb/%E5%A4%B4%E5%83%8F_%E6%88%98%E8%BD%A6.png/96px-%E5%A4%B4%E5%83%8F_%E6%88%98%E8%BD%A6.png"
     },
     {
       "id": "char_464_cement",
@@ -10663,7 +11055,8 @@
         }
       ],
       "english_name": "Cement",
-      "japanese_name": "セメント"
+      "japanese_name": "セメント",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e8/%E5%A4%B4%E5%83%8F_%E6%B4%8B%E7%81%B0.png/96px-%E5%A4%B4%E5%83%8F_%E6%B4%8B%E7%81%B0.png"
     },
     {
       "id": "char_466_qanik",
@@ -10687,7 +11080,8 @@
         }
       ],
       "english_name": "Qanipalaat",
-      "japanese_name": "カニパラート"
+      "japanese_name": "カニパラート",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/82/%E5%A4%B4%E5%83%8F_%E9%9B%AA%E7%BB%92.png/96px-%E5%A4%B4%E5%83%8F_%E9%9B%AA%E7%BB%92.png"
     },
     {
       "id": "char_469_indigo",
@@ -10711,7 +11105,8 @@
         }
       ],
       "english_name": "Indigo",
-      "japanese_name": "インディゴ"
+      "japanese_name": "インディゴ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/92/%E5%A4%B4%E5%83%8F_%E6%B7%B1%E9%9D%9B.png/96px-%E5%A4%B4%E5%83%8F_%E6%B7%B1%E9%9D%9B.png"
     },
     {
       "id": "char_472_pasngr",
@@ -10735,7 +11130,8 @@
         }
       ],
       "english_name": "Passenger",
-      "japanese_name": "パッセンジャー"
+      "japanese_name": "パッセンジャー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d2/%E5%A4%B4%E5%83%8F_%E5%BC%82%E5%AE%A2.png/96px-%E5%A4%B4%E5%83%8F_%E5%BC%82%E5%AE%A2.png"
     },
     {
       "id": "char_473_mberry",
@@ -10767,7 +11163,8 @@
         }
       ],
       "english_name": "Mulberry",
-      "japanese_name": "マルベリー"
+      "japanese_name": "マルベリー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/0f/%E5%A4%B4%E5%83%8F_%E6%A1%91%E8%91%9A.png/96px-%E5%A4%B4%E5%83%8F_%E6%A1%91%E8%91%9A.png"
     },
     {
       "id": "char_474_glady",
@@ -10804,7 +11201,8 @@
         "歌蕾蒂亚",
         "二队长",
         "歌蒂"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/0d/%E5%A4%B4%E5%83%8F_%E6%AD%8C%E8%95%BE%E8%92%82%E5%A8%85.png/96px-%E5%A4%B4%E5%83%8F_%E6%AD%8C%E8%95%BE%E8%92%82%E5%A8%85.png"
     },
     {
       "id": "char_475_akafyu",
@@ -10831,7 +11229,8 @@
       "japanese_name": "アカフユ",
       "aliases": [
         "赤东"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fe/%E5%A4%B4%E5%83%8F_%E8%B5%A4%E5%86%AC.png/96px-%E5%A4%B4%E5%83%8F_%E8%B5%A4%E5%86%AC.png"
     },
     {
       "id": "char_476_blkngt",
@@ -10863,7 +11262,8 @@
         }
       ],
       "english_name": "Blacknight",
-      "japanese_name": "ブラックナイト"
+      "japanese_name": "ブラックナイト",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a1/%E5%A4%B4%E5%83%8F_%E5%A4%9C%E5%8D%8A.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%9C%E5%8D%8A.png"
     },
     {
       "id": "char_478_kirara",
@@ -10887,7 +11287,8 @@
         }
       ],
       "english_name": "Kirara",
-      "japanese_name": "キララ"
+      "japanese_name": "キララ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/a8/%E5%A4%B4%E5%83%8F_%E7%BB%AE%E8%89%AF.png/96px-%E5%A4%B4%E5%83%8F_%E7%BB%AE%E8%89%AF.png"
     },
     {
       "id": "char_479_sleach",
@@ -10924,7 +11325,8 @@
         "贞德",
         "简妮",
         "76"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/96/%E5%A4%B4%E5%83%8F_%E7%90%B4%E6%9F%B3.png/96px-%E5%A4%B4%E5%83%8F_%E7%90%B4%E6%9F%B3.png"
     },
     {
       "id": "char_484_robrta",
@@ -10959,7 +11361,8 @@
       "japanese_name": "ロベルタ",
       "aliases": [
         "罗比拉塔"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/52/%E5%A4%B4%E5%83%8F_%E7%BD%97%E6%AF%94%E8%8F%88%E5%A1%94.png/96px-%E5%A4%B4%E5%83%8F_%E7%BD%97%E6%AF%94%E8%8F%88%E5%A1%94.png"
     },
     {
       "id": "char_485_pallas",
@@ -10994,7 +11397,8 @@
       "japanese_name": "パラス",
       "aliases": [
         "牛牛"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/a/ad/%E5%A4%B4%E5%83%8F_%E5%B8%95%E6%8B%89%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E5%B8%95%E6%8B%89%E6%96%AF.png"
     },
     {
       "id": "char_486_takila",
@@ -11026,7 +11430,8 @@
         }
       ],
       "english_name": "Tequila",
-      "japanese_name": "テキーラ"
+      "japanese_name": "テキーラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/42/%E5%A4%B4%E5%83%8F_%E9%BE%99%E8%88%8C%E5%85%B0.png/96px-%E5%A4%B4%E5%83%8F_%E9%BE%99%E8%88%8C%E5%85%B0.png"
     },
     {
       "id": "char_487_bobb",
@@ -11050,7 +11455,8 @@
         }
       ],
       "english_name": "Bobbing",
-      "japanese_name": "ボビング"
+      "japanese_name": "ボビング",
+      "thumbnail_url": "https://media.prts.wiki/thumb/d/d5/%E5%A4%B4%E5%83%8F_%E6%B3%A2%E5%8D%9C.png/96px-%E5%A4%B4%E5%83%8F_%E6%B3%A2%E5%8D%9C.png"
     },
     {
       "id": "char_488_buildr",
@@ -11074,7 +11480,8 @@
         }
       ],
       "english_name": "Poncirus",
-      "japanese_name": "ポンシラス"
+      "japanese_name": "ポンシラス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/0e/%E5%A4%B4%E5%83%8F_%E9%9D%92%E6%9E%B3.png/96px-%E5%A4%B4%E5%83%8F_%E9%9D%92%E6%9E%B3.png"
     },
     {
       "id": "char_489_serum",
@@ -11098,7 +11505,8 @@
         }
       ],
       "english_name": "Corroserum",
-      "japanese_name": "コロセラム"
+      "japanese_name": "コロセラム",
+      "thumbnail_url": "https://media.prts.wiki/thumb/7/70/%E5%A4%B4%E5%83%8F_%E8%9A%80%E6%B8%85.png/96px-%E5%A4%B4%E5%83%8F_%E8%9A%80%E6%B8%85.png"
     },
     {
       "id": "char_491_humus",
@@ -11122,7 +11530,8 @@
         }
       ],
       "english_name": "Humus",
-      "japanese_name": "ヒューマス"
+      "japanese_name": "ヒューマス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/e/e0/%E5%A4%B4%E5%83%8F_%E4%BC%91%E8%B0%9F%E6%96%AF.png/96px-%E5%A4%B4%E5%83%8F_%E4%BC%91%E8%B0%9F%E6%96%AF.png"
     },
     {
       "id": "char_492_quercu",
@@ -11154,7 +11563,8 @@
         }
       ],
       "english_name": "Quercus",
-      "japanese_name": "クエルクス"
+      "japanese_name": "クエルクス",
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/08/%E5%A4%B4%E5%83%8F_%E5%A4%8F%E6%A0%8E.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%8F%E6%A0%8E.png"
     },
     {
       "id": "char_493_firwhl",
@@ -11170,7 +11580,8 @@
         }
       ],
       "english_name": "Firewhistle",
-      "japanese_name": "ファイヤーホイッスル"
+      "japanese_name": "ファイヤーホイッスル",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fa/%E5%A4%B4%E5%83%8F_%E7%81%AB%E5%93%A8.png/96px-%E5%A4%B4%E5%83%8F_%E7%81%AB%E5%93%A8.png"
     },
     {
       "id": "char_494_vendla",
@@ -11194,7 +11605,8 @@
         }
       ],
       "english_name": "Vendela",
-      "japanese_name": "ヴァンデラ"
+      "japanese_name": "ヴァンデラ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c6/%E5%A4%B4%E5%83%8F_%E5%88%BA%E7%8E%AB.png/96px-%E5%A4%B4%E5%83%8F_%E5%88%BA%E7%8E%AB.png"
     },
     {
       "id": "char_496_wildmn",
@@ -11221,7 +11633,8 @@
       "japanese_name": "ワイルドメイン",
       "aliases": [
         "野鬓"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/9f/%E5%A4%B4%E5%83%8F_%E9%87%8E%E9%AC%83.png/96px-%E5%A4%B4%E5%83%8F_%E9%87%8E%E9%AC%83.png"
     },
     {
       "id": "char_497_ctable",
@@ -11253,7 +11666,8 @@
         }
       ],
       "english_name": "Cantabile",
-      "japanese_name": "カンタービレ"
+      "japanese_name": "カンタービレ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/1/15/%E5%A4%B4%E5%83%8F_%E6%99%93%E6%AD%8C.png/96px-%E5%A4%B4%E5%83%8F_%E6%99%93%E6%AD%8C.png"
     },
     {
       "id": "char_498_inside",
@@ -11285,7 +11699,8 @@
         }
       ],
       "english_name": "Insider",
-      "japanese_name": "インサイダー"
+      "japanese_name": "インサイダー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/85/%E5%A4%B4%E5%83%8F_%E9%9A%90%E7%8E%B0.png/96px-%E5%A4%B4%E5%83%8F_%E9%9A%90%E7%8E%B0.png"
     },
     {
       "id": "char_499_kaitou",
@@ -11309,7 +11724,8 @@
         }
       ],
       "english_name": "Diamante",
-      "japanese_name": "ディアマンテ"
+      "japanese_name": "ディアマンテ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/c2/%E5%A4%B4%E5%83%8F_%E6%8A%98%E5%85%89.png/96px-%E5%A4%B4%E5%83%8F_%E6%8A%98%E5%85%89.png"
     },
     {
       "id": "char_500_noirc",
@@ -11325,7 +11741,8 @@
         }
       ],
       "english_name": "Noir Corne",
-      "japanese_name": "ノイルホーン"
+      "japanese_name": "ノイルホーン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f1/%E5%A4%B4%E5%83%8F_%E9%BB%91%E8%A7%92.png/96px-%E5%A4%B4%E5%83%8F_%E9%BB%91%E8%A7%92.png"
     },
     {
       "id": "char_501_durin",
@@ -11341,7 +11758,8 @@
         }
       ],
       "english_name": "Durin",
-      "japanese_name": "ドゥリン"
+      "japanese_name": "ドゥリン",
+      "thumbnail_url": "https://media.prts.wiki/thumb/2/24/%E5%A4%B4%E5%83%8F_%E6%9D%9C%E6%9E%97.png/96px-%E5%A4%B4%E5%83%8F_%E6%9D%9C%E6%9E%97.png"
     },
     {
       "id": "char_502_nblade",
@@ -11357,7 +11775,8 @@
         }
       ],
       "english_name": "Yato",
-      "japanese_name": "ヤトウ"
+      "japanese_name": "ヤトウ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b2/%E5%A4%B4%E5%83%8F_%E5%A4%9C%E5%88%80.png/96px-%E5%A4%B4%E5%83%8F_%E5%A4%9C%E5%88%80.png"
     },
     {
       "id": "char_503_rang",
@@ -11373,7 +11792,8 @@
         }
       ],
       "english_name": "Rangers",
-      "japanese_name": "レンジャー"
+      "japanese_name": "レンジャー",
+      "thumbnail_url": "https://media.prts.wiki/thumb/9/93/%E5%A4%B4%E5%83%8F_%E5%B7%A1%E6%9E%97%E8%80%85.png/96px-%E5%A4%B4%E5%83%8F_%E5%B7%A1%E6%9E%97%E8%80%85.png"
     },
     {
       "id": "char_504_rguard",
@@ -11391,7 +11811,8 @@
       "japanese_name": "予備隊員-近距離",
       "aliases": [
         "Reserve (Melee)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fa/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E8%BF%91%E6%88%98.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E8%BF%91%E6%88%98.png"
     },
     {
       "id": "char_505_rcast",
@@ -11409,7 +11830,8 @@
       "japanese_name": "予備隊員-術師",
       "aliases": [
         "Reserve (Caster)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cd/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E6%9C%AF%E5%B8%88.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E6%9C%AF%E5%B8%88.png"
     },
     {
       "id": "char_506_rmedic",
@@ -11427,7 +11849,8 @@
       "japanese_name": "予備隊員-支援",
       "aliases": [
         "Reserve (Logistic)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/5a/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E5%90%8E%E5%8B%A4.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E5%90%8E%E5%8B%A4.png"
     },
     {
       "id": "char_507_rsnipe",
@@ -11445,7 +11868,8 @@
       "japanese_name": "予備隊員-狙撃",
       "aliases": [
         "Reserve (Sniper)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/51/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E7%8B%99%E5%87%BB.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E7%8B%99%E5%87%BB.png"
     },
     {
       "id": "char_508_aguard",
@@ -11463,7 +11887,8 @@
         "李云龙",
         "云龙",
         "锋刃"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b4/%E5%A4%B4%E5%83%8F_Sharp.png/96px-%E5%A4%B4%E5%83%8F_Sharp.png"
     },
     {
       "id": "char_509_acast",
@@ -11479,7 +11904,8 @@
       ],
       "aliases": [
         "术髓"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/59/%E5%A4%B4%E5%83%8F_Pith.png/96px-%E5%A4%B4%E5%83%8F_Pith.png"
     },
     {
       "id": "char_510_amedic",
@@ -11496,7 +11922,8 @@
       "aliases": [
         "天启",
         "触痕"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/35/%E5%A4%B4%E5%83%8F_Touch.png/96px-%E5%A4%B4%E5%83%8F_Touch.png"
     },
     {
       "id": "char_511_asnipe",
@@ -11514,7 +11941,8 @@
         "暴风眼",
         "风眼",
         "风暴眼"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8e/%E5%A4%B4%E5%83%8F_Stormeye.png/96px-%E5%A4%B4%E5%83%8F_Stormeye.png"
     },
     {
       "id": "char_512_aprot",
@@ -11529,7 +11957,8 @@
         }
       ],
       "english_name": "Shalem",
-      "japanese_name": "シャレム"
+      "japanese_name": "シャレム",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/fb/%E5%A4%B4%E5%83%8F_%E6%9A%AE%E8%90%BD.png/96px-%E5%A4%B4%E5%83%8F_%E6%9A%AE%E8%90%BD.png"
     },
     {
       "id": "char_513_apionr",
@@ -11544,7 +11973,8 @@
         }
       ],
       "english_name": "Tulip",
-      "japanese_name": "チューリップ"
+      "japanese_name": "チューリップ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f3/%E5%A4%B4%E5%83%8F_%E9%83%81%E9%87%91%E9%A6%99.png/96px-%E5%A4%B4%E5%83%8F_%E9%83%81%E9%87%91%E9%A6%99.png"
     },
     {
       "id": "char_514_rdfend",
@@ -11562,7 +11992,8 @@
       "japanese_name": "予備隊員-重装",
       "aliases": [
         "Reserve (Defender)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/04/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E9%87%8D%E8%A3%85.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E9%87%8D%E8%A3%85.png"
     },
     {
       "id": "char_600_cpione",
@@ -11606,7 +12037,8 @@
       "japanese_name": "予備隊員-重装",
       "aliases": [
         "Reserve (Defender)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/0/04/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E9%87%8D%E8%A3%85.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E9%87%8D%E8%A3%85.png"
     },
     {
       "id": "char_603_csnipe",
@@ -11624,7 +12056,8 @@
       "japanese_name": "予備隊員-狙撃",
       "aliases": [
         "Reserve (Sniper)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/51/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E7%8B%99%E5%87%BB.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E7%8B%99%E5%87%BB.png"
     },
     {
       "id": "char_604_ccast",
@@ -11642,7 +12075,8 @@
       "japanese_name": "予備隊員-術師",
       "aliases": [
         "Reserve (Caster)"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/c/cd/%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E6%9C%AF%E5%B8%88.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%84%E5%A4%87%E5%B9%B2%E5%91%98-%E6%9C%AF%E5%B8%88.png"
     },
     {
       "id": "char_605_cmedic",
@@ -11696,7 +12130,8 @@
         }
       ],
       "english_name": "Tulip",
-      "japanese_name": "チューリップ"
+      "japanese_name": "チューリップ",
+      "thumbnail_url": "https://media.prts.wiki/thumb/f/f3/%E5%A4%B4%E5%83%8F_%E9%83%81%E9%87%91%E9%A6%99.png/96px-%E5%A4%B4%E5%83%8F_%E9%83%81%E9%87%91%E9%A6%99.png"
     },
     {
       "id": "char_609_acguad",
@@ -11714,7 +12149,8 @@
         "李云龙",
         "云龙",
         "锋刃"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/b/b4/%E5%A4%B4%E5%83%8F_Sharp.png/96px-%E5%A4%B4%E5%83%8F_Sharp.png"
     },
     {
       "id": "char_610_acfend",
@@ -11745,7 +12181,8 @@
         "暴风眼",
         "风眼",
         "风暴眼"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/8/8e/%E5%A4%B4%E5%83%8F_Stormeye.png/96px-%E5%A4%B4%E5%83%8F_Stormeye.png"
     },
     {
       "id": "char_612_accast",
@@ -11761,7 +12198,8 @@
       ],
       "aliases": [
         "术髓"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/59/%E5%A4%B4%E5%83%8F_Pith.png/96px-%E5%A4%B4%E5%83%8F_Pith.png"
     },
     {
       "id": "char_613_acmedc",
@@ -11778,7 +12216,8 @@
       "aliases": [
         "天启",
         "触痕"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/3/35/%E5%A4%B4%E5%83%8F_Touch.png/96px-%E5%A4%B4%E5%83%8F_Touch.png"
     },
     {
       "id": "char_614_acsupo",
@@ -11823,7 +12262,8 @@
       "aliases": [
         "Alliance/Supportive Opertator",
         "优等生"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/4/45/%E5%A4%B4%E5%83%8F_%E7%9B%9F%E7%BA%A6%C2%B7%E8%BE%85%E5%8A%A9%E5%B9%B2%E5%91%98.png/96px-%E5%A4%B4%E5%83%8F_%E7%9B%9F%E7%BA%A6%C2%B7%E8%BE%85%E5%8A%A9%E5%B9%B2%E5%91%98.png"
     },
     {
       "id": "char_617_sharp2",
@@ -11841,8 +12281,10 @@
       "japanese_name": "領主・Sharp",
       "aliases": [
         "领主·sharp"
-      ]
+      ],
+      "thumbnail_url": "https://media.prts.wiki/thumb/5/53/%E5%A4%B4%E5%83%8F_%E9%A2%86%E4%B8%BB%C2%B7Sharp.png/96px-%E5%A4%B4%E5%83%8F_%E9%A2%86%E4%B8%BB%C2%B7Sharp.png"
     }
   ],
-  "alias_source": "https://prts.wiki/api.php?action=query&prop=redirects%7Crevisions&rvsection=0"
+  "alias_source": "https://prts.wiki/api.php?action=query&prop=redirects%7Crevisions&rvsection=0",
+  "thumbnail_source": "https://prts.wiki/api.php?action=query&prop=imageinfo&iiprop=url%7Csize%7Cmime&iiurlwidth=96"
 }

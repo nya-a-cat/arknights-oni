@@ -123,6 +123,8 @@ jobs:
           bash "$MOD_ROOT/tests/run_mod_localization_tests.sh"
           bash "$MOD_ROOT/tests/run_mod_config_tests.sh"
           bash "$MOD_ROOT/tests/run_operator_appearance_catalog_tests.sh"
+          python3 "$MOD_ROOT/tests/test_operator_catalog_thumbnails.py"
+          bash "$MOD_ROOT/tests/run_operator_thumbnail_loader_tests.sh"
           bash "$MOD_ROOT/tests/run_resource_index_tests.sh"
           python3 "$MOD_ROOT/tests/test_fallback_release_builder.py"
           bash "$MOD_ROOT/tests/run_operator_fallback_tests.sh"

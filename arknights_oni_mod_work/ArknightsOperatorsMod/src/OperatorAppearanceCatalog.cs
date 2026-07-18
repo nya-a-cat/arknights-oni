@@ -95,6 +95,9 @@ namespace ArknightsOperatorsMod {
 		[JsonProperty("aliases")]
 		public List<string> Aliases { get; private set; }
 
+		[JsonProperty("thumbnail_url", NullValueHandling = NullValueHandling.Ignore)]
+		public string ThumbnailUrl { get; private set; }
+
 		[JsonProperty("skins")]
 		public List<OperatorSkinDefinition> Skins { get; private set; }
 
@@ -108,6 +111,12 @@ namespace ArknightsOperatorsMod {
 			if (string.IsNullOrWhiteSpace(Id) || string.IsNullOrWhiteSpace(Name) || Skins == null ||
 				Skins.Count == 0)
 				throw new InvalidDataException("Operator appearance entry is incomplete");
+			if (!string.IsNullOrWhiteSpace(ThumbnailUrl)) {
+				Uri thumbnailUri;
+				if (!Uri.TryCreate(ThumbnailUrl, UriKind.Absolute, out thumbnailUri) ||
+					thumbnailUri.Scheme != Uri.UriSchemeHttps)
+					throw new InvalidDataException("Operator thumbnail URL must use HTTPS: " + Id);
+			}
 			for (int i = 0; i < Skins.Count; i++) Skins[i].Validate(Id);
 			if (Aliases == null) Aliases = new List<string>();
 			for (int i = 0; i < Aliases.Count; i++) {

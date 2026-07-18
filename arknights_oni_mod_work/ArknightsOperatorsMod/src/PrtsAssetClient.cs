@@ -141,7 +141,8 @@ namespace ArknightsOperatorsMod {
 			StringComparer.OrdinalIgnoreCase
 		) {
 			"torappu.prts.wiki",
-			"static.prts.wiki"
+			"static.prts.wiki",
+			"media.prts.wiki"
 		};
 		private static readonly HashSet<string> AllowedReleaseRedirectHosts = new HashSet<string>(
 			StringComparer.OrdinalIgnoreCase

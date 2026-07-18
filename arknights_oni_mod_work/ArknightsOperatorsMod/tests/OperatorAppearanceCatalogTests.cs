@@ -13,9 +13,16 @@ internal static class OperatorAppearanceCatalogTests {
 		if (args.Length != 1) throw new ArgumentException("Expected the catalog path");
 		OperatorAppearanceCatalog catalog = OperatorAppearanceCatalog.Load(args[0]);
 		Require(catalog.Operators.Count == 449, "operator count mismatch");
+		int thumbnailCount = 0;
+		for (int i = 0; i < catalog.Operators.Count; i++) {
+			if (!string.IsNullOrWhiteSpace(catalog.Operators[i].ThumbnailUrl)) thumbnailCount++;
+		}
+		Require(thumbnailCount == 441, "thumbnail URL snapshot mismatch");
 
 		OperatorAppearanceDefinition amiya = catalog.FindExact("阿米娅");
 		Require(amiya != null && amiya.Id == "char_002_amiya", "Chinese name lookup failed");
+		Require(amiya.ThumbnailUrl.StartsWith("https://media.prts.wiki/", StringComparison.Ordinal),
+			"Amiya thumbnail URL mismatch");
 		Require(amiya.EnglishName == "Amiya", "English display name mismatch");
 		Require(catalog.FindExact("Amiya") == null,
 			"duplicate English name should require dropdown choice");

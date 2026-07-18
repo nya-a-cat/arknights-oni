@@ -18,6 +18,8 @@ MAX_TOTAL_BYTES = 16 * 1024 * 1024
 META_URL = "https://torappu.prts.wiki/assets/char_spine/{character_id}/meta.json"
 PRTS_API_URL = "https://prts.wiki/api.php"
 ALIAS_BATCH_SIZE = 30
+THUMBNAIL_BATCH_SIZE = 30
+THUMBNAIL_WIDTH = 96
 
 
 def read_operators(path: pathlib.Path) -> list[dict[str, str]]:
@@ -137,9 +139,76 @@ def choose_english_name(name: str, aliases: list[str]) -> str | None:
     return None
 
 
+def fetch_thumbnail_urls(
+    operators: list[dict[str, str]], retries: int
+) -> dict[str, str]:
+    names = sorted({str(operator["name"]) for operator in operators})
+    batches = [
+        names[start : start + THUMBNAIL_BATCH_SIZE]
+        for start in range(0, len(names), THUMBNAIL_BATCH_SIZE)
+    ]
+    thumbnails: dict[str, str] = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+        for batch_result in executor.map(
+            lambda batch: fetch_thumbnail_batch(batch, retries), batches
+        ):
+            thumbnails.update(batch_result)
+    return thumbnails
+
+
+def fetch_thumbnail_batch(batch: list[str], retries: int) -> dict[str, str]:
+    title_to_name = {f"文件:头像 {name}.png": name for name in batch}
+    params = {
+        "action": "query",
+        "format": "json",
+        "formatversion": "2",
+        "prop": "imageinfo",
+        "iiprop": "url|size|mime",
+        "iiurlwidth": str(THUMBNAIL_WIDTH),
+        "titles": "|".join(title_to_name),
+    }
+    url = PRTS_API_URL + "?" + urllib.parse.urlencode(params)
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "ArknightsONIMod-CatalogBuilder/1.0"},
+    )
+    body: bytes | None = None
+    last_error: Exception | None = None
+    for attempt in range(max(1, retries + 1)):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                content_length = response.headers.get("Content-Length")
+                if content_length is not None and int(content_length) > MAX_RESPONSE_BYTES:
+                    raise ValueError("PRTS thumbnail response exceeds 1 MiB")
+                body = response.read(MAX_RESPONSE_BYTES + 1)
+            break
+        except Exception as error:
+            last_error = error
+            if attempt < retries:
+                time.sleep(0.5 * (attempt + 1))
+    if body is None:
+        raise last_error or RuntimeError("Failed to fetch PRTS thumbnail metadata")
+    if len(body) > MAX_RESPONSE_BYTES:
+        raise ValueError("PRTS thumbnail response exceeds 1 MiB")
+
+    result: dict[str, str] = {}
+    payload = json.loads(body.decode("utf-8-sig"))
+    for page in payload.get("query", {}).get("pages", []):
+        name = title_to_name.get(str(page.get("title", "")))
+        image_info = page.get("imageinfo", [])
+        if name is None or not image_info:
+            continue
+        thumbnail_url = str(image_info[0].get("thumburl", "")).strip()
+        parsed = urllib.parse.urlparse(thumbnail_url)
+        if parsed.scheme == "https" and parsed.hostname == "media.prts.wiki":
+            result[name] = thumbnail_url
+    return result
+
+
 def fetch_meta(
     operator: dict[str, str], aliases: list[str], english_name: str | None,
-    japanese_name: str | None, cache_dir: pathlib.Path, retries: int
+    japanese_name: str | None, thumbnail_url: str | None,
+    cache_dir: pathlib.Path, retries: int
 ) -> tuple[dict[str, object], int]:
     character_id = operator["id"]
     cache_path = cache_dir / f"{character_id}.json"
@@ -192,6 +261,8 @@ def fetch_meta(
         "name": name,
         "skins": skin_records,
     }
+    if thumbnail_url is not None:
+        record["thumbnail_url"] = thumbnail_url
     english_name = english_name or choose_english_name(name, aliases)
     if english_name is not None and english_name != name:
         record["english_name"] = english_name
@@ -225,16 +296,49 @@ def main() -> None:
         help="Enrich the existing catalog with PRTS aliases without refetching model metadata",
     )
     parser.add_argument(
+        "--thumbnails-only",
+        action="store_true",
+        help="Refresh only 96px thumbnail URLs in the existing catalog",
+    )
+    parser.add_argument(
         "--cache-dir",
         type=pathlib.Path,
         default=pathlib.Path(".cache/operator-meta"),
     )
     args = parser.parse_args()
 
+    if args.thumbnails_only:
+        catalog = json.loads(args.output.read_text(encoding="utf-8-sig"))
+        records = catalog.get("operators")
+        if not isinstance(records, list) or not records:
+            raise ValueError("Existing catalog is empty")
+        operators = [
+            {"id": str(record["id"]), "name": str(record["name"])}
+            for record in records
+        ]
+        thumbnails_by_name = fetch_thumbnail_urls(operators, args.retries)
+        for record in records:
+            thumbnail_url = thumbnails_by_name.get(str(record["name"]))
+            if thumbnail_url is not None:
+                record["thumbnail_url"] = thumbnail_url
+        catalog["thumbnail_source"] = (
+            PRTS_API_URL
+            + "?action=query&prop=imageinfo&iiprop=url%7Csize%7Cmime&iiurlwidth=96"
+        )
+        args.output.write_text(
+            json.dumps(catalog, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(
+            f"Enriched {len(thumbnails_by_name)} thumbnail URLs in {args.output} "
+            f"({args.output.stat().st_size} bytes)"
+        )
+        return
     operators = read_operators(args.operators)
     aliases_by_name, english_by_name, japanese_by_name = fetch_aliases(
         operators, args.retries
     )
+    thumbnails_by_name = fetch_thumbnail_urls(operators, args.retries)
     if args.reuse_existing:
         catalog = json.loads(args.output.read_text(encoding="utf-8-sig"))
         records = catalog.get("operators")
@@ -245,9 +349,11 @@ def main() -> None:
             aliases = aliases_by_name.get(name, [])
             english_name = english_by_name.get(name) or choose_english_name(name, aliases)
             japanese_name = japanese_by_name.get(name)
+            thumbnail_url = thumbnails_by_name.get(name)
             record.pop("english_name", None)
             record.pop("japanese_name", None)
             record.pop("aliases", None)
+            record.pop("thumbnail_url", None)
             if english_name is not None and english_name != name:
                 record["english_name"] = english_name
             if japanese_name is not None and japanese_name != name:
@@ -259,8 +365,14 @@ def main() -> None:
             ]
             if useful_aliases:
                 record["aliases"] = useful_aliases
+            if thumbnail_url is not None:
+                record["thumbnail_url"] = thumbnail_url
         catalog["alias_source"] = (
             PRTS_API_URL + "?action=query&prop=redirects%7Crevisions&rvsection=0"
+        )
+        catalog["thumbnail_source"] = (
+            PRTS_API_URL
+            + "?action=query&prop=imageinfo&iiprop=url%7Csize%7Cmime&iiurlwidth=96"
         )
         args.output.write_text(
             json.dumps(catalog, ensure_ascii=False, indent=2) + "\n",
@@ -282,6 +394,7 @@ def main() -> None:
                 aliases_by_name.get(str(operator["name"]), []),
                 english_by_name.get(str(operator["name"])),
                 japanese_by_name.get(str(operator["name"])),
+                thumbnails_by_name.get(str(operator["name"])),
                 args.cache_dir,
                 args.retries,
             ): operator
@@ -312,6 +425,10 @@ def main() -> None:
             PRTS_API_URL + "?action=query&prop=redirects%7Crevisions&rvsection=0"
         ),
         "meta_source_pattern": META_URL,
+        "thumbnail_source": (
+            PRTS_API_URL
+            + "?action=query&prop=imageinfo&iiprop=url%7Csize%7Cmime&iiurlwidth=96"
+        ),
         "operators": records,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
