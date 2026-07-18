@@ -632,10 +632,11 @@ namespace ArknightsOperatorsMod {
 			string characterId = selection.Character.Id;
 			string skin = selection.Skin.Name;
 			string model = selection.Model;
-			bool active = target.IsAppearanceActive(characterId, skin, model);
+			bool ready = target.IsPreviewAppearanceReady(characterId, skin, model);
 			Debug.Log("[ArknightsOperatorsMod] Apply clicked " + characterId + " " +
-				skin + "/" + model + " active=" + active + " for " + target.DuplicantName);
-			if (active) {
+				skin + "/" + model + " ready=" + ready + " activeModel=" +
+				target.ActiveModel + " for " + target.DuplicantName);
+			if (ready) {
 				CommitSelection();
 				return;
 			}
@@ -677,14 +678,14 @@ namespace ArknightsOperatorsMod {
 			string characterId = selection.Character.Id;
 			string skin = selection.Skin.Name;
 			string model = selection.Model;
-			if (target.IsAppearanceActive(characterId, skin, model)) {
+			if (target.IsPreviewAppearanceReady(characterId, skin, model)) {
 				appearanceOperationPending = false;
 				if (applyWhenAppearanceReady) return CommitSelection();
 				applyWhenAppearanceReady = false;
 				operationStatus = ModLocalization.Text("预览已加载。", "Preview ready.");
 				return false;
 			}
-			if (target.IsAppearanceLoading(characterId, skin, model)) return false;
+			if (target.IsPreviewAppearanceLoading(characterId, skin, model)) return false;
 
 			appearanceOperationPending = false;
 			applyWhenAppearanceReady = false;

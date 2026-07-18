@@ -436,6 +436,29 @@ namespace ArknightsOperatorsMod {
 				StringComparison.Ordinal);
 		}
 
+		internal bool IsPreviewAppearanceReady(string characterId, string skin, string model) {
+			return PreviewMatchesSelection(characterId, skin, model) &&
+				string.Equals(activeCharacterId, characterId, StringComparison.OrdinalIgnoreCase) &&
+				string.Equals(activeSkin, skin, StringComparison.OrdinalIgnoreCase) &&
+				string.IsNullOrEmpty(loadingAppearanceKey) &&
+				string.IsNullOrEmpty(lastAppearanceLoadError);
+		}
+
+		internal bool IsPreviewAppearanceLoading(string characterId, string skin, string model) {
+			return PreviewMatchesSelection(characterId, skin, model) &&
+				!string.IsNullOrEmpty(loadingAppearanceKey);
+		}
+
+		private bool PreviewMatchesSelection(string characterId, string skin, string model) {
+			return previewAppearanceConfig != null &&
+				string.Equals(previewAppearanceConfig.DefaultCharacterId, characterId,
+					StringComparison.OrdinalIgnoreCase) &&
+				string.Equals(previewAppearanceConfig.PreferredSkin, skin,
+					StringComparison.OrdinalIgnoreCase) &&
+				string.Equals(previewAppearanceConfig.PreferredModel, model,
+					StringComparison.OrdinalIgnoreCase);
+		}
+
 		internal string LastAppearanceLoadError {
 			get { return lastAppearanceLoadError; }
 		}
