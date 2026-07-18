@@ -209,8 +209,8 @@ namespace ArknightsOperatorsMod {
 			DrawScaleEditor(rightX, panel.y + 546f);
 			GUI.Box(new Rect(rightX, panel.y + 636f, rightWidth, 30f),
 				string.IsNullOrEmpty(operationStatus) ? ModLocalization.Text(
-					"头像来自 PRTS；皮肤由场景中的 Spine 实时预览。",
-					"PRTS avatar; the in-world Spine model previews the skin.") : operationStatus);
+					"头像用于识别；皮肤请看场景预览。",
+					"Avatar ID only; skin preview is in-world.") : operationStatus);
 
 			GUI.enabled = previousEnabled && !appearanceOperationPending;
 			if (GUI.Button(new Rect(panel.x + 20f, panel.y + 674f, 280f, 46f),
@@ -311,9 +311,13 @@ namespace ArknightsOperatorsMod {
 				GUI.DrawTexture(rect, view.Texture, ScaleMode.ScaleToFit, true);
 				return;
 			}
-			string placeholder = string.IsNullOrEmpty(view.Error) ?
-				ModLocalization.Text("加载中…", "Loading...") :
-				ModLocalization.Text("头像失败", "Avatar failed");
+			string placeholder;
+			if (string.IsNullOrEmpty(view.Error))
+				placeholder = ModLocalization.Text("加载中…", "Loading...");
+			else if (string.IsNullOrWhiteSpace(item.ThumbnailUrl))
+				placeholder = ModLocalization.Text("暂无头像", "No avatar");
+			else
+				placeholder = ModLocalization.Text("点击重试", "Click to retry");
 			GUI.Box(rect, new GUIContent(placeholder, view.Error ?? string.Empty), placeholderStyle);
 		}
 
@@ -321,7 +325,19 @@ namespace ArknightsOperatorsMod {
 			selection = catalog.Normalize(item.Id, selection.Skin.Name, selection.Model);
 			operationStatus = null;
 			RefreshScaleEditor();
+			RetryThumbnailIfFailed(item);
 			EnsureThumbnail(item);
+		}
+
+		private void RetryThumbnailIfFailed(OperatorAppearanceDefinition item) {
+			ThumbnailView view;
+			if (item == null || string.IsNullOrWhiteSpace(item.ThumbnailUrl) ||
+				!thumbnailViews.TryGetValue(item.Id, out view) || string.IsNullOrEmpty(view.Error))
+				return;
+			if (view.Texture != null) Destroy(view.Texture);
+			if (view.Asset != null) view.Asset.Dispose();
+			if (view.Pending != null) DisposeThumbnailWhenComplete(view.Pending);
+			thumbnailViews.Remove(item.Id);
 		}
 
 		private void CycleSkin(int direction) {

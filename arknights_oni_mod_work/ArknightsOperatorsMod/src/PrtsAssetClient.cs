@@ -134,6 +134,7 @@ namespace ArknightsOperatorsMod {
 	public sealed class PrtsAssetClient : IDisposable {
 		public const int TimeoutSeconds = 120;
 		public const int RetryCount = 3;
+		public const int MaximumConcurrentDownloads = 2;
 		public const long MaximumAssetBytes = 64L * 1024L * 1024L;
 		public const long MaximumDownloadBytes = 512L * 1024L * 1024L;
 
@@ -153,7 +154,10 @@ namespace ArknightsOperatorsMod {
 		private const string ReleasePathPrefix = "/nya-a-cat/arknights-oni/releases/download/";
 
 		private readonly HttpClient httpClient;
-		private readonly SemaphoreSlim serialGate = new SemaphoreSlim(1, 1);
+		private readonly SemaphoreSlim downloadGate = new SemaphoreSlim(
+			MaximumConcurrentDownloads,
+			MaximumConcurrentDownloads
+		);
 		private bool disposed;
 
 		public PrtsAssetClient() {
@@ -190,7 +194,7 @@ namespace ArknightsOperatorsMod {
 			for (int i = 0; i < request.Sources.Count; i++)
 				ValidateSourceUri(request.Sources[i].SourceUri);
 
-			await serialGate.WaitAsync(cancellationToken).ConfigureAwait(false);
+			await downloadGate.WaitAsync(cancellationToken).ConfigureAwait(false);
 			try {
 				Exception lastError = null;
 				for (int attempt = 0; attempt <= RetryCount; attempt++) {
@@ -223,7 +227,7 @@ namespace ArknightsOperatorsMod {
 					lastError
 				);
 			} finally {
-				serialGate.Release();
+				downloadGate.Release();
 			}
 		}
 
@@ -339,7 +343,6 @@ namespace ArknightsOperatorsMod {
 				return;
 			disposed = true;
 			httpClient.Dispose();
-			serialGate.Dispose();
 		}
 	}
 }

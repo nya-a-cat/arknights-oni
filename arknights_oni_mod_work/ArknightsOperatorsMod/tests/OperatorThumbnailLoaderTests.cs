@@ -66,12 +66,14 @@ internal static class OperatorThumbnailLoaderTests {
 		private int requests;
 
 		public ManualResetEventSlim BlockedRequestStarted { get; private set; }
+		public ManualResetEventSlim BlockedRequestCanceled { get; private set; }
 		public int Requests { get { return Volatile.Read(ref requests); } }
 
 		public FakeHandler(Dictionary<string, byte[]> responses, string blockedUrl) {
 			this.responses = responses;
 			this.blockedUrl = blockedUrl;
 			BlockedRequestStarted = new ManualResetEventSlim(false);
+			BlockedRequestCanceled = new ManualResetEventSlim(false);
 		}
 
 		public void ReleaseBlockedRequest() {
@@ -85,7 +87,16 @@ internal static class OperatorThumbnailLoaderTests {
 			Interlocked.Increment(ref requests);
 			if (string.Equals(request.RequestUri.AbsoluteUri, blockedUrl, StringComparison.Ordinal)) {
 				BlockedRequestStarted.Set();
-				await releaseBlocked.Task.ConfigureAwait(false);
+				try {
+					Task canceled = Task.Delay(Timeout.Infinite, cancellationToken);
+					Task completed = await Task.WhenAny(releaseBlocked.Task, canceled)
+						.ConfigureAwait(false);
+					if (!object.ReferenceEquals(completed, releaseBlocked.Task))
+						cancellationToken.ThrowIfCancellationRequested();
+				} catch (OperationCanceledException) {
+					BlockedRequestCanceled.Set();
+					throw;
+				}
 			}
 			byte[] content;
 			if (!responses.TryGetValue(request.RequestUri.AbsoluteUri, out content))
@@ -94,6 +105,53 @@ internal static class OperatorThumbnailLoaderTests {
 				RequestMessage = request,
 				Content = new ByteArrayContent(content)
 			};
+		}
+	}
+
+	private sealed class ConcurrencyHandler : HttpMessageHandler {
+		private readonly byte[] content;
+		private readonly TaskCompletionSource<bool> release = new TaskCompletionSource<bool>();
+		private int active;
+		private int maximumActive;
+		private int requests;
+
+		public ManualResetEventSlim TwoRequestsStarted { get; private set; }
+		public int MaximumActive { get { return Volatile.Read(ref maximumActive); } }
+		public int Requests { get { return Volatile.Read(ref requests); } }
+
+		public ConcurrencyHandler(byte[] content) {
+			this.content = content;
+			TwoRequestsStarted = new ManualResetEventSlim(false);
+		}
+
+		public void Release() {
+			release.TrySetResult(true);
+		}
+
+		protected override async Task<HttpResponseMessage> SendAsync(
+			HttpRequestMessage request,
+			CancellationToken cancellationToken
+		) {
+			Interlocked.Increment(ref requests);
+			int current = Interlocked.Increment(ref active);
+			int observed;
+			do {
+				observed = Volatile.Read(ref maximumActive);
+				if (observed >= current) break;
+			} while (Interlocked.CompareExchange(ref maximumActive, current, observed) != observed);
+			if (current >= 2) TwoRequestsStarted.Set();
+			try {
+				Task canceled = Task.Delay(Timeout.Infinite, cancellationToken);
+				Task completed = await Task.WhenAny(release.Task, canceled).ConfigureAwait(false);
+				if (!object.ReferenceEquals(completed, release.Task))
+					cancellationToken.ThrowIfCancellationRequested();
+				return new HttpResponseMessage(HttpStatusCode.OK) {
+					RequestMessage = request,
+					Content = new ByteArrayContent(content)
+				};
+			} finally {
+				Interlocked.Decrement(ref active);
+			}
 		}
 	}
 
@@ -207,11 +265,97 @@ internal static class OperatorThumbnailLoaderTests {
 			"unknown image magic was accepted"
 		);
 
+		ConcurrencyHandler concurrencyHandler = new ConcurrencyHandler(PngHeader(96, 96));
+		PrtsAssetClient concurrencyClient = new PrtsAssetClient(concurrencyHandler);
+		try {
+			PrtsAssetRequest firstConcurrent = OperatorThumbnailLoader.CreateRequest(Character(
+				"char_concurrent_a",
+				"https://media.prts.wiki/thumb/concurrent-a.png"
+			));
+			PrtsAssetRequest secondConcurrent = OperatorThumbnailLoader.CreateRequest(Character(
+				"char_concurrent_b",
+				"https://media.prts.wiki/thumb/concurrent-b.png"
+			));
+			Task<PrtsDownloadResult> firstDownload = concurrencyClient.DownloadAsync(
+				firstConcurrent,
+				Path.Combine(root, "concurrent-a.part"),
+				CancellationToken.None
+			);
+			Task<PrtsDownloadResult> secondDownload = concurrencyClient.DownloadAsync(
+				secondConcurrent,
+				Path.Combine(root, "concurrent-b.part"),
+				CancellationToken.None
+			);
+			Require(concurrencyHandler.TwoRequestsStarted.Wait(TimeSpan.FromSeconds(2)),
+				"two thumbnail downloads did not start concurrently");
+			concurrencyHandler.Release();
+			Task.WaitAll(firstDownload, secondDownload);
+			Require(concurrencyHandler.MaximumActive == 2,
+				"thumbnail downloads exceeded or missed the two-slot limit");
+		} finally {
+			concurrencyHandler.Release();
+			concurrencyClient.Dispose();
+		}
+
+		ConcurrencyHandler queueHandler = new ConcurrencyHandler(PngHeader(96, 96));
+		PrtsResourceService.InitializeForTests(new PrtsAssetClient(queueHandler));
+		try {
+			OperatorThumbnailLoader queueLoader = new OperatorThumbnailLoader(
+				PrtsResourceService.Instance,
+				TimeSpan.FromMilliseconds(200)
+			);
+			Task<OperatorThumbnailAsset>[] queued = new[] {
+				queueLoader.LoadAsync(Character(
+					"char_queue_a",
+					"https://media.prts.wiki/thumb/queue-a.png"
+				), CancellationToken.None),
+				queueLoader.LoadAsync(Character(
+					"char_queue_b",
+					"https://media.prts.wiki/thumb/queue-b.png"
+				), CancellationToken.None),
+				queueLoader.LoadAsync(Character(
+					"char_queue_c",
+					"https://media.prts.wiki/thumb/queue-c.png"
+				), CancellationToken.None)
+			};
+			Require(queueHandler.TwoRequestsStarted.Wait(TimeSpan.FromSeconds(2)),
+				"queue test did not fill both thumbnail slots");
+			Thread.Sleep(275);
+			int pendingIndex = -1;
+			int timeoutCount = 0;
+			for (int i = 0; i < queued.Length; i++) {
+				if (!queued[i].IsCompleted) {
+					pendingIndex = i;
+					continue;
+				}
+				RequireThrows<TimeoutException>(
+					() => queued[i].GetAwaiter().GetResult(),
+					"active thumbnail did not time out"
+				);
+				timeoutCount++;
+			}
+			Require(timeoutCount == 2 && pendingIndex >= 0,
+				"queued thumbnail consumed its timeout before entering a download slot");
+			Require(queueHandler.Requests == 3,
+				"queued thumbnail did not start after a slot became available");
+			queueHandler.Release();
+			OperatorThumbnailAsset queuedAsset = queued[pendingIndex].GetAwaiter().GetResult();
+			queuedAsset.Dispose();
+			queueLoader.Dispose();
+		} finally {
+			queueHandler.Release();
+			PrtsResourceService.Shutdown();
+		}
+
 		const string fastUrl = "https://media.prts.wiki/thumb/fast.png";
 		const string slowUrl = "https://media.prts.wiki/thumb/slow.png";
+		const string timeoutUrl = "https://media.prts.wiki/thumb/timeout.png";
+		const string shutdownUrl = "https://media.prts.wiki/thumb/shutdown.png";
 		Dictionary<string, byte[]> responses = new Dictionary<string, byte[]> {
 			{ fastUrl, PngHeader(96, 96) },
-			{ slowUrl, PngHeader(96, 96) }
+			{ slowUrl, PngHeader(96, 96) },
+			{ timeoutUrl, PngHeader(96, 96) },
+			{ shutdownUrl, PngHeader(96, 96) }
 		};
 		FakeHandler handler = new FakeHandler(responses, slowUrl);
 		PrtsAssetClient client = new PrtsAssetClient(handler);
@@ -226,6 +370,10 @@ internal static class OperatorThumbnailLoaderTests {
 			Require(fastRequest.MaximumBytes == 256L * 1024L, "thumbnail byte limit mismatch");
 			Require(OperatorThumbnailLoader.MaximumConcurrentLoads == 2,
 				"thumbnail concurrency limit mismatch");
+			Require(OperatorThumbnailLoader.LoadTimeoutSeconds == 15,
+				"thumbnail timeout mismatch");
+			Require(PrtsAssetClient.MaximumConcurrentDownloads == 2,
+				"asset client concurrency does not match the gallery limit");
 
 			OperatorThumbnailLoader loader = new OperatorThumbnailLoader(PrtsResourceService.Instance);
 			OperatorThumbnailAsset first = loader.LoadAsync(fast, CancellationToken.None)
@@ -250,10 +398,51 @@ internal static class OperatorThumbnailLoaderTests {
 				() => pending.GetAwaiter().GetResult(),
 				"closing the thumbnail scope did not cancel its pending wait"
 			);
+			Require(handler.BlockedRequestCanceled.Wait(TimeSpan.FromSeconds(2)),
+				"closing the thumbnail scope left the underlying HTTP request running");
 			handler.ReleaseBlockedRequest();
 			PrtsAssetRequest slowRequest = OperatorThumbnailLoader.CreateRequest(slow);
 			PrtsResourceService.Instance.GetOrDownloadAsync(slowRequest, CancellationToken.None)
 				.GetAwaiter().GetResult();
+
+			PrtsResourceService.Shutdown();
+			FakeHandler timeoutHandler = new FakeHandler(responses, timeoutUrl);
+			PrtsResourceService.InitializeForTests(new PrtsAssetClient(timeoutHandler));
+			OperatorThumbnailLoader timing = new OperatorThumbnailLoader(
+				PrtsResourceService.Instance,
+				TimeSpan.FromMilliseconds(50)
+			);
+			Task<OperatorThumbnailAsset> timeoutPending = timing.LoadAsync(
+				Character("char_timeout", timeoutUrl),
+				CancellationToken.None
+			);
+			Require(timeoutHandler.BlockedRequestStarted.Wait(TimeSpan.FromSeconds(2)),
+				"timeout thumbnail request did not start");
+			RequireThrows<TimeoutException>(
+				() => timeoutPending.GetAwaiter().GetResult(),
+				"thumbnail timeout did not fail the pending request"
+			);
+			Require(timeoutHandler.BlockedRequestCanceled.Wait(TimeSpan.FromSeconds(2)),
+				"thumbnail timeout left the HTTP request running");
+			timing.Dispose();
+			PrtsResourceService.Shutdown();
+
+			FakeHandler shutdownHandler = new FakeHandler(responses, shutdownUrl);
+			PrtsResourceService.InitializeForTests(new PrtsAssetClient(shutdownHandler));
+			OperatorAppearanceDefinition shutdownCharacter = Character("char_shutdown", shutdownUrl);
+			Task<string> shutdownPending = PrtsResourceService.Instance.GetOrDownloadAsync(
+				OperatorThumbnailLoader.CreateRequest(shutdownCharacter),
+				CancellationToken.None
+			);
+			Require(shutdownHandler.BlockedRequestStarted.Wait(TimeSpan.FromSeconds(2)),
+				"shutdown thumbnail request did not start");
+			PrtsResourceService.Shutdown();
+			RequireThrows<OperationCanceledException>(
+				() => shutdownPending.GetAwaiter().GetResult(),
+				"resource-service shutdown did not cancel its HTTP request"
+			);
+			Require(shutdownHandler.BlockedRequestCanceled.Wait(TimeSpan.FromSeconds(2)),
+				"resource-service shutdown left the HTTP request running");
 		} finally {
 			PrtsResourceService.Shutdown();
 		}

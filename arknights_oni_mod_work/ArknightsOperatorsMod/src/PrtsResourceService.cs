@@ -14,8 +14,8 @@ namespace ArknightsOperatorsMod {
 		private readonly ResourceIndexStore index;
 		private readonly PrtsAssetClient client;
 		private readonly object downloadGate = new object();
-		private readonly Dictionary<string, Task<string>> inFlightDownloads =
-			new Dictionary<string, Task<string>>(StringComparer.Ordinal);
+		private readonly Dictionary<string, SharedDownload> inFlightDownloads =
+			new Dictionary<string, SharedDownload>(StringComparer.Ordinal);
 		private readonly Dictionary<string, int> inFlightResourceKeys =
 			new Dictionary<string, int>(StringComparer.Ordinal);
 		private readonly object activeGate = new object();
@@ -87,17 +87,16 @@ namespace ArknightsOperatorsMod {
 			if (request == null)
 				throw new ArgumentNullException("request");
 			string flightKey = request.Key + "\n" + request.ResourceVersion;
-			Task<string> shared = null;
+			SharedDownload shared = null;
 			bool created = false;
 			lock (downloadGate) {
-				if (inFlightDownloads.TryGetValue(flightKey, out shared) && shared.IsCompleted) {
-					inFlightDownloads.Remove(flightKey);
-					shared = null;
-				}
+				inFlightDownloads.TryGetValue(flightKey, out shared);
 				if (shared == null) {
 					IncrementInFlightNoLock(request.Key);
 					try {
-						shared = GetOrDownloadCoreAsync(request, CancellationToken.None);
+						CancellationTokenSource source = new CancellationTokenSource();
+						shared = new SharedDownload(source);
+						shared.Task = GetOrDownloadCoreAsync(request, source.Token);
 						inFlightDownloads[flightKey] = shared;
 						created = true;
 					} catch {
@@ -105,6 +104,7 @@ namespace ArknightsOperatorsMod {
 						throw;
 					}
 				}
+				shared.Waiters++;
 			}
 			if (created)
 				ObserveCompletedDownloadAsync(flightKey, request.Key, shared);
@@ -112,17 +112,20 @@ namespace ArknightsOperatorsMod {
 		}
 
 		private async void ObserveCompletedDownloadAsync(string flightKey, string resourceKey,
-			Task<string> shared) {
+			SharedDownload shared) {
 			try {
-				await shared.ConfigureAwait(false);
+				await shared.Task.ConfigureAwait(false);
 			} catch {
 			} finally {
 				lock (downloadGate) {
-					Task<string> current;
+					SharedDownload current;
 					if (inFlightDownloads.TryGetValue(flightKey, out current) &&
 						object.ReferenceEquals(current, shared))
 						inFlightDownloads.Remove(flightKey);
+					shared.CompletionObserved = true;
 					DecrementInFlightNoLock(resourceKey);
+					if (shared.Waiters == 0)
+						shared.DisposeCancellation();
 				}
 			}
 		}
@@ -140,20 +143,37 @@ namespace ArknightsOperatorsMod {
 			else inFlightResourceKeys[resourceKey] = count - 1;
 		}
 
-		private static async Task<string> AwaitSharedAsync(
-			Task<string> shared,
+		private async Task<string> AwaitSharedAsync(
+			SharedDownload shared,
 			CancellationToken cancellationToken
 		) {
-			if (!cancellationToken.CanBeCanceled)
-				return await shared.ConfigureAwait(false);
-			cancellationToken.ThrowIfCancellationRequested();
-			TaskCompletionSource<bool> canceled = new TaskCompletionSource<bool>();
-			using (cancellationToken.Register(() => canceled.TrySetResult(true))) {
-				Task completed = await Task.WhenAny(shared, canceled.Task).ConfigureAwait(false);
-				if (!object.ReferenceEquals(completed, shared))
-					throw new OperationCanceledException(cancellationToken);
+			try {
+				if (!cancellationToken.CanBeCanceled)
+					return await shared.Task.ConfigureAwait(false);
+				cancellationToken.ThrowIfCancellationRequested();
+				TaskCompletionSource<bool> canceled = new TaskCompletionSource<bool>();
+				using (cancellationToken.Register(() => canceled.TrySetResult(true))) {
+					Task completed = await Task.WhenAny(shared.Task, canceled.Task).ConfigureAwait(false);
+					if (!object.ReferenceEquals(completed, shared.Task))
+						throw new OperationCanceledException(cancellationToken);
+				}
+				return await shared.Task.ConfigureAwait(false);
+			} finally {
+				ReleaseDownloadWaiter(shared);
 			}
-			return await shared.ConfigureAwait(false);
+		}
+
+		private void ReleaseDownloadWaiter(SharedDownload shared) {
+			lock (downloadGate) {
+				if (shared.Waiters > 0)
+					shared.Waiters--;
+				if (shared.Waiters != 0)
+					return;
+				if (!shared.CompletionObserved && !shared.Task.IsCompleted)
+					shared.Cancellation.Cancel();
+				if (shared.CompletionObserved)
+					shared.DisposeCancellation();
+			}
 		}
 
 		private async Task<string> GetOrDownloadCoreAsync(
@@ -386,7 +406,32 @@ namespace ArknightsOperatorsMod {
 			if (disposed)
 				return;
 			disposed = true;
+			SharedDownload[] downloads;
+			lock (downloadGate) {
+				downloads = new SharedDownload[inFlightDownloads.Count];
+				inFlightDownloads.Values.CopyTo(downloads, 0);
+			}
+			for (int i = 0; i < downloads.Length; i++)
+				downloads[i].Cancellation.Cancel();
 			client.Dispose();
+		}
+
+		private sealed class SharedDownload {
+			public readonly CancellationTokenSource Cancellation;
+			public Task<string> Task;
+			public int Waiters;
+			public bool CompletionObserved;
+			private bool cancellationDisposed;
+
+			public SharedDownload(CancellationTokenSource cancellation) {
+				Cancellation = cancellation;
+			}
+
+			public void DisposeCancellation() {
+				if (cancellationDisposed) return;
+				cancellationDisposed = true;
+				Cancellation.Dispose();
+			}
 		}
 
 		private sealed class ResourceLease : IDisposable {

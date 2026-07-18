@@ -50,10 +50,12 @@ namespace ArknightsOperatorsMod {
 	public sealed class OperatorThumbnailLoader : IDisposable {
 		public const int ThumbnailWidth = 96;
 		public const int MaximumConcurrentLoads = 2;
+		public const int LoadTimeoutSeconds = 15;
 		public const long MaximumThumbnailBytes = 256L * 1024L;
 		public const int MaximumDecodedDimension = 256;
 
 		private readonly PrtsResourceService resources;
+		private readonly TimeSpan loadTimeout;
 		private readonly SemaphoreSlim loadGate = new SemaphoreSlim(
 			MaximumConcurrentLoads,
 			MaximumConcurrentLoads
@@ -64,9 +66,17 @@ namespace ArknightsOperatorsMod {
 			new HashSet<OperatorThumbnailAsset>();
 		private int disposed;
 
-		public OperatorThumbnailLoader(PrtsResourceService resources) {
+		public OperatorThumbnailLoader(PrtsResourceService resources) : this(
+			resources,
+			TimeSpan.FromSeconds(LoadTimeoutSeconds)
+		) {
+		}
+
+		internal OperatorThumbnailLoader(PrtsResourceService resources, TimeSpan loadTimeout) {
 			if (resources == null) throw new ArgumentNullException("resources");
+			if (loadTimeout <= TimeSpan.Zero) throw new ArgumentOutOfRangeException("loadTimeout");
 			this.resources = resources;
+			this.loadTimeout = loadTimeout;
 		}
 
 		public async Task<OperatorThumbnailAsset> LoadAsync(
@@ -78,42 +88,58 @@ namespace ArknightsOperatorsMod {
 			PrtsAssetRequest request = CreateRequest(character);
 			bool gateEntered = false;
 			IDisposable lease = null;
-			using (CancellationTokenSource linked = CancellationTokenSource.CreateLinkedTokenSource(
+			using (CancellationTokenSource scope = CancellationTokenSource.CreateLinkedTokenSource(
 				cancellationToken,
 				lifetime.Token
 			)) {
 				try {
-					await loadGate.WaitAsync(linked.Token).ConfigureAwait(false);
+					await loadGate.WaitAsync(scope.Token).ConfigureAwait(false);
 					gateEntered = true;
-					linked.Token.ThrowIfCancellationRequested();
-					lease = resources.Acquire(new[] { request.Key });
-					string localPath = await resources.GetOrDownloadAsync(request, linked.Token)
-						.ConfigureAwait(false);
-					linked.Token.ThrowIfCancellationRequested();
-					OperatorThumbnailFileInfo info = OperatorThumbnailFile.Inspect(
-						localPath,
-						MaximumThumbnailBytes,
-						MaximumDecodedDimension
-					);
-					linked.Token.ThrowIfCancellationRequested();
-					OperatorThumbnailAsset asset = new OperatorThumbnailAsset(
-						request.Key,
-						localPath,
-						info,
-						lease,
-						ReleaseAsset
-					);
-					lease = null;
-					bool accepted;
-					lock (activeGate) {
-						accepted = Volatile.Read(ref disposed) == 0;
-						if (accepted) activeAssets.Add(asset);
+					using (CancellationTokenSource timeout = new CancellationTokenSource())
+					using (CancellationTokenSource linked = CancellationTokenSource.CreateLinkedTokenSource(
+						scope.Token,
+						timeout.Token
+					)) {
+						timeout.CancelAfter(loadTimeout);
+						try {
+							linked.Token.ThrowIfCancellationRequested();
+							lease = resources.Acquire(new[] { request.Key });
+							string localPath = await resources.GetOrDownloadAsync(request, linked.Token)
+								.ConfigureAwait(false);
+							linked.Token.ThrowIfCancellationRequested();
+							OperatorThumbnailFileInfo info = OperatorThumbnailFile.Inspect(
+								localPath,
+								MaximumThumbnailBytes,
+								MaximumDecodedDimension
+							);
+							linked.Token.ThrowIfCancellationRequested();
+							OperatorThumbnailAsset asset = new OperatorThumbnailAsset(
+								request.Key,
+								localPath,
+								info,
+								lease,
+								ReleaseAsset
+							);
+							lease = null;
+							bool accepted;
+							lock (activeGate) {
+								accepted = Volatile.Read(ref disposed) == 0;
+								if (accepted) activeAssets.Add(asset);
+							}
+							if (!accepted) {
+								asset.Dispose();
+								throw new OperationCanceledException(lifetime.Token);
+							}
+							return asset;
+						} catch (OperationCanceledException error) {
+							if (timeout.IsCancellationRequested && !scope.IsCancellationRequested)
+								throw new TimeoutException(
+									"Operator thumbnail timed out after " + loadTimeout.TotalSeconds + " seconds",
+									error
+								);
+							throw;
+						}
 					}
-					if (!accepted) {
-						asset.Dispose();
-						throw new OperationCanceledException(lifetime.Token);
-					}
-					return asset;
 				} finally {
 					if (lease != null) lease.Dispose();
 					if (gateEntered) loadGate.Release();
