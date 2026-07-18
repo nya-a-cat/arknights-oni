@@ -160,10 +160,14 @@ namespace ArknightsOperatorsMod {
 			GUI.Box(new Rect(rightX + 50f, panel.y + 356f, 195f, 38f), DisplayValue(selection.Model));
 			if (GUI.Button(new Rect(rightX + 253f, panel.y + 356f, 42f, 38f), "›")) CycleModel(1);
 
-			DrawScaleEditor(rightX, panel.y + 414f);
-			GUI.Box(new Rect(rightX, panel.y + 506f, 295f, 56f), ModLocalization.Text(
+			if (GUI.Button(new Rect(rightX, panel.y + 414f, 295f, 38f),
+				ModLocalization.Text("预览当前皮肤", "Preview selected appearance")))
+				PreviewSelection();
+
+			DrawScaleEditor(rightX, panel.y + 458f);
+			GUI.Box(new Rect(rightX, panel.y + 526f, 295f, 36f), ModLocalization.Text(
 				"比例按当前实际模型保存，并由使用同一外观的复制人共享。",
-				"The size is saved for the loaded model and shared by duplicants using that appearance."
+				"Size is saved for the selected skin and model."
 			));
 
 			if (GUI.Button(new Rect(panel.x + 20f, panel.y + 584f, 250f, 46f),
@@ -201,6 +205,8 @@ namespace ArknightsOperatorsMod {
 		}
 
 		private void ClosePicker() {
+			if (target != null)
+				target.ClearPreviewAppearance();
 			pickerOpen = false;
 			target = null;
 			selection = null;
@@ -211,11 +217,11 @@ namespace ArknightsOperatorsMod {
 
 		private void DrawScaleEditor(float x, float y) {
 			RefreshScaleEditorWhenModelChanges();
-			bool canEdit = target != null && !string.IsNullOrEmpty(scaleAppearanceKey);
-			string model = canEdit ? DisplayValue(target.ActiveModel) :
+			bool canEdit = selection != null && !string.IsNullOrEmpty(scaleAppearanceKey);
+			string model = canEdit ? DisplayValue(selection.Model) :
 				ModLocalization.Text("正在加载", "Loading");
 			GUI.Label(new Rect(x, y, 295f, 24f),
-				ModLocalization.Text("当前模型比例：", "Loaded model size: ") + model);
+				ModLocalization.Text("选中模型比例：", "Selected model size: ") + model);
 
 			bool previousEnabled = GUI.enabled;
 			GUI.enabled = canEdit;
@@ -235,7 +241,8 @@ namespace ArknightsOperatorsMod {
 			if (GUI.Button(new Rect(x + 116f, y + 28f, 179f, 32f),
 				ModLocalization.Text("恢复默认比例", "Restore default size")) &&
 				ResetScale()) {
-				scaleText = target.ActiveVisualScalePercent.ToString();
+				scaleText = ModConfigStore.Current.ResolveVisualScalePercent(
+					selection.Character.Id, selection.Skin.Name, selection.Model).ToString();
 				scaleError = null;
 			}
 			GUI.enabled = previousEnabled;
@@ -248,10 +255,8 @@ namespace ArknightsOperatorsMod {
 			ModConfig previousConfig = null;
 			try {
 				previousConfig = ModConfigStore.Current;
-				if (!target.SetActiveVisualScalePercent(scalePercent)) {
-					scaleText = previousText;
-					return;
-				}
+				ModConfigStore.SetAppearanceVisualScale(selection.Character.Id,
+					selection.Skin.Name, selection.Model, scalePercent);
 				scaleText = nextText;
 				scaleError = null;
 			} catch (Exception error) {
@@ -264,7 +269,11 @@ namespace ArknightsOperatorsMod {
 			ModConfig previousConfig = null;
 			try {
 				previousConfig = ModConfigStore.Current;
-				return target.ResetActiveVisualScalePercent();
+				ModConfigStore.ResetAppearanceVisualScale(selection.Character.Id,
+					selection.Skin.Name, selection.Model);
+				scaleText = ModConfigStore.Current.ResolveVisualScalePercent(
+					selection.Character.Id, selection.Skin.Name, selection.Model).ToString();
+				return true;
 			} catch (Exception error) {
 				RestoreScaleAfterFailure(previousConfig, previousText, error);
 				return false;
@@ -287,16 +296,29 @@ namespace ArknightsOperatorsMod {
 		}
 
 		private void RefreshScaleEditorWhenModelChanges() {
-			string currentKey = target == null ? null : target.ActiveAppearanceScaleKey;
+			string currentKey = SelectionScaleKey();
 			if (string.Equals(currentKey, scaleAppearanceKey, StringComparison.Ordinal)) return;
 			RefreshScaleEditor();
 		}
 
 		private void RefreshScaleEditor() {
-			scaleAppearanceKey = target == null ? null : target.ActiveAppearanceScaleKey;
-			scaleText = string.IsNullOrEmpty(scaleAppearanceKey) ? string.Empty :
-				target.ActiveVisualScalePercent.ToString();
+			scaleAppearanceKey = SelectionScaleKey();
+			scaleText = selection == null || string.IsNullOrEmpty(scaleAppearanceKey) ? string.Empty :
+				ModConfigStore.Current.ResolveVisualScalePercent(
+					selection.Character.Id, selection.Skin.Name, selection.Model).ToString();
 			scaleError = null;
+		}
+
+		private string SelectionScaleKey() {
+			return selection == null ? null : ModConfig.AppearanceScaleKey(
+				selection.Character.Id, selection.Skin.Name, selection.Model);
+		}
+
+		private void PreviewSelection() {
+			if (target == null || selection == null) return;
+			target.PreviewAppearance(selection.Character.Id, selection.Skin.Name, selection.Model);
+			ShowStatus(ModLocalization.Text("正在预览选中皮肤，点击应用后保存。",
+				"Previewing the selected appearance; click Apply to save it."));
 		}
 
 		private void ShowStatus(string text) {

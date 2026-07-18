@@ -72,6 +72,7 @@ namespace ArknightsOperatorsMod {
 		private IDisposable resourceLease;
 		private int loadGeneration;
 		private OperatorAppearanceOverride appearanceOverride;
+		private ModConfig previewAppearanceConfig;
 		private ModConfig appearanceConfig;
 		private string activeCharacterId;
 		private string activeSkin;
@@ -198,6 +199,8 @@ namespace ArknightsOperatorsMod {
 		}
 
 		private ModConfig ResolveAppearanceConfig(ModConfig globalConfig) {
+			if (previewAppearanceConfig != null)
+				return ModConfigStore.Clone(previewAppearanceConfig);
 			return appearanceOverride == null ? ModConfigStore.Clone(globalConfig) :
 				appearanceOverride.Resolve(globalConfig);
 		}
@@ -431,6 +434,7 @@ namespace ArknightsOperatorsMod {
 		internal void SetIndividualAppearance(string characterId, string skin, string model) {
 			if (appearanceOverride == null)
 				appearanceOverride = gameObject.AddComponent<OperatorAppearanceOverride>();
+			previewAppearanceConfig = null;
 			appearanceOverride.Set(characterId, skin, model);
 			ApplyAppearanceConfig(ResolveAppearanceConfig(ModConfigStore.Current));
 			Debug.Log("[ArknightsOperatorsMod] Individual appearance " + characterId + " " +
@@ -438,10 +442,27 @@ namespace ArknightsOperatorsMod {
 		}
 
 		internal void ClearIndividualAppearance() {
+			previewAppearanceConfig = null;
 			if (appearanceOverride == null || !appearanceOverride.HasOverride) return;
 			appearanceOverride.Clear();
 			ApplyAppearanceConfig(ResolveAppearanceConfig(ModConfigStore.Current));
 			Debug.Log("[ArknightsOperatorsMod] Global appearance restored for " + DuplicantName);
+		}
+
+		internal void PreviewAppearance(string characterId, string skin, string model) {
+			ModConfig preview = ModConfigStore.Clone(ModConfigStore.Current);
+			preview.DefaultCharacterId = characterId;
+			preview.PreferredSkin = skin;
+			preview.PreferredModel = model;
+			preview.Normalize();
+			previewAppearanceConfig = preview;
+			ApplyAppearanceConfig(preview);
+		}
+
+		internal void ClearPreviewAppearance() {
+			if (previewAppearanceConfig == null) return;
+			previewAppearanceConfig = null;
+			ApplyAppearanceConfig(ResolveAppearanceConfig(ModConfigStore.Current));
 		}
 
 		private ModConfig ConfigForEffectiveAnimation(string effectiveAnimation) {
