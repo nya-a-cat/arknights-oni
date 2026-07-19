@@ -12,16 +12,27 @@ internal static class OperatorAppearanceCatalogTests {
 	public static int Main(string[] args) {
 		if (args.Length != 1) throw new ArgumentException("Expected the catalog path");
 		OperatorAppearanceCatalog catalog = OperatorAppearanceCatalog.Load(args[0]);
-		Require(catalog.Operators.Count == 449, "operator count mismatch");
+		Require(catalog.Operators.Count == 420, "selectable operator count mismatch");
 		int thumbnailCount = 0;
+		int skinsWithoutMovementModel = 0;
 		for (int i = 0; i < catalog.Operators.Count; i++) {
 			if (!string.IsNullOrWhiteSpace(catalog.Operators[i].ThumbnailUrl)) thumbnailCount++;
+			for (int skinIndex = 0; skinIndex < catalog.Operators[i].Skins.Count; skinIndex++) {
+				if (catalog.Operators[i].Skins[skinIndex].FindModel("\u57fa\u5efa") == null)
+					skinsWithoutMovementModel++;
+			}
 		}
-		Require(thumbnailCount == 449, "thumbnail URL snapshot mismatch");
+		Require(thumbnailCount == 420, "selectable thumbnail URL snapshot mismatch");
+		Require(skinsWithoutMovementModel == 0, "non-moving skin remained selectable");
 		OperatorAppearanceDefinition raidian = catalog.FindExact("char_614_acsupo");
-		Require(raidian != null && raidian.ThumbnailUrl.Contains("Raidian"),
-			"protocol-suffix thumbnail lookup failed");
-
+		Require(raidian == null, "combat-only Raidian should not be selectable");
+		Require(catalog.FindById("char_510_amedic") == null,
+			"combat-only Touch should not be selectable");
+		OperatorAppearanceDefinition guardAmiya = catalog.FindById("char_1001_amiya2");
+		Require(guardAmiya != null && guardAmiya.Skins.Count == 2,
+			"Guard Amiya movement-compatible skins should remain selectable");
+		Require(guardAmiya.FindSkin("\u9ed8\u8ba4") == null,
+			"Guard Amiya combat-only default skin should be filtered");
 		OperatorAppearanceDefinition amiya = catalog.FindExact("阿米娅");
 		Require(amiya != null && amiya.Id == "char_002_amiya", "Chinese name lookup failed");
 		Require(amiya.ThumbnailUrl.StartsWith("https://media.prts.wiki/", StringComparison.Ordinal),
@@ -36,7 +47,9 @@ internal static class OperatorAppearanceCatalogTests {
 		Require(catalog.FindExact("Exusiai") == exusiai, "Exusiai English lookup failed");
 		Require(catalog.FindExact("阿能") == exusiai, "PRTS alias lookup failed");
 		Require(catalog.FindExact("char_103_angel") == exusiai, "char_id lookup failed");
-		Require(catalog.FindExact("暮落") == null, "duplicate Chinese name should require dropdown choice");
+		OperatorAppearanceDefinition dusk = catalog.FindExact("暮落");
+		Require(dusk != null && dusk.Id == "char_4025_aprot2",
+			"movement-compatible Chinese name should resolve after filtering");
 		Require(catalog.Search("阿米娅", 60).Count >= 3, "operator search result mismatch");
 		Require(catalog.Search("Texas", 60).Count >= 1, "English search result mismatch");
 		OperatorAppearanceDefinition texas = catalog.FindExact("テキサス");

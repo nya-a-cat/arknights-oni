@@ -205,7 +205,7 @@ internal static class OperatorThumbnailLoaderTests {
 			: ",\"thumbnail_url\":\"" + thumbnailUrl + "\"";
 		string json = "{\"schema_version\":1,\"operators\":[{" +
 			"\"id\":\"" + id + "\",\"name\":\"Test\"" + thumbnailProperty + "," +
-			"\"skins\":[{\"name\":\"default\",\"models\":[\"build\"]}]}]}";
+			"\"skins\":[{\"name\":\"default\",\"models\":[\"\\u57fa\\u5efa\"]}]}]}";
 		return OperatorAppearanceCatalog.FromJson(json).Operators[0];
 	}
 

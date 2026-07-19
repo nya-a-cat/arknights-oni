@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 
 namespace ArknightsOperatorsMod {
 	public sealed class OperatorAppearanceCatalog {
+		private const string MovementModel = "\u57fa\u5efa";
+
 		[JsonProperty("schema_version")]
 		public int SchemaVersion { get; private set; }
 
@@ -22,8 +24,17 @@ namespace ArknightsOperatorsMod {
 			if (catalog == null || catalog.SchemaVersion != 1 || catalog.Operators == null ||
 				catalog.Operators.Count == 0)
 				throw new InvalidDataException("Operator appearance catalog is empty or unsupported");
-			for (int i = 0; i < catalog.Operators.Count; i++)
-				catalog.Operators[i].Validate();
+			List<OperatorAppearanceDefinition> selectable =
+				new List<OperatorAppearanceDefinition>(catalog.Operators.Count);
+			for (int i = 0; i < catalog.Operators.Count; i++) {
+				OperatorAppearanceDefinition item = catalog.Operators[i];
+				item.Validate();
+				item.RetainSkinsWithModel(MovementModel);
+				if (item.Skins.Count > 0) selectable.Add(item);
+			}
+			if (selectable.Count == 0)
+				throw new InvalidDataException("Operator appearance catalog has no movement-compatible entries");
+			catalog.Operators = selectable;
 			catalog.Operators.Sort(OperatorAppearanceDefinition.CompareByDisplayName);
 			return catalog;
 		}
@@ -122,6 +133,12 @@ namespace ArknightsOperatorsMod {
 			for (int i = 0; i < Aliases.Count; i++) {
 				if (string.IsNullOrWhiteSpace(Aliases[i]))
 					throw new InvalidDataException("Operator alias is empty: " + Id);
+			}
+		}
+
+		internal void RetainSkinsWithModel(string modelName) {
+			for (int i = Skins.Count - 1; i >= 0; i--) {
+				if (Skins[i].FindModel(modelName) == null) Skins.RemoveAt(i);
 			}
 		}
 
