@@ -8,7 +8,7 @@ Operators are available today. Voice, base furniture, enemies, and visual effect
 
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3765340857) · [Usage: EN / 中文 / 日本語](./docs/usage_multilingual.md) · [Roadmap](#current-progress--roadmap) · [Installation](#installation)
 
-[![Version](https://img.shields.io/badge/version-0.3.2--alpha.2-6d5dfc)](https://github.com/nya-a-cat/arknights-oni/releases/tag/v0.3.2-alpha.2)
+[![Version](https://img.shields.io/badge/version-0.3.3--dev-f39c12)](https://github.com/nya-a-cat/arknights-oni/tree/develop)
 ![ONI tested](https://img.shields.io/badge/ONI_tested-740622-ea6b35)
 ![C#](https://img.shields.io/badge/C%23-Unity-512BD4?logo=csharp&logoColor=white)
 [![Repository](https://img.shields.io/badge/GitHub-arknights--oni-181717?logo=github)](https://github.com/nya-a-cat/arknights-oni)
@@ -18,7 +18,7 @@ Operators are available today. Voice, base furniture, enemies, and visual effect
 ![Arknights Operators Alpha gameplay montage](./docs/images/arknights-oni-alpha-v0.3.2-workshop.png)
 
 > [!IMPORTANT]
-> Version `0.3.2-alpha.2` currently implements the **Arknights Operators** module. It replaces duplicant visuals with selectable operator Spine models and maps movement, work, rest, sleep, stress, and death states to matching animations.
+> The published Stable version is `0.3.2-alpha.2`. The local `develop` line is now `0.3.3-dev` and implements the next **Arknights Operators** update.
 >
 > Each duplicant can keep its own operator, skin, and model. A global default remains available for new duplicants and for duplicants without an individual override.
 >
@@ -28,11 +28,23 @@ Operators are available today. Voice, base furniture, enemies, and visual effect
 
 The recorded four-duplicant game-test baseline used the `0.3.2-alpha.1` candidate on Oxygen Not Included build 740622. Texas, Amiya, Kal'tsit, and Exusiai were assigned to four different duplicants, saved, and restored after a full save reload.
 
+## Upcoming 0.3.3 update
+
+The current local `develop` build contains the following changes for the next release:
+
+- A paged 96px operator gallery with 20 cards per page, visible-page-only thumbnail loading, retryable failures, and offline name placeholders.
+- In-world skin/model previews and a persistent `Apply to this duplicant` action that survives closing the picker and save reloads.
+- A default visual size of `125%` plus per-appearance `75–200%` overrides keyed by `char_id + skin + model`.
+- A user-entered `128–2000 MiB` on-demand cache capacity with `512 MiB` as the default, plus permanent retention mode.
+- A movement-compatibility filter. The source snapshot still catalogs 449 operators; the picker exposes 420 operators and removes 30 skins whose metadata has no base model for walking. This excludes 29 combat-only characters from new selections.
+
+These changes remain on `develop` until the final Dev and RC game checks are complete. The existing Steam Workshop item continues to use the published Stable package.
+
 ## What makes it special?
 
-- Search a catalog of 449 operators by Chinese, English, or Japanese name, PRTS redirect alias, or `char_id` inside the game.
+- Search a 449-operator metadata snapshot by Chinese, English, or Japanese name, PRTS redirect alias, or `char_id`; the picker exposes 420 movement-compatible operators.
 - Use automatically selected Chinese or English option labels; operator display names prefer Chinese, Japanese, or English according to the current game language and available PRTS metadata.
-- Select an operator, skin, and model through linked controls.
+- Select an operator, movement-compatible skin, and model through linked controls.
 - Browse operators as 20-card pages with cached 96px PRTS avatars; the selected avatar is enlarged on the right and missing/offline images fall back to name cards.
 - Select a duplicant and press `Ctrl+F8` to assign its operator, skin, and model live; use `Ctrl+Shift+F8` for lightweight global resource, model-switching, and size settings.
 - Render Spine 3.8 Region/Mesh attachments, clipping, multiple atlas pages, and common blend modes directly in C#.
@@ -103,6 +115,7 @@ See the [GitHub Release fallback design](./docs/github_release_asset_fallback.md
 
 - [x] Searchable 449-operator catalog with Chinese, English, Japanese, redirect-alias, and `char_id` lookup
 - [x] Linked operator, skin, and model selection
+- [x] Movement-compatibility filtering: 420 selectable operators; 29 combat-only characters and 30 skins without a base walking model are hidden from new selections
 - [x] Paged 96px operator-avatar gallery with visible-page-only loading, name placeholders, and in-world Spine skin/model preview (code complete; game validation pending)
 - [x] Live per-duplicant switching from `Ctrl+F8`, with lightweight global runtime and resource settings in Mod Options
 - [x] Runtime animation mapping and ground alignment
@@ -146,7 +159,7 @@ See the [complete code review and roadmap](./docs/code_review_and_roadmap_202607
 
 ## Development
 
-The next development line is `0.3.3`. `main` contains game-tested stable code, `develop` carries integrated development work, and isolated `feature/*` branches cover higher-risk changes. Nightly and RC packages use a separate Testing identity; the current Steam Workshop item receives Stable packages only. See [Release channels and branch policy](./docs/release_channels.md).
+The current development version is `0.3.3-dev`. `main` contains game-tested stable code, `develop` carries integrated development work, and isolated `feature/*` branches cover higher-risk changes. Nightly and RC packages use a separate Testing identity; the current Steam Workshop item receives Stable packages only. See [Release channels and branch policy](./docs/release_channels.md).
 
 From the repository root, package each identity with:
 

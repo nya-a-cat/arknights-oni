@@ -8,6 +8,11 @@ The operator catalog remains at schema version `1`. Each operator may include an
 `thumbnail_url` field. Older catalogs without that field continue to load and the gallery must
 render a name placeholder for those entries.
 
+The source snapshot keeps all 449 metadata entries. Runtime catalog loading retains only skins
+whose model list includes the base model used for ONI movement. The current snapshot therefore
+exposes 420 operators, hides 30 non-moving skins, and excludes 29 combat-only characters from new
+gallery selections. Existing save data is not rewritten by this filter.
+
 `tools/update_operator_appearance_catalog.py` queries MediaWiki `imageinfo` in batches of 30 with
 `iiurlwidth=96`. It stores the returned `https://media.prts.wiki/...` thumbnail URL only. The
 generator retries missing standard portraits with the PRTS `(卫戍协议)` filename suffix and never

@@ -8,7 +8,7 @@
 
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3765340857) · [使用说明：中文 / English / 日本語](./docs/usage_multilingual.md) · [路线图](#当前进度与-roadmap) · [安装](#安装)
 
-[![版本](https://img.shields.io/badge/version-0.3.2--alpha.2-6d5dfc)](https://github.com/nya-a-cat/arknights-oni/releases/tag/v0.3.2-alpha.2)
+[![版本](https://img.shields.io/badge/version-0.3.3--dev-f39c12)](https://github.com/nya-a-cat/arknights-oni/tree/develop)
 ![ONI 实测](https://img.shields.io/badge/ONI_tested-740622-ea6b35)
 ![C#](https://img.shields.io/badge/C%23-Unity-512BD4?logo=csharp&logoColor=white)
 [![仓库](https://img.shields.io/badge/GitHub-arknights--oni-181717?logo=github)](https://github.com/nya-a-cat/arknights-oni)
@@ -18,7 +18,7 @@
 ![Arknights Operators Alpha 实机拼图](./docs/images/arknights-oni-alpha-v0.3.2-workshop.png)
 
 > [!IMPORTANT]
-> 当前 `0.3.2-alpha.2` 实现的是 **Arknights Operators（明日方舟干员）** 模块：把可选择的干员 Spine 外观覆盖到复制人上，并将移动、工作、休息、睡眠、压力和死亡状态映射到对应动画。
+> 当前已发布 Stable 版本为 `0.3.2-alpha.2`。本地 `develop` 开发线已经更新到 `0.3.3-dev`，用于准备下一次 **Arknights Operators（明日方舟干员）** 更新。
 >
 > 每个复制人都可以保存自己的干员、皮肤和模型；全局默认继续用于新复制人，以及没有单独覆盖的复制人。
 >
@@ -28,11 +28,23 @@
 
 现有四复制人实机记录使用 ONI build 740622 和 `0.3.2-alpha.1` 候选包。德克萨斯、阿米娅、凯尔希和能天使分别分配给四个复制人，保存并完整重载存档后仍保持各自选择。
 
+## 即将发布的 0.3.3 更新
+
+当前本地 `develop` 已包含以下待发布功能：
+
+- 每页 20 张卡片的 96px 干员图库，只加载当前页头像，失败可以重试，离线时显示名称占位卡。
+- 场景内皮肤/模型预览，以及关闭选择面板和保存重载后仍能保持的“应用到此复制人”。
+- 默认 `125%` 的视觉大小，以及按 `char_id + 皮肤 + 模型` 保存的 `75–200%` 独立倍率。
+- 用户可填写 `128–2000 MiB` 的按需缓存容量，默认 `512 MiB`，并保留永久保存已下载资源的模式。
+- 移动兼容过滤。轻量源目录仍记录 449 个干员；选择界面显示 420 个具备基建移动模型的干员，并隐藏缺少基建走路模型的 30 个皮肤，因此 29 个纯战斗角色不能再被新选择。
+
+这些功能会继续留在 `develop`，完成最终 Dev 和 RC 实机检查后再进入稳定版。现有 Steam 创意工坊条目继续使用已经发布的 Stable 包。
+
 ## 项目特色
 
-- 在游戏内按中文名、英文名、日文名、PRTS 重定向别名或 `char_id` 搜索 449 个干员。
+- 在游戏内按中文名、英文名、日文名、PRTS 重定向别名或 `char_id` 搜索 449 个干员的元数据；选择界面显示其中 420 个具备移动模型的干员。
 - 设置界面自动选择中文或英文，干员显示名会结合当前游戏语言和 PRTS 已提供的中文、日文、英文元数据。
-- 联动选择干员、皮肤和模型。
+- 联动选择干员、具备移动模型的皮肤和模型。
 - 以每页 20 张卡片浏览 96px PRTS 干员头像；右侧放大当前头像，离线或缺图时显示名称占位卡。
 - 选中复制人后按 `Ctrl+F8` 单独设置干员、皮肤和模型；按 `Ctrl+Shift+F8` 打开轻量的全局资源、模型切换和大小设置。
 - 使用 C# 实时渲染 Spine 3.8 Region/Mesh、clipping、多 atlas page 和常用 blend mode。
@@ -103,6 +115,7 @@ Git 源码仓库不包含明日方舟图片、Spine 骨骼、atlas 或复制的 
 
 - [x] 支持中文、英文、日文、重定向别名和 `char_id` 的 449 干员目录
 - [x] 干员、皮肤和模型联动选择
+- [x] 移动兼容过滤：选择界面保留 420 个干员，隐藏 29 个纯战斗角色和 30 个缺少基建走路模型的皮肤
 - [x] 96px 干员头像分页图库、仅当前页加载、名称占位卡，以及场景内 Spine 皮肤/模型预览（代码完成，等待实机验证）
 - [x] 通过 `Ctrl+F8` 实时切换单个复制人，并在 Mod Options 中提供轻量的全局运行与资源设置
 - [x] 运行时动画映射与地面对齐
@@ -146,7 +159,7 @@ Git 源码仓库不包含明日方舟图片、Spine 骨骼、atlas 或复制的 
 
 ## 开发
 
-下一条开发版本线为 `0.3.3`。`main` 保存实机验证通过的稳定代码，`develop` 承载日常集成，高风险改动使用隔离的 `feature/*`。Nightly 与 RC 使用独立 Testing 身份，现有 Steam 创意工坊条目只接收 Stable 包。详见[分支与发布通道](./docs/release_channels.md)。
+当前开发版本为 `0.3.3-dev`。`main` 保存实机验证通过的稳定代码，`develop` 承载日常集成，高风险改动使用隔离的 `feature/*`。Nightly 与 RC 使用独立 Testing 身份，现有 Steam 创意工坊条目只接收 Stable 包。详见[分支与发布通道](./docs/release_channels.md)。
 
 在仓库根目录使用以下命令分别打包各身份：
 
